@@ -120,11 +120,6 @@
                   <i data-lucide="refresh-cw" class="w-4 h-4" aria-hidden="true"></i><span>Try again</span>
                 </button>
               </div>
-
-              <div id="zoom-indicator" class="absolute top-3 left-3 bg-forest-950/80 backdrop-blur-sm text-parchment-50 text-xs px-2.5 py-1 rounded-full border border-white/15 flex items-center gap-1.5">
-                <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-amber-400" aria-hidden="true"></i>
-                <span id="zoom-text">Close-up view (zooms out on a miss)</span>
-              </div>
             </div>
             <p id="photo-credit" class="mt-1.5 text-xs text-parchment-700"></p>
           </div>
@@ -168,9 +163,15 @@
             </div>
 
             <div id="round1-input-area" class="space-y-3 relative">
-              <label for="animal-guess-input" class="block text-xs font-bold uppercase tracking-wider text-parchment-800">
-                Your guess — pick an animal from the list
-              </label>
+              <div class="flex items-center justify-between gap-3">
+                <label for="animal-guess-input" class="block text-xs font-bold uppercase tracking-wider text-parchment-800">
+                  Your guess
+                </label>
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <span class="text-xs font-medium text-parchment-800">Guesses left</span>
+                  <div id="attempts-dots-input" class="flex gap-1" role="img" aria-label="5 attempts left"></div>
+                </div>
+              </div>
               <div class="relative">
                 <input type="text" id="animal-guess-input" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go"
                   role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="autocomplete-list"
@@ -409,7 +410,7 @@
           <div class="mt-5 inline-flex items-baseline gap-2 bg-forest-950/70 px-6 py-3 rounded-2xl border border-forest-700">
             <span class="text-xs uppercase tracking-wider text-emerald-300 font-semibold">Total Score</span>
             <span id="summary-total-score" class="font-display text-4xl font-bold text-amber-400">0</span>
-            <span class="text-sm text-forest-100/80">/ 3,000</span>
+            <span class="text-sm text-forest-100/80">/ 2,500</span>
           </div>
           <p id="summary-rank-title" class="text-xs font-semibold uppercase tracking-wider text-emerald-200 mt-2"></p>
         </div>
@@ -689,7 +690,7 @@
       </div>
 
       <div class="overflow-y-auto">
-        <p class="px-4 pt-3 text-xs text-parchment-800">Score 1,500 or more on a daily to add its animal. Badges show your best score on it: bronze from 1,500 points, silver from 1,700, gold from 2,400. Tap an animal you have met to practise on it; practice and past dailies can raise a badge but do not add new animals.</p>
+        <p class="px-4 pt-3 text-xs text-parchment-800">Score 1,250 or more on a daily to add its animal. Badges show your best score on it: bronze from 1,250 points, silver from 1,400, gold from 2,000. Tap an animal you have met to practise on it; practice and past dailies can raise a badge but do not add new animals.</p>
         <p id="zoo-retake" class="mx-4 mt-3 px-3 py-2 rounded-lg bg-amber-50 border border-amber-200 text-xs font-medium text-amber-900"></p>
         <div id="zoo-grid" class="p-4 space-y-5"></div>
         <div class="mx-4 mb-4 p-4 rounded-xl bg-parchment-100 border border-parchment-200 space-y-3">
@@ -727,11 +728,11 @@
       </div>
 
       <div class="p-5 overflow-y-auto space-y-4 text-sm text-parchment-900">
-        <p>One wild animal a day, three rounds, 3,000 points to win.</p>
+        <p>One wild animal a day, three rounds, 2,500 points to win.</p>
         <ol class="space-y-3">
           <li class="flex gap-3">
             <span class="w-7 h-7 shrink-0 rounded-full bg-forest-800 text-white font-bold flex items-center justify-center">1</span>
-            <div><strong>Name the animal.</strong> You get a close-up photo and five guesses. Each miss zooms the photo out, unlocks a clue, and tells you how closely your guess is related: same class, order, family or genus. Fewer guesses, more points. If you never get it, your closest relative still earns up to 350.</div>
+            <div><strong>Name the animal.</strong> You get a close-up photo and five guesses. Each miss zooms the photo out, unlocks a clue, and tells you how closely your guess is related: same class, order, family or genus. Fewer guesses, more points. If you never get it, your closest relative still earns up to 175.</div>
           </li>
           <li class="flex gap-3">
             <span class="w-7 h-7 shrink-0 rounded-full bg-forest-800 text-white font-bold flex items-center justify-center">2</span>
@@ -742,7 +743,7 @@
             <div><strong>Paint where it lives.</strong> Colour in the map cells that make up its native range. Cells next to the true range count for half, so near misses still score.</div>
           </li>
         </ol>
-        <p class="text-xs text-parchment-800">Missing round 1 does not end the game: the animal is revealed and you carry on. A new animal arrives at midnight, your time. Play every day to build a streak. Score 1,500 or more on a daily and the animal joins your zoo. From a 3-day streak you can retake one missed animal a day. A first retake needs 1,750, and every further retake of the same animal needs 250 more.</p>
+        <p class="text-xs text-parchment-800">Missing round 1 does not end the game: the animal is revealed and you carry on. A new animal arrives at midnight, your time. Play every day to build a streak. Score 1,250 or more on a daily and the animal joins your zoo. From a 3-day streak you can retake one missed animal a day. A first retake needs 1,500, and every further retake of the same animal needs 250 more.</p>
         <button data-action="close-modal" class="w-full py-3 px-4 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold shadow transition">Start playing</button>
       </div>
     </div>

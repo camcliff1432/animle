@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guesses left: mockup</title>
+<style>
+:root{--bg:#f6f1e4;--surface:#fffdf6;--surface2:#efe7d2;--text:#2c251b;--text2:#5b4f3c;--muted:#8a7d66;--border:#d9cfb6;--green:#275c44}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;padding:24px 16px}
+h1{font-size:18px;font-weight:600;margin:0 0 4px;text-align:center}
+p.sub{margin:0 0 20px;text-align:center;color:var(--text2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:700px;margin:0 auto}
+.lab{font-size:14px;font-weight:600;text-align:center;margin:0 0 8px}
+.ph{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:10px;max-width:290px;margin:0 auto}
+.sc{background:var(--bg);border-radius:12px;overflow:hidden;height:470px;display:flex;flex-direction:column;gap:8px;padding:0 10px 10px}
+.photo{height:70px;background:var(--surface2);border-radius:0 0 10px 10px;display:flex;align-items:flex-end;justify-content:center;font-size:11px;color:var(--muted);padding-bottom:6px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:8px 10px;font-size:12px}
+.row{display:flex;justify-content:space-between;gap:8px;color:var(--text2)}
+.row b{font-weight:600;color:var(--text)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--green)}
+.dot.o{background:var(--border)}
+.inp{height:34px;border:1px solid var(--border);border-radius:8px;background:var(--surface);display:flex;align-items:center;padding:0 10px;font-size:12px;color:var(--muted)}
+.btn{height:34px;border-radius:8px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;padding:0 12px}
+.btn.alt{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+.cap{font-size:13px;color:var(--text2);text-align:center;margin:10px 0 0}
+</style>
+</head>
+<body>
+<h1>Guesses left: where the dots go</h1>
+<p class="sub">Both screens are scrolled down to the guess box, as a phone player would be.</p>
+<div class="grid">
+  <div>
+    <p class="lab">Today</p>
+    <div class="ph"><div class="sc">
+      <div class="photo">bottom of the photo</div>
+      <div class="card">
+        <div class="row"><span>Diet</span><b>Insects and fruit</b></div>
+        <div class="row"><span>Biome</span><b>Locked (miss 2)</b></div>
+        <div class="row"><span>Size</span><b>Locked (miss 3)</b></div>
+        <div class="row"><span>Last clue</span><b>Locked (miss 4)</b></div>
+      </div>
+      <div class="card" style="font-size:11px;color:var(--text2)">Not it. Same order as the answer</div>
+      <div style="font-size:12px;font-weight:600;margin-top:2px">Your guess</div>
+      <div class="inp">Type an animal name</div>
+      <div style="display:flex;gap:8px"><div class="btn" style="flex:1">Guess</div><div class="btn alt">Skip</div></div>
+      <div style="margin-top:auto;font-size:11px;color:var(--muted);text-align:center">How many guesses are left? Scroll up to find out.</div>
+    </div></div>
+    <p class="cap">Dots are off the top of the screen</p>
+  </div>
+  <div>
+    <p class="lab">Proposed</p>
+    <div class="ph"><div class="sc">
+      <div class="photo">bottom of the photo</div>
+      <div class="card">
+        <div class="row"><span>Diet</span><b>Insects and fruit</b></div>
+        <div class="row"><span>Biome</span><b>Locked (miss 2)</b></div>
+        <div class="row"><span>Size</span><b>Locked (miss 3)</b></div>
+        <div class="row"><span>Last clue</span><b>Locked (miss 4)</b></div>
+      </div>
+      <div class="card" style="font-size:11px;color:var(--text2)">Not it. Same order as the answer</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
+        <span style="font-size:12px;font-weight:600">Your guess</span>
+        <span style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text2)">Guesses left <span style="display:flex;gap:3px"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot o"></i><i class="dot o"></i></span></span>
+      </div>
+      <div class="inp">Type an animal name</div>
+      <div style="display:flex;gap:8px"><div class="btn" style="flex:1">Guess</div><div class="btn alt">Skip</div></div>
+    </div></div>
+    <p class="cap">Dots sit on the same line as the guess box</p>
+  </div>
+</div>
+</body>
+</html>

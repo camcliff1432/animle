@@ -15,7 +15,7 @@ import { GUESSABLE } from "./data/taxonomy.js";
 import { SCHEDULE } from "./data/schedule.js";
 import PHOTOS from "./data/photos.json";
 import {
-  MAX_GUESSES, scoreIdentification, scorePopulation, populationLabel, scoreCells, rankFor,
+  MAX_GUESSES, ROUND_MAX, MAX_TOTAL, scoreIdentification, scorePopulation, populationLabel, scoreCells, rankFor,
   relatedness, closestLevel, RELATED_POINTS, badgeFor
 } from "./engine/scoring.js";
 import { normalizeName, judgeGuess } from "./engine/matching.js";
@@ -560,24 +560,25 @@ function skipAnimalGuess() {
   saveProgress();
 }
 
-const ZOOM_TEXT = ["Extreme close-up", "Close-up", "Medium view", "Wide view", "Almost the full photo (final attempt)"];
-
 function renderRound1() {
   const a = appState.animal;
   const used = appState.r1Guesses.length;
   const done = roundOneOver();
   const remaining = done ? 0 : MAX_GUESSES - used;
 
-  const dots = $("attempts-dots");
-  dots.setAttribute("aria-label", `${remaining} ${remaining === 1 ? "attempt" : "attempts"} left`);
-  dots.replaceChildren(...Array.from({ length: MAX_GUESSES }, (_, i) => {
-    const dot = document.createElement("span");
-    dot.className = `w-3 h-3 rounded-full ${i < remaining ? "bg-forest-700" : "bg-parchment-300"}`;
-    return dot;
-  }));
+  // The same dots show at the top of the card and beside the guess box, so they stay in view
+  // while the phone keyboard is open.
+  for (const id of ["attempts-dots", "attempts-dots-input"]) {
+    const dots = $(id);
+    dots.setAttribute("aria-label", `${remaining} ${remaining === 1 ? "attempt" : "attempts"} left`);
+    dots.replaceChildren(...Array.from({ length: MAX_GUESSES }, (_, i) => {
+      const dot = document.createElement("span");
+      dot.className = `w-3 h-3 rounded-full ${i < remaining ? "bg-forest-700" : "bg-parchment-300"}`;
+      return dot;
+    }));
+  }
 
   showPhoto(photoLevel());
-  $("zoom-text").textContent = done ? "Full view" : ZOOM_TEXT[Math.min(used, ZOOM_TEXT.length - 1)];
 
   const credit = PHOTOS[a.id];
   $("photo-credit").textContent = `Photo: ${credit.artist} · ${credit.license} · cropped`;
@@ -946,13 +947,13 @@ function renderHistoryChart(history) {
     .attr("aria-label", `Bar chart of your last ${recent.length} daily scores: ${recent.map(r => `${r.date} ${r.total}`).join(", ")}`);
   const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
   const x = scaleBand().domain(recent.map((_, i) => i)).range([0, Math.min(innerW, recent.length * 84)]).padding(0.32);
-  const y = scaleLinear().domain([0, 3000]).range([innerH, 0]);
+  const y = scaleLinear().domain([0, MAX_TOTAL]).range([innerH, 0]);
 
-  for (const tick of [0, 1000, 2000, 3000]) {
+  for (const tick of [0, 500, 1000, 1500, 2000, 2500]) {
     g.append("line").attr("x1", 0).attr("x2", innerW).attr("y1", y(tick)).attr("y2", y(tick))
       .attr("stroke", "#ebe2cf").attr("stroke-dasharray", tick === 0 ? "none" : "3,3");
     g.append("text").attr("x", -8).attr("y", y(tick) + 4).attr("text-anchor", "end")
-      .attr("font-size", "12px").attr("fill", "#4a4031").text(tick === 0 ? "0" : `${tick / 1000}k`);
+      .attr("font-size", "12px").attr("fill", "#4a4031").text(tick === 0 ? "0" : tick >= 1000 ? `${tick / 1000}k` : String(tick));
   }
 
   const colors = { r1: "#275c44", r2: "#f59e0b", r3: "#0284c7" };
@@ -980,8 +981,8 @@ function renderHistoryChart(history) {
 
 async function shareScorecard() {
   const total = appState.r1Score + appState.r2Score + appState.r3Score;
-  const bar = (score) => {
-    const filled = Math.round((score / 1000) * 5);
+  const bar = (score, max = 1000) => {
+    const filled = Math.round((score / max) * 5);
     return "🟩".repeat(filled) + "⬜".repeat(5 - filled);
   };
   const n = puzzleNumber(appState.todayKey);
@@ -992,8 +993,8 @@ async function shareScorecard() {
   const guesses = appState.r1Solved ? `${appState.r1Guesses.length}/${MAX_GUESSES}` : `X/${MAX_GUESSES}`;
   const text = [
     title,
-    `Score: ${total.toLocaleString()} / 3,000`,
-    `🐾 Species: ${bar(appState.r1Score)} ${appState.r1Score} (${guesses})`,
+    `Score: ${total.toLocaleString()} / ${MAX_TOTAL.toLocaleString()}`,
+    `🐾 Species: ${bar(appState.r1Score, ROUND_MAX.r1)} ${appState.r1Score} (${guesses})`,
     `📊 Census:  ${bar(appState.r2Score)} ${appState.r2Score}`,
     `🗺️ Habitat: ${bar(appState.r3Score)} ${appState.r3Score}`,
     url
@@ -1216,7 +1217,7 @@ async function copyBackupCode() {
 // player's own, from this device.
 // ---------------------------------------------------------------------------
 const LB_TEXT = {
-  daily: { unit: "points", explain: "Everyone who finishes today's puzzle, ranked by score out of 3,000. Ties go to whoever used fewer guesses in round 1." },
+  daily: { unit: "points", explain: "Everyone who finishes today's puzzle, ranked by score out of 2,500. Ties go to whoever used fewer guesses in round 1." },
   streak: { unit: "days", explain: "The longest runs of consecutive daily puzzles." },
   zoo: { unit: "animals", explain: "Who has collected the most animals, with gold badges breaking ties." }
 };

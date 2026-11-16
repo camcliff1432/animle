@@ -1,7 +1,11 @@
 // Pure scoring rules for all three rounds. No DOM access, so every rule here is unit-tested.
 
 export const MAX_GUESSES = 5;
-const ROUND1_POINTS = [1000, 850, 700, 550, 400];
+// Round 1 is worth less than the other two rounds, so knowing the animal on sight
+// is a head start, not the whole game. Rounds 2 and 3 are worth 1000 each.
+const ROUND1_POINTS = [500, 425, 350, 275, 200];
+export const ROUND_MAX = { r1: ROUND1_POINTS[0], r2: 1000, r3: 1000 };
+export const MAX_TOTAL = ROUND_MAX.r1 + ROUND_MAX.r2 + ROUND_MAX.r3;
 
 /**
  * How closely two animals are related, from their taxonomy.
@@ -19,7 +23,7 @@ export function relatedness(a, b) {
 }
 
 /** Consolation points when round 1 is not solved, by the closest guess made. */
-export const RELATED_POINTS = { genus: 350, family: 250, order: 150, class: 50, none: 0 };
+export const RELATED_POINTS = { genus: 175, family: 125, order: 75, class: 25, none: 0 };
 const RELATED_ORDER = ["none", "class", "order", "family", "genus"];
 
 export function closestLevel(levels) {
@@ -89,16 +93,16 @@ export function scoreCells(userCells, targetCells, neighbours, distance) {
 }
 
 export function rankFor(total) {
-  if (total >= 2650) return "Master Conservationist";
-  if (total >= 2100) return "Senior Wildlife Biologist";
-  if (total >= 1500) return "Field Naturalist";
-  if (total >= 900) return "Trail Scout";
+  if (total >= 2200) return "Master Conservationist";
+  if (total >= 1750) return "Senior Wildlife Biologist";
+  if (total >= 1250) return "Field Naturalist";
+  if (total >= 750) return "Trail Scout";
   return "Junior Field Assistant";
 }
 
 /** Zoo badge for a species, from the player's best total on it. */
 export function badgeFor(best) {
-  if (best >= 2400) return "gold";
-  if (best >= 1700) return "silver";
+  if (best >= 2000) return "gold";
+  if (best >= 1400) return "silver";
   return "bronze";
 }

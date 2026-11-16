@@ -74,7 +74,7 @@ Nothing needs a server today. A server becomes necessary for any of: accounts, l
 
 - Depend on server-side scoring (area 3) and accounts (area 4).
 - Decide what is ranked: daily score, streak, zoo size, or all three. Decide whether there are friends-only boards.
-- Rank thresholds and the 1,500-point bar for the zoo were set without real player data and should be re-tuned after the beta.
+- Rank thresholds and the 1,250-point bar for the zoo were set without real player data and should be re-tuned after the beta.
 
 ### 6. Legal
 

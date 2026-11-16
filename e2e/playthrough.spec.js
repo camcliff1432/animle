@@ -72,6 +72,9 @@ test("a full daily game, then practice, keeps stats and progress straight", asyn
   await expect(page.locator("#clue-diet")).toContainText("Locked");
   await guess(page, WRONG);
   await expect(attempts).toHaveAttribute("aria-label", "4 attempts left");
+  // The same count sits beside the guess box, so it stays in view with the keyboard open.
+  await expect(page.locator("#attempts-dots-input")).toHaveAttribute("aria-label", "4 attempts left");
+  await expect(page.locator("#attempts-dots-input")).toBeInViewport();
   await expect(page.locator("#clue-diet")).toHaveText(animal.diet);
   await expect(page.locator("#clue-size")).toContainText("Locked");
   const expected = { genus: "Same genus", family: "Same family", order: "Same order", class: "Same class only", none: "Different class" }[wrongLevel(animal)];
@@ -86,7 +89,7 @@ test("a full daily game, then practice, keeps stats and progress straight", asyn
   await input.fill(animal.name);
   await input.press("Enter");
   await expect(page.locator("#round1-title")).toHaveText(animal.name);
-  await expect(page.locator("#round1-points")).toHaveText("+850");
+  await expect(page.locator("#round1-points")).toHaveText("+425");
   await noSidewaysScroll(page);
   await page.getByRole("button", { name: "Next: Estimate Population" }).click();
 
@@ -129,7 +132,7 @@ test("a full daily game, then practice, keeps stats and progress straight", asyn
   await expect(page.locator("#next-puzzle-countdown")).toHaveText(/^\d\d:\d\d:\d\d$/);
   await expect(page.locator("#streak-count")).toHaveText("1");
   await expect(page.locator("#stat-total-played")).toHaveText("1");
-  await expect(page.locator("#stat-avg-r1")).toHaveText("850");
+  await expect(page.locator("#stat-avg-r1")).toHaveText("425");
   await expect(page.locator("#summary-zoo-title")).toContainText("joined your zoo");
   await expect(page.locator("#zoo-pill-count")).toHaveText("1");
   const dailyAverage = await page.locator("#stat-avg-score").textContent();
@@ -204,7 +207,7 @@ test("missing the animal still earns points for a close relative", async ({ page
     .filter(g => !animal.groups.some(group => group.toLowerCase() === g.name.toLowerCase()))
     .sort((a, b) => levels[b.level] - levels[a.level])
     .slice(0, 5);
-  const points = { genus: 350, family: 250, order: 150, class: 50, none: 0 }[closest[0].level];
+  const points = { genus: 175, family: 125, order: 75, class: 25, none: 0 }[closest[0].level];
 
   await page.goto("/");
   await page.keyboard.press("Escape");
@@ -269,10 +272,10 @@ test("from a 3-day streak, one missed animal a day can be retaken and earned", a
   await expect(zoo.locator("#zoo-retake")).toContainText("You have a retake today");
   await zoo.getByRole("button", { name: `Retake ${first.name}` }).click();
   await expect(page.locator("#mode-badge")).toHaveText("Retake");
-  await expect(page.locator("#header-date-label")).toContainText("1,750 points"); // a first retake needs 250 more than a daily
+  await expect(page.locator("#header-date-label")).toContainText("1,500 points"); // a first retake needs 250 more than a daily
 
   await guess(page, first.name);
-  await expect(page.locator("#round1-points")).toHaveText("+1000");
+  await expect(page.locator("#round1-points")).toHaveText("+500");
   await finishFromRound2(page, first.population.value);
   await expect(page.locator("#summary-edition-tag")).toHaveText("Retake Field Report");
   await expect(page.locator("#summary-zoo-title")).toContainText(`${first.name} joined your zoo`);
@@ -283,7 +286,7 @@ test("from a 3-day streak, one missed animal a day can be retaken and earned", a
   await page.reload();
   await page.getByRole("button", { name: "Open my zoo" }).click();
   await expect(zoo.locator("#zoo-retake")).toContainText("Today's retake is used");
-  await expect(zoo.getByRole("button", { name: `Retake ${second.name}, needs 1,750 points` })).toBeDisabled();
+  await expect(zoo.getByRole("button", { name: `Retake ${second.name}, needs 1,500 points` })).toBeDisabled();
   await expect(zoo.getByText(first.name, { exact: true })).toBeVisible();
 });
 
@@ -327,7 +330,7 @@ test("a past daily can be played from the archive without touching the streak", 
   await expect(page.locator("#mode-badge")).toHaveText("Archive");
 
   await guess(page, animal.name);
-  await expect(page.locator("#round1-points")).toHaveText("+1000");
+  await expect(page.locator("#round1-points")).toHaveText("+500");
   await page.getByRole("button", { name: "Next: Estimate Population" }).click();
   await page.locator("#pop-number-input").fill(String(animal.population.value));
   await page.getByRole("button", { name: "Lock In Population Estimate" }).click();

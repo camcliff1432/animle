@@ -195,7 +195,7 @@ describe("earning animals and retakes", () => {
     data = recordZooResult(data, "okapi", ZOO_MIN_SCORE + 2 * RETAKE_STEP, day, "retake");
     expect(data.zoo.okapi).toEqual({ best: ZOO_MIN_SCORE + 2 * RETAKE_STEP, plays: 1, first: day });
     expect(data.missed.okapi).toBeUndefined();
-    expect(retakeBar(1)).toBe(1750);
+    expect(retakeBar(1)).toBe(1500);
     expect(retakeBar(50)).toBe(RETAKE_MAX_SCORE);
 
     expect(recordZooResult(emptyData(), "kakapo", ZOO_MIN_SCORE, day, "daily").zoo.kakapo.best).toBe(ZOO_MIN_SCORE);

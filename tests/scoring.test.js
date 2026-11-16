@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import {
-  MAX_GUESSES, scoreIdentification, scorePopulation, populationLabel, scoreCells, rankFor,
+  MAX_GUESSES, MAX_TOTAL, ROUND_MAX, scoreIdentification, scorePopulation, populationLabel, scoreCells, rankFor,
   relatedness, closestLevel, RELATED_POINTS, badgeFor
 } from "../src/engine/scoring.js";
 import {
@@ -18,12 +18,12 @@ describe("round 1 scoring", () => {
   it("gives five guesses and pays less for each one used", () => {
     expect(MAX_GUESSES).toBe(5);
     const points = [1, 2, 3, 4, 5].map(n => scoreIdentification(n, true));
-    expect(points).toEqual([1000, 850, 700, 550, 400]);
+    expect(points).toEqual([500, 425, 350, 275, 200]);
   });
 
   it("pays for the closest relative when the animal is never named", () => {
     expect(scoreIdentification(5, false, ["none", "class", "family", "order", "none"])).toBe(RELATED_POINTS.family);
-    expect(scoreIdentification(5, false, ["genus"])).toBe(350);
+    expect(scoreIdentification(5, false, ["genus"])).toBe(175);
     expect(scoreIdentification(5, false, ["none", "none"])).toBe(0);
     expect(scoreIdentification(5, false, [])).toBe(0);
   });
@@ -38,6 +38,15 @@ describe("round 1 scoring", () => {
     expect(closestLevel([])).toBe("none");
     const p = RELATED_POINTS;
     expect(p.genus > p.family && p.family > p.order && p.order > p.class && p.class > p.none).toBe(true);
+  });
+});
+
+describe("round weights", () => {
+  it("makes round 1 worth less than each of the other rounds", () => {
+    expect(ROUND_MAX.r1).toBe(scoreIdentification(1, true));
+    expect(ROUND_MAX.r1).toBeLessThan(ROUND_MAX.r2);
+    expect(ROUND_MAX.r1 / MAX_TOTAL).toBeLessThanOrEqual(0.2);
+    expect(MAX_TOTAL).toBe(2500);
   });
 });
 
@@ -213,13 +222,13 @@ describe("round 3 scoring", () => {
 
 describe("ranks and badges", () => {
   it("names a rank for any total", () => {
-    expect(rankFor(3000)).toBe("Master Conservationist");
+    expect(rankFor(MAX_TOTAL)).toBe("Master Conservationist");
     expect(rankFor(0)).toBe("Junior Field Assistant");
   });
 
   it("awards zoo badges by best score", () => {
     expect(badgeFor(0)).toBe("bronze");
-    expect(badgeFor(1700)).toBe("silver");
-    expect(badgeFor(2400)).toBe("gold");
+    expect(badgeFor(1400)).toBe("silver");
+    expect(badgeFor(2000)).toBe("gold");
   });
 });

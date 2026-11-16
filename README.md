@@ -30,10 +30,10 @@ A daily wildlife game in three rounds: name the animal, estimate its wild popula
 
 There are 130 species: 125 take turns as the daily, and 5 easy ones (giant panda, koala, polar bear, African bush elephant, emperor penguin) are practice animals. Practice animals are listed in `PRACTICE_IDS` in `src/data/speciesExtra.js`; they are never a daily and never join the zoo.
 
-- **Round 1, five guesses.** Each miss zooms the photo out, unlocks a clue and says how closely the guess is related (same class, order, family or genus). Solving scores 1000, 850, 700, 550 or 400. Not solving still scores up to 350 for the closest relative guessed.
+- **Round 1, five guesses.** Each miss zooms the photo out, unlocks a clue and says how closely the guess is related (same class, order, family or genus). Solving scores 500, 425, 350, 275 or 200. Not solving still scores up to 175 for the closest relative guessed.
 - **Round 2.** Any guess inside the published population range scores 1000. Outside it the score falls with the order-of-magnitude distance.
 - **Round 3.** The world is covered in about 2,600 equal-area hexagonal cells. The player paints cells; cells beside the true range count for half. It works by touch, mouse and keyboard.
-- **Zoo.** Scoring 1,500 or more on a daily adds its animal, with a bronze, silver or gold badge for the best score. The zoo is laid out by region. Animals that were played but not earned, and dailies that were skipped, are "missed"; from a 3-day streak the player can retake one missed animal a day. A first retake needs 1,750, and each further retake of the same animal needs 250 more, up to 2,500. Practice and past dailies can raise a badge but never add an animal. A backup code moves progress between devices.
+- **Zoo.** Scoring 1,250 or more on a daily adds its animal, with a bronze, silver or gold badge for the best score. The zoo is laid out by region. Animals that were played but not earned, and dailies that were skipped, are "missed"; from a 3-day streak the player can retake one missed animal a day. A first retake needs 1,500, and each further retake of the same animal needs 250 more, up to 2,100. Practice and past dailies can raise a badge but never add an animal. A backup code moves progress between devices.
 - **Past dailies.** Any earlier daily can be played by number without changing the streak or daily stats.
 
 ## Where things live

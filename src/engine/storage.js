@@ -111,7 +111,7 @@ export function addToZoo(zoo, animalId, total, date) {
 }
 
 /** A daily or a retake must score at least this much for the animal to join the zoo. */
-export const ZOO_MIN_SCORE = 1500;
+export const ZOO_MIN_SCORE = 1250;
 /** Retakes are available from a daily streak of this many days, one per day. */
 export const RETAKE_STREAK = 3;
 
@@ -123,7 +123,7 @@ export const RETAKE_STREAK = 3;
  */
 /** Each retake of the same animal raises its bar by this much, up to RETAKE_MAX_SCORE. */
 export const RETAKE_STEP = 250;
-export const RETAKE_MAX_SCORE = 2500;
+export const RETAKE_MAX_SCORE = 2100;
 
 /** The score needed on an animal's nth retake (n starts at 1). */
 export const retakeBar = (n) => Math.min(RETAKE_MAX_SCORE, ZOO_MIN_SCORE + RETAKE_STEP * Math.max(1, n));
