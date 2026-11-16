@@ -1,0 +1,48 @@
+{
+  "name": "animle",
+  "private": true,
+  "version": "0.4.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "photos": "node scripts/fetch-photos.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "e2e": "playwright test",
+    "build:artifact": "node scripts/build-artifact.mjs",
+    "check-ranges": "node scripts/check-ranges.mjs",
+    "review": "node scripts/review-status.mjs",
+    "sheets": "node scripts/contact-sheet.mjs",
+    "screenshots": "node scripts/screenshots.mjs",
+    "schedule": "node scripts/build-schedule.mjs",
+    "preview-focus": "node scripts/preview-focus.mjs",
+    "check-batch": "node scripts/check-batch.mjs",
+    "prune-guesses": "node scripts/prune-guess-list.mjs",
+    "find-photo": "node scripts/find-photo.mjs",
+    "review-sheet": "node scripts/review-sheet.mjs",
+    "check-artifact": "node scripts/check-artifact.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/fraunces": "5.3.0",
+    "@fontsource-variable/plus-jakarta-sans": "5.3.0",
+    "d3-geo": "3.1.2",
+    "d3-scale": "4.0.3",
+    "d3-selection": "3.0.1",
+    "d3-transition": "3.0.2",
+    "d3-zoom": "3.0.1",
+    "lucide": "1.73.0",
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "autoprefixer": "10.6.2",
+    "postcss": "8.5.33",
+    "sharp": "0.35.5",
+    "tailwindcss": "3.4.19",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  }
+}

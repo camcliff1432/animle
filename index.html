@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--csp-->
+  <title>Animle — Daily Wildlife & Habitat Challenge</title>
+  <meta name="description" content="A daily wildlife puzzle in three rounds: name the animal from a close-up photo, estimate how many remain in the wild, and paint where it lives on the map." />
+  <meta name="theme-color" content="#153124" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Animle — Daily Wildlife Challenge" />
+  <meta property="og:description" content="Name the animal, estimate its wild population, and paint its range. A new species every day." />
+  <meta property="og:image" content="./og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+</head>
+<body class="min-h-screen flex flex-col topo-bg selection:bg-forest-700 selection:text-white">
+
+  <!-- Toast notifications (announced to screen readers) -->
+  <div id="toast-container" role="status" aria-live="polite" class="fixed top-28 sm:top-auto sm:bottom-5 inset-x-4 sm:inset-x-auto sm:right-5 z-[60] flex flex-col items-center sm:items-end gap-2 pointer-events-none"></div>
+
+  <header class="bg-forest-900 text-parchment-50 border-b border-forest-800 shadow-md sticky top-0 z-30">
+    <div class="max-w-4xl mx-auto px-4 py-2 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="hidden sm:flex w-9 h-9 rounded-xl bg-forest-700 border border-forest-500/40 items-center justify-center shadow-inner" aria-hidden="true">
+          <i data-lucide="compass" class="w-5 h-5 text-amber-400"></i>
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-2">
+            <span class="font-display text-xl font-bold tracking-tight text-parchment-50">Animle</span>
+            <span id="mode-badge" class="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-forest-700 text-emerald-200 border border-forest-500/40">Daily</span>
+          </div>
+          <p id="header-date-label" class="text-xs text-forest-100/80 truncate">Field Edition</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <div id="streak-pill" class="flex items-center gap-1.5 bg-forest-950/80 px-3 h-11 rounded-lg border border-amber-500/30 shadow-inner" title="Daily streak">
+          <i data-lucide="flame" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
+          <span id="streak-count" class="text-sm font-bold text-parchment-50">0</span>
+          <span class="text-xs font-medium text-amber-300/90 hidden sm:inline">day streak</span>
+          <span class="sr-only sm:hidden">day streak</span>
+        </div>
+
+        <button id="btn-daily" data-action="load-daily" class="hidden btn-compact flex items-center justify-center gap-1.5 px-2.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-sm font-semibold text-white transition" aria-label="Back to today's daily">
+          <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i>
+          <span class="hidden sm:inline">Today's Daily</span>
+        </button>
+
+        <button data-action="open-zoo" class="btn-compact flex items-center justify-center gap-1.5 px-2.5 rounded-lg bg-forest-800 hover:bg-forest-700 text-sm font-medium text-parchment-100 border border-forest-700 transition" aria-label="Open my zoo">
+          <i data-lucide="paw-print" class="w-4 h-4 text-emerald-300" aria-hidden="true"></i>
+          <span id="zoo-pill-count" class="text-sm font-bold">0</span>
+        </button>
+
+        <button data-action="open-menu" class="btn-compact flex items-center justify-center gap-1.5 px-2.5 rounded-lg bg-forest-800 hover:bg-forest-700 text-sm font-medium text-parchment-100 border border-forest-700 transition" aria-label="Open the menu">
+          <i data-lucide="menu" class="w-4 h-4" aria-hidden="true"></i>
+          <span class="hidden sm:inline">Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <nav aria-label="Round progress" class="bg-forest-950/80 border-t border-forest-800/80">
+      <ol class="max-w-4xl mx-auto px-4 py-2 flex items-center justify-between text-xs">
+        <li id="step-1-pill" class="flex items-center gap-1.5 font-semibold text-emerald-300">
+          <span class="w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center text-xs">1</span>
+          <span><span class="sm:hidden">Species</span><span class="hidden sm:inline">Identify Species</span></span>
+        </li>
+        <li aria-hidden="true" class="h-px flex-1 bg-forest-800 mx-2 sm:mx-4"></li>
+        <li id="step-2-pill" class="flex items-center gap-1.5 font-medium text-forest-100/70">
+          <span class="w-5 h-5 rounded-full bg-forest-800 border border-forest-700 flex items-center justify-center text-xs">2</span>
+          <span><span class="sm:hidden">Population</span><span class="hidden sm:inline">Wild Population</span></span>
+        </li>
+        <li aria-hidden="true" class="h-px flex-1 bg-forest-800 mx-2 sm:mx-4"></li>
+        <li id="step-3-pill" class="flex items-center gap-1.5 font-medium text-forest-100/70">
+          <span class="w-5 h-5 rounded-full bg-forest-800 border border-forest-700 flex items-center justify-center text-xs">3</span>
+          <span><span class="sm:hidden">Habitat</span><span class="hidden sm:inline">Habitat Map</span></span>
+        </li>
+        <li aria-hidden="true" class="h-px flex-1 bg-forest-800 mx-2 sm:mx-4"></li>
+        <li id="step-4-pill" class="flex items-center gap-1.5 font-medium text-forest-100/70">
+          <i data-lucide="award" class="w-4 h-4" aria-hidden="true"></i>
+          <span class="hidden sm:inline">Summary</span>
+          <span class="sr-only sm:hidden">Summary</span>
+        </li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="flex-1 max-w-4xl w-full mx-auto px-4 py-5 sm:py-8">
+
+    <!-- ==================== ROUND 1 ==================== -->
+    <section id="stage-1" class="animate-stage" aria-labelledby="stage-1-title">
+      <div class="bg-parchment-50 rounded-2xl shadow-lg border border-parchment-300 overflow-hidden">
+        <div class="px-5 py-4 bg-parchment-100 border-b border-parchment-200 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-forest-700">Round 1 of 3 • Species Identification</span>
+            <h1 id="stage-1-title" class="text-xl sm:text-2xl font-bold text-parchment-900">What wild animal is this?</h1>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-xs font-medium text-parchment-800 mr-1">Attempts left:</span>
+            <div id="attempts-dots" class="flex gap-1" role="img" aria-label="5 attempts left"></div>
+          </div>
+        </div>
+
+        <div class="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
+          <div class="md:col-span-7">
+            <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-forest-950 border-2 border-parchment-300 shadow-inner">
+              <img id="animal-image" alt="Close-up photo of today's mystery animal" class="animal-photo w-full h-full object-cover" width="960" height="720" />
+
+              <div id="image-loading-overlay" class="hidden absolute inset-0 bg-forest-950/85 flex flex-col items-center justify-center gap-2 text-parchment-100 z-10">
+                <div class="w-7 h-7 border-2 border-amber-400 border-t-transparent rounded-full animate-spin"></div>
+                <span class="text-xs font-medium tracking-wide">Loading photo…</span>
+              </div>
+
+              <div id="image-error-overlay" class="hidden absolute inset-0 bg-forest-950 flex flex-col items-center justify-center gap-3 text-parchment-100 z-10 p-4 text-center">
+                <p class="text-sm font-medium">The photo could not be loaded.</p>
+                <p class="text-xs text-forest-100/80">Check your connection and try again. You can still play from the field notes.</p>
+                <button data-action="retry-photo" class="px-4 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold flex items-center gap-2">
+                  <i data-lucide="refresh-cw" class="w-4 h-4" aria-hidden="true"></i><span>Try again</span>
+                </button>
+              </div>
+
+              <div id="zoom-indicator" class="absolute top-3 left-3 bg-forest-950/80 backdrop-blur-sm text-parchment-50 text-xs px-2.5 py-1 rounded-full border border-white/15 flex items-center gap-1.5">
+                <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-amber-400" aria-hidden="true"></i>
+                <span id="zoom-text">Close-up view (zooms out on a miss)</span>
+              </div>
+            </div>
+            <p id="photo-credit" class="mt-1.5 text-xs text-parchment-700"></p>
+          </div>
+
+          <div class="md:col-span-5 flex flex-col justify-between space-y-4">
+            <div class="bg-parchment-100/90 rounded-xl p-4 border border-parchment-200 space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-forest-800 flex items-center gap-1.5">
+                  <i data-lucide="file-text" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                  Field Notes
+                </span>
+                <span class="text-xs text-parchment-800">Unlock with guesses</span>
+              </div>
+              <dl class="space-y-2 text-sm">
+                <div class="flex items-start gap-2">
+                  <dt class="font-semibold text-forest-800 min-w-[68px]">Type:</dt>
+                  <dd id="clue-class" class="text-parchment-800 italic">—</dd>
+                </div>
+                <div class="flex items-start gap-2">
+                  <dt class="font-semibold text-forest-800 min-w-[68px]">Diet:</dt>
+                  <dd id="clue-diet" class="text-parchment-800 italic">Locked (miss 1)</dd>
+                </div>
+                <div class="flex items-start gap-2">
+                  <dt class="font-semibold text-forest-800 min-w-[68px]">Biome:</dt>
+                  <dd id="clue-biome" class="text-parchment-800 italic">Locked (miss 2)</dd>
+                </div>
+                <div class="flex items-start gap-2">
+                  <dt class="font-semibold text-forest-800 min-w-[68px]">Size:</dt>
+                  <dd id="clue-size" class="text-parchment-800 italic">Locked (miss 3)</dd>
+                </div>
+                <div class="flex items-start gap-2">
+                  <dt class="font-semibold text-forest-800 min-w-[68px]">Last clue:</dt>
+                  <dd id="clue-last" class="text-parchment-800 italic">Locked (miss 4)</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div id="previous-guesses-container" class="hidden space-y-1.5">
+              <p class="text-xs font-semibold text-parchment-800">Your guesses, and how closely each is related:</p>
+              <ul id="previous-guesses-list" class="space-y-1.5"></ul>
+            </div>
+
+            <div id="round1-input-area" class="space-y-3 relative">
+              <label for="animal-guess-input" class="block text-xs font-bold uppercase tracking-wider text-parchment-800">
+                Your guess — pick an animal from the list
+              </label>
+              <div class="relative">
+                <input type="text" id="animal-guess-input" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go"
+                  role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="autocomplete-list"
+                  placeholder="Start typing, e.g. Tiger"
+                  class="w-full px-4 py-3 pr-10 rounded-xl bg-white border-2 border-parchment-300 focus:border-forest-700 text-base text-parchment-900 font-medium shadow-sm" />
+                <i data-lucide="search" class="w-4 h-4 text-parchment-800/60 absolute right-3.5 top-4" aria-hidden="true"></i>
+                <ul id="autocomplete-list" role="listbox" aria-label="Animal suggestions" class="hidden absolute left-0 right-0 bottom-full mb-1 max-h-56 overflow-y-auto bg-white rounded-xl shadow-xl border border-parchment-300 z-30 divide-y divide-parchment-100"></ul>
+              </div>
+
+              <div class="flex gap-2">
+                <button data-action="submit-guess" class="flex-1 py-3 px-4 rounded-xl bg-forest-800 hover:bg-forest-700 active:scale-[0.99] text-white font-semibold shadow-md transition flex items-center justify-center gap-2">
+                  <span>Submit Guess</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+                </button>
+                <button data-action="skip-guess" class="px-3.5 py-2 rounded-xl bg-parchment-200 hover:bg-parchment-300 text-parchment-900 text-xs font-semibold transition leading-tight text-center">
+                  Reveal clue<br /><span class="font-medium text-parchment-800">uses a guess</span>
+                </button>
+              </div>
+            </div>
+
+            <div id="round1-result" class="hidden rounded-xl p-4 border space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span id="round1-badge" class="inline-block text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded mb-1"></span>
+                  <h3 id="round1-title" class="font-display text-xl font-bold text-parchment-900"></h3>
+                  <p id="round1-scientific" class="text-xs italic text-parchment-800"></p>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-parchment-800 block">Points</span>
+                  <span id="round1-points" class="font-display text-xl font-bold text-forest-800">+0</span>
+                </div>
+              </div>
+              <p id="round1-note" class="text-xs text-parchment-800"></p>
+              <button data-action="go-stage" data-stage="2" class="w-full py-3 px-4 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold shadow transition flex items-center justify-center gap-2">
+                <span>Next: Estimate Population</span>
+                <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ROUND 2 ==================== -->
+    <section id="stage-2" class="hidden animate-stage" aria-labelledby="stage-2-title">
+      <div class="bg-parchment-50 rounded-2xl shadow-lg border border-parchment-300 overflow-hidden">
+        <div class="px-5 py-4 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-forest-700">Round 2 of 3 • Conservation Census</span>
+            <h2 id="stage-2-title" class="text-xl sm:text-2xl font-bold text-parchment-900">
+              How many <span id="r2-animal-name" class="text-forest-800 underline decoration-amber-500/60"></span> remain in the wild?
+            </h2>
+          </div>
+          <img id="r2-thumb" alt="" class="w-16 aspect-[4/3] rounded-xl object-cover border border-parchment-300 hidden sm:block" />
+        </div>
+
+        <div class="p-4 sm:p-7 space-y-6">
+          <div id="round2-input-area" class="space-y-6">
+            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-parchment-200 shadow-sm text-center space-y-3">
+              <label for="pop-number-input" class="text-xs font-bold uppercase tracking-wider text-parchment-800 block">
+                Your wild population estimate
+              </label>
+              <div class="flex items-center justify-center gap-2">
+                <input type="number" id="pop-number-input" min="1" max="1000000000" inputmode="numeric" placeholder="?"
+                  class="font-display text-3xl sm:text-4xl font-bold text-center text-forest-900 bg-parchment-50 border-2 border-parchment-300 focus:border-forest-700 rounded-xl px-4 py-2 w-56 sm:w-64" />
+              </div>
+              <p id="pop-category-hint" class="text-xs font-medium text-parchment-800">Drag the slider, tap a preset, or type a number.</p>
+
+              <div class="pt-1 px-1">
+                <input type="range" id="pop-log-slider" min="0" max="8" step="0.01" value="4" class="w-full is-unset" aria-label="Population estimate on a logarithmic scale from 1 to 100 million" />
+                <div class="flex justify-between text-xs font-semibold text-parchment-800" aria-hidden="true">
+                  <span>1</span><span>100</span><span>10k</span><span>1M</span><span>100M</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <span class="text-xs font-semibold text-parchment-800 block">Quick presets:</span>
+              <div class="flex flex-wrap gap-2">
+                <button data-action="pop-preset" data-value="10" class="px-3 rounded-lg bg-red-50 hover:bg-red-100 text-red-900 border border-red-200 text-xs font-semibold transition">~10</button>
+                <button data-action="pop-preset" data-value="100" class="px-3 rounded-lg bg-red-50 hover:bg-red-100 text-red-900 border border-red-200 text-xs font-semibold transition">~100</button>
+                <button data-action="pop-preset" data-value="1000" class="px-3 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-900 border border-orange-200 text-xs font-semibold transition">~1,000</button>
+                <button data-action="pop-preset" data-value="5000" class="px-3 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 text-xs font-semibold transition">~5,000</button>
+                <button data-action="pop-preset" data-value="25000" class="px-3 rounded-lg bg-parchment-100 hover:bg-parchment-200 text-parchment-900 border border-parchment-300 text-xs font-semibold transition">~25,000</button>
+                <button data-action="pop-preset" data-value="150000" class="px-3 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 text-xs font-semibold transition">~150,000</button>
+                <button data-action="pop-preset" data-value="1000000" class="px-3 rounded-lg bg-forest-50 hover:bg-forest-100 text-forest-900 border border-forest-200 text-xs font-semibold transition">~1 million</button>
+                <button data-action="pop-preset" data-value="10000000" class="px-3 rounded-lg bg-forest-50 hover:bg-forest-100 text-forest-900 border border-forest-200 text-xs font-semibold transition">~10 million</button>
+              </div>
+            </div>
+
+            <button id="btn-submit-pop" data-action="submit-population" disabled class="w-full py-3.5 px-5 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold shadow-md transition flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+              <span>Lock In Population Estimate</span>
+              <i data-lucide="circle-check" class="w-4 h-4" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div id="round2-result" class="hidden space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-white p-4 rounded-xl border border-parchment-200 text-center">
+                <span class="text-xs font-semibold text-parchment-800 block">Your Estimate</span>
+                <span id="r2-user-val" class="font-display text-2xl font-bold text-amber-700 mt-1 block">—</span>
+              </div>
+              <div class="bg-forest-900 text-parchment-50 p-4 rounded-xl border border-forest-700 text-center shadow-sm">
+                <span class="text-xs font-semibold text-emerald-300 block">Estimated Wild Population</span>
+                <span id="r2-actual-val" class="font-display text-2xl font-bold text-white mt-1 block">—</span>
+                <span id="r2-iucn-badge" class="inline-block mt-1.5 text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"></span>
+              </div>
+              <div class="bg-white p-4 rounded-xl border border-parchment-200 text-center">
+                <span class="text-xs font-semibold text-parchment-800 block">Accuracy Score</span>
+                <span id="r2-points" class="font-display text-2xl font-bold text-forest-800 mt-1 block">+0</span>
+                <span id="r2-accuracy-label" class="text-xs text-parchment-800 block mt-0.5"></span>
+              </div>
+            </div>
+
+            <div class="bg-parchment-100 rounded-xl p-4 border border-parchment-200 text-sm text-parchment-900 space-y-1.5">
+              <p id="r2-pop-context"></p>
+              <p id="r2-pop-source" class="text-xs text-parchment-800"></p>
+            </div>
+
+            <button data-action="go-stage" data-stage="3" class="w-full py-3.5 px-5 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold shadow-md transition flex items-center justify-center gap-2">
+              <span>Next: Map Native Habitat Range</span>
+              <i data-lucide="map" class="w-4 h-4" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ROUND 3 ==================== -->
+    <section id="stage-3" class="hidden animate-stage" aria-labelledby="stage-3-title">
+      <div class="bg-parchment-50 rounded-2xl shadow-lg border border-parchment-300 overflow-hidden">
+        <div class="px-5 py-4 bg-parchment-100 border-b border-parchment-200 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-forest-700">Round 3 of 3 • Biogeography</span>
+            <h2 id="stage-3-title" class="text-xl sm:text-2xl font-bold text-parchment-900">
+              Paint the native range of the <span id="r3-animal-name" class="text-forest-800"></span>
+            </h2>
+          </div>
+          <div id="map-legend" class="hidden flex flex-wrap items-center gap-3 text-xs font-semibold">
+            <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-sm bg-amber-500/60 border-2 border-amber-600 inline-block"></span>Only yours</span>
+            <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-sm bg-emerald-500/50 border-2 border-dashed border-emerald-800 inline-block"></span>Missed</span>
+            <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-sm bg-emerald-800 border-2 border-emerald-950 inline-block"></span>Matched</span>
+          </div>
+        </div>
+
+        <div class="p-3 sm:p-6 space-y-3 sm:space-y-4">
+          <div id="map-toolbar" class="flex flex-wrap items-center justify-between gap-2 bg-parchment-100 p-2 rounded-xl border border-parchment-200" role="toolbar" aria-label="Painting tools">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <button id="btn-mode-paint" data-action="draw-mode" data-mode="paint" aria-pressed="true" class="px-3 rounded-lg text-xs font-semibold flex items-center gap-1.5">
+                <i data-lucide="paintbrush" class="w-3.5 h-3.5" aria-hidden="true"></i><span>Paint</span>
+              </button>
+              <button id="btn-mode-erase" data-action="draw-mode" data-mode="erase" aria-pressed="false" class="px-3 rounded-lg text-xs font-semibold flex items-center gap-1.5">
+                <i data-lucide="eraser" class="w-3.5 h-3.5" aria-hidden="true"></i><span>Erase</span>
+              </button>
+              <button id="btn-mode-move" data-action="draw-mode" data-mode="move" aria-pressed="false" class="px-3 rounded-lg text-xs font-semibold flex items-center gap-1.5">
+                <i data-lucide="hand" class="w-3.5 h-3.5" aria-hidden="true"></i><span>Move</span>
+              </button>
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span id="map-count" class="text-xs font-semibold text-parchment-800 mr-1">0 cells</span>
+              <button data-action="undo-point" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-parchment-200 text-parchment-900 border border-parchment-300 transition flex items-center gap-1">
+                <i data-lucide="undo-2" class="w-3.5 h-3.5" aria-hidden="true"></i><span>Undo</span>
+              </button>
+              <button data-action="clear-drawings" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-red-50 text-red-700 border border-parchment-300 transition flex items-center gap-1">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5" aria-hidden="true"></i><span>Clear</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="map-regions" class="flex items-center gap-1.5 overflow-x-auto pb-1" role="group" aria-label="Jump to a part of the world">
+            <span class="text-xs font-semibold text-parchment-800 shrink-0">Jump to:</span>
+            <button data-action="map-region" data-region="world" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-parchment-200 text-parchment-900 border border-parchment-300 transition whitespace-nowrap">World</button>
+            <button data-action="map-region" data-region="north-america" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-parchment-200 text-parchment-900 border border-parchment-300 transition whitespace-nowrap">N. America</button>
+            <button data-action="map-region" data-region="south-america" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-parchment-200 text-parchment-900 border border-parchment-300 transition whitespace-nowrap">S. America</button>
+            <button data-action="map-region" data-region="europe" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-parchment-200 text-parchment-900 border border-parchment-300 transition whitespace-nowrap">Europe</button>
+            <button data-action="map-region" data-region="africa" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-parchment-200 text-parchment-900 border border-parchment-300 transition whitespace-nowrap">Africa</button>
+            <button data-action="map-region" data-region="asia" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-parchment-200 text-parchment-900 border border-parchment-300 transition whitespace-nowrap">Asia</button>
+            <button data-action="map-region" data-region="oceania" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-parchment-200 text-parchment-900 border border-parchment-300 transition whitespace-nowrap">Oceania</button>
+            <button data-action="map-region" data-region="arctic" class="px-2.5 rounded-lg text-xs font-semibold bg-white hover:bg-parchment-200 text-parchment-900 border border-parchment-300 transition whitespace-nowrap">Arctic</button>
+          </div>
+
+          <p id="map-instruction" class="text-xs text-parchment-800 flex items-start gap-1.5">
+            <i data-lucide="info" class="w-4 h-4 text-forest-700 shrink-0" aria-hidden="true"></i>
+            <span class="mouse-only">Click or drag to paint cells; click a painted cell to clear it. Scroll to zoom, right-drag to move. Keyboard: focus the map, then arrow keys move, <kbd class="px-1 py-0.5 bg-white border border-parchment-300 rounded text-xs">Space</kbd> paints.</span>
+            <span class="touch-only">Drag one finger to paint cells; tap a painted cell to clear it. Use two fingers to move and zoom, or jump to a region first.</span>
+          </p>
+
+          <div id="habitat-map-container" tabindex="0" role="application" aria-describedby="map-instruction"
+            aria-label="World map of paintable cells. Arrow keys move between cells, Space paints or clears a cell, plus and minus zoom."
+            class="border-2 border-parchment-300 shadow-inner">
+            <svg id="habitat-svg" aria-hidden="true"></svg>
+            <div class="absolute top-2 left-2 z-20 flex flex-col bg-white/95 rounded-lg shadow border border-parchment-300 overflow-hidden">
+              <button data-action="map-zoom" data-factor="1.6" class="btn-compact hover:bg-parchment-100 text-parchment-900 font-bold text-lg leading-none" aria-label="Zoom in">+</button>
+              <div class="h-px bg-parchment-200"></div>
+              <button data-action="map-zoom" data-factor="0.625" class="btn-compact hover:bg-parchment-100 text-parchment-900 font-bold text-lg leading-none" aria-label="Zoom out">&minus;</button>
+            </div>
+            <p id="map-readout" class="hidden absolute bottom-2 left-2 right-2 z-20 text-xs font-semibold text-parchment-900 bg-white/95 border border-parchment-300 rounded-lg px-2.5 py-1.5 shadow pointer-events-none"></p>
+          </div>
+          <p id="map-live" class="sr-only" aria-live="polite"></p>
+
+          <div id="round3-submit-area">
+            <button data-action="submit-habitat" class="w-full py-3.5 px-5 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold shadow-md transition flex items-center justify-center gap-2">
+              <span>Submit Range</span>
+              <i data-lucide="globe" class="w-4 h-4" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div id="round3-result" class="hidden bg-parchment-100 rounded-xl p-4 border border-parchment-200 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-forest-700 block">Habitat Match Result</span>
+                <p id="r3-feedback-text" class="text-sm font-medium text-parchment-900 mt-0.5"></p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-parchment-800 block">Map Score</span>
+                <span id="r3-points" class="font-display text-2xl font-bold text-forest-800">+0</span>
+              </div>
+            </div>
+            <button data-action="go-stage" data-stage="4" class="w-full py-3.5 px-5 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold shadow-md transition flex items-center justify-center gap-2">
+              <span>View Final Field Report</span>
+              <i data-lucide="award" class="w-4 h-4" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FINAL REPORT ==================== -->
+    <section id="stage-4" class="hidden animate-stage" aria-labelledby="summary-animal-title">
+      <div class="bg-parchment-50 rounded-2xl shadow-xl border border-parchment-300 overflow-hidden">
+        <div class="bg-forest-900 text-parchment-50 px-6 py-7 text-center relative overflow-hidden">
+          <span id="summary-edition-tag" class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-forest-800 text-emerald-300 border border-forest-600 mb-2">Daily Field Report</span>
+          <h2 id="summary-animal-title" class="font-display text-3xl sm:text-4xl font-bold text-white"></h2>
+          <p id="summary-scientific-name" class="text-sm italic text-forest-100/80 mt-0.5"></p>
+
+          <div class="mt-5 inline-flex items-baseline gap-2 bg-forest-950/70 px-6 py-3 rounded-2xl border border-forest-700">
+            <span class="text-xs uppercase tracking-wider text-emerald-300 font-semibold">Total Score</span>
+            <span id="summary-total-score" class="font-display text-4xl font-bold text-amber-400">0</span>
+            <span class="text-sm text-forest-100/80">/ 3,000</span>
+          </div>
+          <p id="summary-rank-title" class="text-xs font-semibold uppercase tracking-wider text-emerald-200 mt-2"></p>
+        </div>
+
+        <div class="p-4 sm:p-7 space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            <div class="bg-white p-4 rounded-xl border border-parchment-200 flex sm:flex-col items-center sm:items-start justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-forest-700">1. Identification</span>
+                <p id="sum-r1-detail" class="text-xs text-parchment-800 mt-0.5">—</p>
+              </div>
+              <span id="sum-r1-score" class="font-display text-2xl font-bold text-parchment-900 sm:mt-2">0</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-parchment-200 flex sm:flex-col items-center sm:items-start justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-forest-700">2. Population</span>
+                <p id="sum-r2-detail" class="text-xs text-parchment-800 mt-0.5">—</p>
+              </div>
+              <span id="sum-r2-score" class="font-display text-2xl font-bold text-parchment-900 sm:mt-2">0</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-parchment-200 flex sm:flex-col items-center sm:items-start justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-forest-700">3. Habitat Map</span>
+                <p id="sum-r3-detail" class="text-xs text-parchment-800 mt-0.5">—</p>
+              </div>
+              <span id="sum-r3-score" class="font-display text-2xl font-bold text-parchment-900 sm:mt-2">0</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button data-action="share" class="flex-1 py-3.5 px-5 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold shadow-md transition flex items-center justify-center gap-2">
+              <i data-lucide="share-2" class="w-4 h-4" aria-hidden="true"></i>
+              <span>Share Result</span>
+            </button>
+            <button data-action="practice-random" class="py-3.5 px-5 rounded-xl bg-parchment-200 hover:bg-parchment-300 text-parchment-900 font-semibold transition flex items-center justify-center gap-2">
+              <i data-lucide="shuffle" class="w-4 h-4" aria-hidden="true"></i>
+              <span>Practice Another Species</span>
+            </button>
+          </div>
+
+          <button data-action="open-zoo" class="w-full text-left bg-amber-50 hover:bg-amber-100 rounded-xl p-4 border border-amber-200 flex items-center gap-3 transition">
+            <span id="summary-badge" class="zoo-badge shrink-0" aria-hidden="true"></span>
+            <span class="min-w-0"><span id="summary-zoo-title" class="block text-sm font-bold text-parchment-900"></span><span id="summary-zoo-sub" class="block text-xs text-parchment-800"></span></span>
+          </button>
+
+          <div id="next-puzzle-box" class="bg-forest-50 rounded-xl p-4 border border-forest-200 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2 text-sm font-semibold text-forest-900">
+              <i data-lucide="timer" class="w-4 h-4" aria-hidden="true"></i>
+              <span>Next daily animal in</span>
+            </div>
+            <span id="next-puzzle-countdown" class="font-display text-2xl font-bold text-forest-800 tabular-nums">--:--:--</span>
+          </div>
+
+          <!-- Species card -->
+          <div class="bg-parchment-100 rounded-2xl p-4 sm:p-5 border border-parchment-200 flex flex-col sm:flex-row gap-5 items-start">
+            <img id="summary-image" alt="" class="w-full sm:w-44 aspect-[4/3] rounded-xl object-cover border border-parchment-300 shrink-0 bg-forest-900" width="960" height="720" />
+            <div class="space-y-2 min-w-0">
+              <div class="flex flex-wrap items-center gap-2">
+                <span id="summary-iucn" class="text-xs font-bold uppercase px-2.5 py-0.5 rounded-full"></span>
+                <span id="summary-pop-badge" class="text-xs font-semibold text-parchment-900 bg-white px-2.5 py-0.5 rounded-full border border-parchment-300"></span>
+              </div>
+              <p id="summary-fact" class="text-sm text-parchment-900 leading-relaxed"></p>
+              <p class="text-xs text-parchment-800"><strong>Classification:</strong> <span id="summary-class"></span></p>
+              <p class="text-xs text-parchment-800"><strong>Native range:</strong> <span id="summary-regions"></span></p>
+              <p class="text-xs text-parchment-800"><strong>Population source:</strong> <span id="summary-pop-source"></span></p>
+              <p class="text-xs text-parchment-800"><strong>Photo:</strong> <span id="summary-photo-credit"></span></p>
+            </div>
+          </div>
+
+          <!-- History -->
+          <div class="bg-white rounded-2xl p-4 sm:p-5 border border-parchment-200 shadow-sm space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <h3 class="font-display text-lg font-bold text-parchment-900">Daily Score History</h3>
+                <p class="text-xs text-parchment-800">Your daily games, split by round. Practice games are not counted.</p>
+              </div>
+              <div class="flex flex-wrap items-center gap-3 text-xs font-semibold">
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-forest-700 inline-block"></span>Species</span>
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-amber-500 inline-block"></span>Census</span>
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-sky-600 inline-block"></span>Habitat</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 bg-parchment-50 p-3 rounded-xl border border-parchment-200 text-center">
+              <div>
+                <span class="text-xs font-semibold text-parchment-800 block">Current Streak</span>
+                <span id="stat-current-streak" class="font-display text-lg font-bold text-amber-600">0</span>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-parchment-800 block">Best Streak</span>
+                <span id="stat-best-streak" class="font-display text-lg font-bold text-forest-800">0</span>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-parchment-800 block">Daily Games</span>
+                <span id="stat-total-played" class="font-display text-lg font-bold text-parchment-900">0</span>
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-parchment-800 block">Daily Average</span>
+                <span id="stat-avg-score" class="font-display text-lg font-bold text-forest-800">0</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-2.5 text-center">
+              <div class="p-2 rounded-lg border border-parchment-200">
+                <span class="text-xs font-semibold text-parchment-800 block">Avg. species</span>
+                <span id="stat-avg-r1" class="font-display text-base font-bold text-forest-700">—</span>
+              </div>
+              <div class="p-2 rounded-lg border border-parchment-200">
+                <span class="text-xs font-semibold text-parchment-800 block">Avg. census</span>
+                <span id="stat-avg-r2" class="font-display text-base font-bold text-amber-600">—</span>
+              </div>
+              <div class="p-2 rounded-lg border border-parchment-200">
+                <span class="text-xs font-semibold text-parchment-800 block">Avg. habitat</span>
+                <span id="stat-avg-r3" class="font-display text-base font-bold text-sky-700">—</span>
+              </div>
+            </div>
+
+            <div id="score-history-chart" class="w-full overflow-x-auto"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-4xl w-full mx-auto px-4 pb-6 text-xs text-parchment-800 text-center space-y-1">
+    <p>Photos by Wikimedia Commons contributors, credited beside each photo. Map data from Natural Earth.</p>
+    <p class="flex flex-wrap items-center justify-center gap-x-1">
+      <button data-action="open-credits" class="link-btn">Credits</button><span aria-hidden="true">·</span>
+      <button data-action="open-privacy" class="link-btn">Privacy</button><span aria-hidden="true">·</span>
+      <button data-action="open-terms" class="link-btn">Terms</button>
+    </p>
+  </footer>
+
+  <div id="menu-modal" class="hidden fixed inset-0 z-50 bg-forest-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" data-modal>
+    <div role="dialog" aria-modal="true" aria-labelledby="menu-title" tabindex="-1" class="bg-parchment-50 rounded-2xl max-w-md w-full max-h-[88vh] flex flex-col border border-parchment-300 shadow-2xl overflow-hidden">
+      <div class="px-5 py-3 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+        <div>
+          <h3 id="menu-title" class="font-display text-xl font-bold text-parchment-900">Menu</h3>
+          
+        </div>
+        <button data-action="close-modal" class="btn-compact rounded-lg hover:bg-parchment-200 text-parchment-900 flex items-center justify-center" aria-label="Close">
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="p-4 overflow-y-auto space-y-2">
+        <button data-action="load-daily" class="w-full flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-forest-50 border border-parchment-200 text-left transition">
+          <span class="w-10 h-10 shrink-0 rounded-lg bg-forest-800 text-amber-300 flex items-center justify-center"><i data-lucide="calendar" class="w-5 h-5" aria-hidden="true"></i></span>
+          <span class="min-w-0"><span class="block font-bold text-sm text-parchment-900">Today's daily</span><span class="block text-xs text-parchment-800">The one game a day that counts for your streak</span></span>
+        </button>
+        <button data-action="open-archive" class="w-full flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-forest-50 border border-parchment-200 text-left transition">
+          <span class="w-10 h-10 shrink-0 rounded-lg bg-forest-800 text-amber-300 flex items-center justify-center"><i data-lucide="calendar-days" class="w-5 h-5" aria-hidden="true"></i></span>
+          <span class="min-w-0"><span class="block font-bold text-sm text-parchment-900">Past dailies</span><span class="block text-xs text-parchment-800">Play any earlier daily by number</span></span>
+        </button>
+        <button data-action="practice-random" class="w-full flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-forest-50 border border-parchment-200 text-left transition">
+          <span class="w-10 h-10 shrink-0 rounded-lg bg-forest-800 text-amber-300 flex items-center justify-center"><i data-lucide="shuffle" class="w-5 h-5" aria-hidden="true"></i></span>
+          <span class="min-w-0"><span class="block font-bold text-sm text-parchment-900">Practice</span><span class="block text-xs text-parchment-800">A random animal; never affects your stats</span></span>
+        </button>
+        <button data-action="open-zoo" class="w-full flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-forest-50 border border-parchment-200 text-left transition">
+          <span class="w-10 h-10 shrink-0 rounded-lg bg-forest-800 text-amber-300 flex items-center justify-center"><i data-lucide="paw-print" class="w-5 h-5" aria-hidden="true"></i></span>
+          <span class="min-w-0"><span class="block font-bold text-sm text-parchment-900">My zoo</span><span class="block text-xs text-parchment-800">Every animal you have met, with your badges</span></span>
+        </button>
+        <button data-action="open-howto" class="w-full flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-forest-50 border border-parchment-200 text-left transition">
+          <span class="w-10 h-10 shrink-0 rounded-lg bg-forest-800 text-amber-300 flex items-center justify-center"><i data-lucide="circle-help" class="w-5 h-5" aria-hidden="true"></i></span>
+          <span class="min-w-0"><span class="block font-bold text-sm text-parchment-900">How to play</span><span class="block text-xs text-parchment-800">The three rounds and how scoring works</span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="archive-modal" class="hidden fixed inset-0 z-50 bg-forest-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" data-modal>
+    <div role="dialog" aria-modal="true" aria-labelledby="archive-title" tabindex="-1" class="bg-parchment-50 rounded-2xl max-w-2xl w-full max-h-[88vh] flex flex-col border border-parchment-300 shadow-2xl overflow-hidden">
+      <div class="px-5 py-3 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+        <div>
+          <h3 id="archive-title" class="font-display text-xl font-bold text-parchment-900">Past dailies</h3>
+          <p class="text-xs text-parchment-800">Catch up on a day you missed. Archive games never change your streak or daily stats.</p>
+        </div>
+        <button data-action="close-modal" class="btn-compact rounded-lg hover:bg-parchment-200 text-parchment-900 flex items-center justify-center" aria-label="Close">
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul id="archive-list" class="p-4 overflow-y-auto space-y-2"></ul>
+    </div>
+  </div>
+
+  <div id="zoo-modal" class="hidden fixed inset-0 z-50 bg-forest-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" data-modal>
+    <div role="dialog" aria-modal="true" aria-labelledby="zoo-title" tabindex="-1" class="bg-parchment-50 rounded-2xl max-w-2xl w-full max-h-[88vh] flex flex-col border border-parchment-300 shadow-2xl overflow-hidden">
+      <div class="px-5 py-3 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+        <div>
+          <h3 id="zoo-title" class="font-display text-xl font-bold text-parchment-900">My zoo</h3>
+          <p class="text-xs text-parchment-800"><span id="zoo-count"></span></p>
+        </div>
+        <button data-action="close-modal" class="btn-compact rounded-lg hover:bg-parchment-200 text-parchment-900 flex items-center justify-center" aria-label="Close">
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="overflow-y-auto">
+        <p class="px-4 pt-3 text-xs text-parchment-800">Score 1,500 or more on a daily to add its animal. Badges show your best score on it: bronze from 1,500 points, silver from 1,700, gold from 2,400. Tap an animal you have met to practise on it; practice and past dailies can raise a badge but do not add new animals.</p>
+        <p id="zoo-retake" class="mx-4 mt-3 px-3 py-2 rounded-lg bg-amber-50 border border-amber-200 text-xs font-medium text-amber-900"></p>
+        <div id="zoo-grid" class="p-4 space-y-5"></div>
+        <div class="mx-4 mb-4 p-4 rounded-xl bg-parchment-100 border border-parchment-200 space-y-3">
+          <h4 class="font-bold text-sm text-parchment-900">Back up or move your progress</h4>
+          <p class="text-xs text-parchment-800">Your streak, scores and zoo are saved in this browser only. A backup code lets you restore them here later or carry them to another device.</p>
+          <button data-action="backup-copy" class="px-4 rounded-lg bg-forest-800 hover:bg-forest-700 text-white text-sm font-semibold flex items-center gap-2">
+            <i data-lucide="copy" class="w-4 h-4" aria-hidden="true"></i><span>Copy my backup code</span>
+          </button>
+          <textarea id="backup-output" readonly rows="2" aria-label="Your backup code" class="hidden w-full text-xs font-mono p-2 rounded-lg border border-parchment-300 bg-white"></textarea>
+          <label for="restore-input" class="block text-xs font-bold uppercase tracking-wider text-parchment-800">Restore from a code</label>
+          <textarea id="restore-input" rows="2" placeholder="Paste a backup code here" autocomplete="off" spellcheck="false" class="w-full text-xs font-mono p-2 rounded-lg border-2 border-parchment-300 focus:border-forest-700 bg-white"></textarea>
+          <button data-action="backup-restore" class="px-4 rounded-lg bg-parchment-200 hover:bg-parchment-300 text-parchment-900 text-sm font-semibold">Restore</button>
+          <div id="restore-confirm" class="hidden p-3 rounded-lg bg-amber-50 border border-amber-300 space-y-2">
+            <p class="text-xs font-medium text-amber-900">This replaces the streak, scores and zoo saved on this device with the ones in the code. It cannot be undone.</p>
+            <div class="flex flex-wrap gap-2">
+              <button data-action="backup-restore-confirm" class="px-4 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold">Replace my progress</button>
+              <button data-action="backup-restore-cancel" class="px-4 rounded-lg bg-white border border-parchment-300 text-parchment-900 text-sm font-semibold">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="howto-modal" class="hidden fixed inset-0 z-50 bg-forest-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" data-modal>
+    <div role="dialog" aria-modal="true" aria-labelledby="howto-title" tabindex="-1" class="bg-parchment-50 rounded-2xl max-w-lg w-full max-h-[88vh] flex flex-col border border-parchment-300 shadow-2xl overflow-hidden">
+      <div class="px-5 py-3 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+        <div>
+          <h3 id="howto-title" class="font-display text-xl font-bold text-parchment-900">How to play</h3>
+          
+        </div>
+        <button data-action="close-modal" class="btn-compact rounded-lg hover:bg-parchment-200 text-parchment-900 flex items-center justify-center" aria-label="Close">
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="p-5 overflow-y-auto space-y-4 text-sm text-parchment-900">
+        <p>One wild animal a day, three rounds, 3,000 points to win.</p>
+        <ol class="space-y-3">
+          <li class="flex gap-3">
+            <span class="w-7 h-7 shrink-0 rounded-full bg-forest-800 text-white font-bold flex items-center justify-center">1</span>
+            <div><strong>Name the animal.</strong> You get a close-up photo and five guesses. Each miss zooms the photo out, unlocks a clue, and tells you how closely your guess is related: same class, order, family or genus. Fewer guesses, more points. If you never get it, your closest relative still earns up to 350.</div>
+          </li>
+          <li class="flex gap-3">
+            <span class="w-7 h-7 shrink-0 rounded-full bg-forest-800 text-white font-bold flex items-center justify-center">2</span>
+            <div><strong>Estimate the wild population.</strong> Anything inside the published range scores full marks. Outside it, the right order of magnitude is what counts.</div>
+          </li>
+          <li class="flex gap-3">
+            <span class="w-7 h-7 shrink-0 rounded-full bg-forest-800 text-white font-bold flex items-center justify-center">3</span>
+            <div><strong>Paint where it lives.</strong> Colour in the map cells that make up its native range. Cells next to the true range count for half, so near misses still score.</div>
+          </li>
+        </ol>
+        <p class="text-xs text-parchment-800">Missing round 1 does not end the game: the animal is revealed and you carry on. A new animal arrives at midnight, your time. Play every day to build a streak. Score 1,500 or more on a daily and the animal joins your zoo. From a 3-day streak you can retake one missed animal a day. A first retake needs 1,750, and every further retake of the same animal needs 250 more.</p>
+        <button data-action="close-modal" class="w-full py-3 px-4 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold shadow transition">Start playing</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="credits-modal" class="hidden fixed inset-0 z-50 bg-forest-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" data-modal>
+    <div role="dialog" aria-modal="true" aria-labelledby="credits-title" tabindex="-1" class="bg-parchment-50 rounded-2xl max-w-lg w-full max-h-[88vh] flex flex-col border border-parchment-300 shadow-2xl overflow-hidden">
+      <div class="px-5 py-3 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+        <div>
+          <h3 id="credits-title" class="font-display text-xl font-bold text-parchment-900">Credits and licences</h3>
+          
+        </div>
+        <button data-action="close-modal" class="btn-compact rounded-lg hover:bg-parchment-200 text-parchment-900 flex items-center justify-center" aria-label="Close">
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="p-5 overflow-y-auto space-y-4 text-sm text-parchment-900">
+        <div><h4 class="font-bold">Photos</h4>
+          <p>Every photo comes from Wikimedia Commons under a public domain, CC0, CC BY or CC BY-SA licence, and has been cropped. The photographer and licence are shown under each photo and on each species card. Photos of the animals you have met are listed here, so the list never spoils a future puzzle.</p>
+          <ul id="credits-photos" class="mt-2 space-y-1 text-xs text-parchment-800"></ul></div>
+        <div><h4 class="font-bold">Map</h4><p>Country outlines from Natural Earth (public domain), via the world-atlas package. Range shapes are our own approximations and are not survey data.</p></div>
+        <div><h4 class="font-bold">Population figures</h4><p>Each figure links to its source on the result screen. Figures are published estimates and often carry wide uncertainty.</p></div>
+        <div><h4 class="font-bold">Fonts and software</h4><p>Fraunces and Plus Jakarta Sans (SIL Open Font Licence). Built with D3, TopoJSON, Lucide icons, Tailwind CSS and Vite (ISC, BSD and MIT licences).</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="privacy-modal" class="hidden fixed inset-0 z-50 bg-forest-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" data-modal>
+    <div role="dialog" aria-modal="true" aria-labelledby="privacy-title" tabindex="-1" class="bg-parchment-50 rounded-2xl max-w-lg w-full max-h-[88vh] flex flex-col border border-parchment-300 shadow-2xl overflow-hidden">
+      <div class="px-5 py-3 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+        <div>
+          <h3 id="privacy-title" class="font-display text-xl font-bold text-parchment-900">Privacy</h3>
+          
+        </div>
+        <button data-action="close-modal" class="btn-compact rounded-lg hover:bg-parchment-200 text-parchment-900 flex items-center justify-center" aria-label="Close">
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="p-5 overflow-y-auto space-y-3 text-sm text-parchment-900">
+        <p><strong>Short version: the game keeps your progress on your own device and collects nothing about you.</strong></p>
+        <p><strong>What is stored.</strong> Your streak, scores, zoo and unfinished game are saved in your browser's local storage. They never leave your device unless you copy a backup code yourself.</p>
+        <p><strong>What is not collected.</strong> There are no accounts, no advertising cookies, no tracking and no analytics.</p>
+        <p><strong>Other sites.</strong> Source and photo-credit links open Wikipedia, Wikimedia Commons and other sites, which have their own privacy policies.</p>
+        <p><strong>Deleting your data.</strong> Clear this site's data in your browser settings and everything is gone.</p>
+        <p class="text-xs text-parchment-800">This page will be updated before accounts, leaderboards, analytics or advertising are ever added.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="terms-modal" class="hidden fixed inset-0 z-50 bg-forest-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" data-modal>
+    <div role="dialog" aria-modal="true" aria-labelledby="terms-title" tabindex="-1" class="bg-parchment-50 rounded-2xl max-w-lg w-full max-h-[88vh] flex flex-col border border-parchment-300 shadow-2xl overflow-hidden">
+      <div class="px-5 py-3 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+        <div>
+          <h3 id="terms-title" class="font-display text-xl font-bold text-parchment-900">Terms of use</h3>
+          
+        </div>
+        <button data-action="close-modal" class="btn-compact rounded-lg hover:bg-parchment-200 text-parchment-900 flex items-center justify-center" aria-label="Close">
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="p-5 overflow-y-auto space-y-3 text-sm text-parchment-900">
+        <p>Animle is a free game offered as it is, for fun and learning.</p>
+        <p><strong>Accuracy.</strong> Population figures and range maps are simplified from published sources and can be out of date or wrong. Do not rely on them for research, conservation or travel decisions.</p>
+        <p><strong>Content.</strong> Photos belong to their photographers and are used under the licences shown beside them. You may share your results freely.</p>
+        <p><strong>Fair play.</strong> Please do not spoil the daily animal for other players.</p>
+        <p><strong>Changes.</strong> The game, its scoring and these terms may change. Saved progress is kept on your device and may be lost if you clear your browser data.</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

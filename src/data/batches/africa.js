@@ -1,0 +1,505 @@
+// Species batch: africa. Format: see src/data/batches/README.md
+export default [
+  {
+    id: "african-bush-elephant",
+    name: "African Bush Elephant",
+    wikiTitle: "African_bush_elephant",
+    scientificName: "Loxodonta africana",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Proboscidea)",
+    taxon: ["Mammalia", "Proboscidea", "Elephantidae", "Loxodonta"],
+    aliases: ["african savanna elephant", "savanna elephant", "african savannah elephant"],
+    groups: ["elephant"],
+    diet: "Herbivore — Grasses, leaves, bark and fruit; eats up to 150 kg a day",
+    biome: "Open savanna, woodland and semi-desert scrub",
+    size: "3 – 4 m at the shoulder; 4,000 – 7,000 kg",
+    lastClue: "The largest land animal alive, with huge ears shaped like the African continent.",
+    population: {
+      value: 415428, low: 395000, high: 436000,
+      display: "about 415,000",
+      year: 2016, basis: "all individuals in the wild",
+      confidence: "estimated",
+      note: "Figure from the 2016 African Elephant Status Report (415,428 ± 20,111), as quoted by Wikipedia; savanna elephants only.",
+      source: { label: "Wikipedia: African bush elephant (AfESG 2016 estimate)", url: "https://en.wikipedia.org/wiki/African_bush_elephant" }
+    },
+    status: "Endangered",
+    region: "Africa",
+    regionsText: "Savannas and woodlands of eastern and southern Africa, with scattered pockets across the Sahel",
+    fact: "Herds are led by an old matriarch who remembers where water was found in past droughts. Elephants can pick up low rumbles through their feet.",
+    ranges: [
+      [[9.5,24.5],[10.5,33],[8,36],[4.5,36.5],[3,38.5],[1,41],[-2,41],[-4.5,39],[-8,39.5],[-10.5,40.3],[-12,38],[-14,36.5],[-15.5,35.5],[-17.5,35.2],[-20,34],[-24,32.5],[-26.5,32],[-25,28],[-24,26],[-27,23],[-25,20],[-22,17],[-18,12.5],[-16.5,12],[-15,15],[-13,20],[-12,24],[-11,28],[-9,28.5],[-7,30],[-3,31],[-1,30.5],[1,29.8],[2.5,28],[4,27],[6,25]],
+      [[13,-2],[13,2],[11.5,3],[10,1.5],[10,-2],[11,-3.5]],
+      [[16,-3],[15.5,-1],[14.8,-1.5],[15,-3.5]],
+      [[10,14],[11,16],[10,22],[8,23],[7,19],[8,14.5]]
+    ]
+  },
+  {
+    id: "mountain-gorilla",
+    name: "Mountain Gorilla",
+    wikiTitle: "Mountain_gorilla",
+    scientificName: "Gorilla beringei beringei",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Primates)",
+    taxon: ["Mammalia", "Primates", "Hominidae", "Gorilla"],
+    aliases: [],
+    groups: ["gorilla", "ape"],
+    diet: "Herbivore — Leaves, stems and shoots, with a little fruit and the odd insect",
+    biome: "Cool, misty volcanic mountain forest at high altitude",
+    size: "1.2 – 1.7 m tall standing; 100 – 220 kg",
+    lastClue: "The thick-furred great ape of the Virunga volcanoes, led by a silver-backed male.",
+    population: {
+      value: 1063, low: 850, high: 1300,
+      display: "about 1,060",
+      year: 2018, basis: "all individuals in the wild",
+      confidence: "counted",
+      note: "Combined census of the Virunga massif and Bwindi, about 1,063 animals; the figure is repeated as the latest by Wikipedia and WWF.",
+      source: { label: "Wikipedia: Mountain gorilla (census figure)", url: "https://en.wikipedia.org/wiki/Mountain_gorilla" }
+    },
+    status: "Endangered",
+    region: "Africa",
+    regionsText: "Virunga volcanoes (Rwanda, Uganda, DR Congo) and Bwindi Impenetrable Forest in Uganda",
+    fact: "Troops sleep in nests of bent vegetation built fresh each evening. Their numbers have crept up thanks to close protection and veterinary care.",
+    ranges: [
+      [[-1.35,29.4],[-1.45,29.65],[-1.55,29.55],[-1.5,29.4]],
+      [[-1.05,29.65],[-1.0,29.8],[-1.15,29.85],[-1.2,29.7]]
+    ]
+  },
+  {
+    id: "bonobo",
+    name: "Bonobo",
+    wikiTitle: "Bonobo",
+    scientificName: "Pan paniscus",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Primates)",
+    taxon: ["Mammalia", "Primates", "Hominidae", "Pan"],
+    aliases: ["pygmy chimpanzee"],
+    groups: ["ape"],
+    diet: "Omnivore — Mostly fruit, plus leaves, seeds, and occasionally small animals",
+    biome: "Lowland rainforest and swamp forest south of a great river",
+    size: "70 – 83 cm tall; 25 – 60 kg",
+    lastClue: "A slender, black-faced ape with a centre parting, famed for solving conflicts with affection.",
+    population: {
+      value: 40000, low: 29500, high: 50000,
+      display: "roughly 30,000 – 50,000",
+      year: 2016, basis: "all individuals in the wild",
+      confidence: "estimated",
+      note: "IUCN 2016 assessment range as quoted by Wikipedia; the forests are poorly surveyed.",
+      source: { label: "Wikipedia: Bonobo (IUCN 2016 estimate)", url: "https://en.wikipedia.org/wiki/Bonobo" }
+    },
+    status: "Endangered",
+    region: "Africa",
+    regionsText: "Rainforests south of the Congo River in the Democratic Republic of the Congo",
+    fact: "Female-led groups keep the peace with social bonding rather than fights. They are found only in a single country.",
+    ranges: [
+      [[2.5,19],[1.5,22],[0.5,24.5],[0.8,26],[-0.5,26.5],[-2,26],[-3,26.5],[-4,25.5],[-5.5,24],[-5.5,21.5],[-4.5,19.5],[-3,17.5],[-2.2,17.3],[-1.8,18.2],[-0.5,18.4],[0.5,18.6],[1.5,19.2]]
+    ]
+  },
+  {
+    id: "cheetah",
+    name: "Cheetah",
+    wikiTitle: "Cheetah",
+    scientificName: "Acinonyx jubatus",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Carnivora)",
+    taxon: ["Mammalia", "Carnivora", "Felidae", "Acinonyx"],
+    aliases: [],
+    groups: ["big cat", "cat"],
+    diet: "Carnivore — Gazelles, impala and other small to medium antelope, caught by sprinting",
+    biome: "Open grassland, scrub and semi-desert plains",
+    size: "1.1 – 1.5 m long plus a 70 cm tail; 21 – 65 kg",
+    lastClue: "The fastest land animal, with black tear-stripes down its face.",
+    population: {
+      value: 6517, low: 5200, high: 7800,
+      display: "about 6,500",
+      year: 2021, basis: "mature individuals",
+      confidence: "estimated",
+      note: "IUCN-based figure of 6,517 mature animals in 2021 (about 7,100 in 2016). Includes a tiny Iranian population not drawn here.",
+      source: { label: "Wikipedia: Cheetah (IUCN assessment)", url: "https://en.wikipedia.org/wiki/Cheetah" }
+    },
+    status: "Vulnerable",
+    region: "Africa",
+    regionsText: "Open country of southern and eastern Africa, with remnant groups in the Sahara and Sahel",
+    fact: "It can reach about 100 km/h in a few seconds, but tires fast and must rest after a chase. Unlike other big cats it cannot fully retract its claws.",
+    ranges: [
+      [[-17.5,12],[-17.5,25],[-16,29.5],[-17,33],[-19,33],[-22,32],[-24.5,31.8],[-26,28],[-27,25],[-28,22],[-26,19],[-23,16],[-20,14]],
+      [[-4,38],[-1,39.5],[2,41],[4.5,42],[8,44.5],[9,41],[7,38],[8,34],[5,31],[3,30],[2,33],[1,35],[-2,34.5],[-4,36]],
+      [[12.5,-1],[13,3.5],[11.5,3.5],[10.5,1.5],[11,-1]],
+      [[24,5],[25,8],[23,10],[22,6]],
+      [[16,10],[17,12],[15.5,13],[14.5,11]]
+    ]
+  },
+  {
+    id: "african-wild-dog",
+    name: "African Wild Dog",
+    wikiTitle: "African_wild_dog",
+    scientificName: "Lycaon pictus",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Carnivora)",
+    taxon: ["Mammalia", "Carnivora", "Canidae", "Lycaon"],
+    aliases: ["painted dog", "painted wolf", "african hunting dog", "cape hunting dog"],
+    groups: ["wild dog", "dog"],
+    diet: "Carnivore — Antelope run down in relay by the whole pack, then shared out",
+    biome: "Savanna, open woodland and dry plains",
+    size: "75 – 110 cm long; 18 – 36 kg",
+    lastClue: "A big-eared pack hunter with a blotchy coat of black, tan and white, no two alike.",
+    population: {
+      value: 1400, low: 1100, high: 1700,
+      display: "about 1,400 adults",
+      year: 2020, basis: "mature individuals",
+      confidence: "estimated",
+      note: "About 6,600 adults in total, of which roughly 1,400 are mature, spread over about 39 subpopulations (IUCN assessment as quoted by Wikipedia).",
+      source: { label: "Wikipedia: African wild dog (IUCN figures)", url: "https://en.wikipedia.org/wiki/African_wild_dog" }
+    },
+    status: "Endangered",
+    region: "Africa",
+    regionsText: "Scattered reserves and wilderness of southern and eastern Africa, with a few in West Africa",
+    fact: "Packs vote on when to set off hunting by sneezing. They catch their prey far more often than lions do.",
+    ranges: [
+      [[-12,22],[-11,30],[-10,34],[-9,37.5],[-7,38.5],[-10.5,39],[-13,38],[-15,36],[-18,35],[-21,34.5],[-24.5,32],[-26,31.5],[-25,28],[-22,26],[-20,22],[-18,18],[-17.5,13],[-14,15],[-13,19]],
+      [[-1,34],[1,35],[4,38],[7,37],[9,34],[7,30],[3,31],[1,30.5],[-1,31.5]],
+      [[13,-14],[13,-12],[12,-12],[12.5,-13.5]]
+    ]
+  },
+  {
+    id: "black-rhinoceros",
+    name: "Black Rhinoceros",
+    wikiTitle: "Black_rhinoceros",
+    scientificName: "Diceros bicornis",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Perissodactyla)",
+    taxon: ["Mammalia", "Perissodactyla", "Rhinocerotidae", "Diceros"],
+    aliases: ["black rhino", "hook-lipped rhinoceros", "hook-lipped rhino"],
+    groups: ["rhino", "rhinoceros"],
+    diet: "Herbivore — Browses leaves, twigs and shoots with a pointed, grasping upper lip",
+    biome: "Thorny scrub, bushland and dry savanna",
+    size: "1.4 – 1.7 m at the shoulder; 800 – 1,400 kg",
+    lastClue: "A two-horned giant, hunted nearly to extinction for those horns.",
+    population: {
+      value: 3142, low: 2500, high: 3800,
+      display: "about 3,100",
+      year: 2020, basis: "mature individuals",
+      confidence: "counted",
+      note: "IUCN assessment by Emslie (2020) as quoted by Wikipedia; most animals are monitored individually in protected areas.",
+      source: { label: "Wikipedia: Black rhinoceros (IUCN 2020)", url: "https://en.wikipedia.org/wiki/Black_rhinoceros" }
+    },
+    status: "Critically Endangered",
+    region: "Africa",
+    regionsText: "Protected reserves in Namibia, South Africa, Zimbabwe, Kenya, Tanzania and a few other countries",
+    fact: "Its name has nothing to do with skin colour; both rhino species are grey. Numbers fell by about 98 percent in the 20th century before conservation lifted them again.",
+    ranges: [
+      [[-18.3,13.8],[-18.3,17.8],[-20.5,17.5],[-20.8,14.3]],
+      [[-21,29.8],[-21.5,31.5],[-24,32],[-28.5,32.5],[-28,31],[-27,30.5],[-25,28.5],[-23,28]],
+      [[-1,34.5],[0.5,36.5],[0.5,38],[-2.5,38.5],[-3.5,37.5],[-3,35.5],[-2.5,34.7]],
+      [[-8,36.5],[-8,38.5],[-10,38.5],[-10,37]],
+      [[-12.5,31],[-12.5,32.5],[-13.5,32.5],[-13.5,31]]
+    ]
+  },
+  {
+    id: "hippopotamus",
+    name: "Hippopotamus",
+    wikiTitle: "Hippopotamus",
+    scientificName: "Hippopotamus amphibius",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Artiodactyla)",
+    taxon: ["Mammalia", "Artiodactyla", "Hippopotamidae", "Hippopotamus"],
+    aliases: ["hippo", "common hippopotamus", "common hippo"],
+    groups: [],
+    diet: "Herbivore — Grazes grass on land at night, up to 40 kg in a night",
+    biome: "Rivers, lakes and swamps beside grassland",
+    size: "3.3 – 5 m long; 1,300 – 1,800 kg",
+    lastClue: "A barrel-bodied river giant that spends the day submerged and is feared for its huge tusks.",
+    population: {
+      value: 122500, low: 115000, high: 130000,
+      display: "about 115,000 – 130,000",
+      year: 2017, basis: "all individuals in the wild",
+      confidence: "estimated",
+      note: "IUCN assessment by Lewison and Pluháček (2017) as quoted by Wikipedia.",
+      source: { label: "Wikipedia: Hippopotamus (IUCN 2017)", url: "https://en.wikipedia.org/wiki/Hippopotamus" }
+    },
+    status: "Vulnerable",
+    region: "Africa",
+    regionsText: "Rivers and lakes of sub-Saharan Africa, strongest in East and southern Africa",
+    fact: "Its skin leaks a reddish oily fluid that acts like sunscreen and fights germs. Despite its bulk it kills more people in Africa than most other large mammals.",
+    ranges: [
+      [[14,-16],[15.5,-12],[14,-5],[14,4],[12,10],[10,12],[7,10],[6,2],[5,-8],[8,-13],[11,-15]],
+      [[11,24],[12,33],[9,36],[5,37],[3,40],[-2,41],[-5,39.5],[-10,40.3],[-15,40],[-18,36],[-23,35.5],[-26.5,32.5],[-33,27.5],[-34,24],[-29,29],[-26,27],[-25,24],[-21,22],[-18,18],[-17.5,13.5],[-12,13.5],[-8,13],[-5,12],[-3,10.5],[0,9.5],[3,9.5],[4,8],[6,10],[8,13],[10,15],[11,19]]
+    ]
+  },
+  {
+    id: "aardvark",
+    name: "Aardvark",
+    wikiTitle: "Aardvark",
+    scientificName: "Orycteropus afer",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Tubulidentata)",
+    taxon: ["Mammalia", "Tubulidentata", "Orycteropodidae", "Orycteropus"],
+    aliases: ["antbear", "ant bear", "earth pig"],
+    groups: [],
+    diet: "Insectivore — Ants and termites, licked up with a sticky tongue up to 30 cm long",
+    biome: "Savanna, scrub and woodland with soft, diggable soil",
+    size: "1 – 1.3 m long plus a thick tail; 40 – 65 kg",
+    lastClue: "A night-time digger with a pig-like snout, donkey ears and a name from Afrikaans for a burrowing swine.",
+    population: {
+      value: 500000, low: 100000, high: 1000000,
+      display: "unknown, probably several hundred thousand",
+      year: 2015, basis: "all individuals in the wild",
+      confidence: "rough",
+      note: "No census exists: it is nocturnal and secretive. This is an order-of-magnitude guess; the cited page only says counts are lacking and numbers appear stable.",
+      source: { label: "Wikipedia: Aardvark (conservation status)", url: "https://en.wikipedia.org/wiki/Aardvark" }
+    },
+    status: "Least Concern",
+    region: "Africa",
+    regionsText: "Savannas, grasslands and woodlands across most of sub-Saharan Africa",
+    fact: "It digs burrows so quickly that it can vanish into hard ground in minutes. Warthogs, hyenas and other animals later move into its abandoned holes.",
+    ranges: [
+      [[12,-16],[14,-5],[13,12],[12,24],[12,33],[10,37],[11,43],[8,48],[2,46],[-1,41],[-5,39.5],[-10,40.3],[-15,40],[-18,36],[-23,35.5],[-26.5,32.7],[-34,26],[-34.5,20],[-31,17],[-26,15],[-20,13],[-13,12.5],[-5,12],[-1,13],[0,10],[4,9],[5,-2],[7,-8],[10,-14]]
+    ]
+  },
+  {
+    id: "mandrill",
+    name: "Mandrill",
+    wikiTitle: "Mandrill",
+    scientificName: "Mandrillus sphinx",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Primates)",
+    taxon: ["Mammalia", "Primates", "Cercopithecidae", "Mandrillus"],
+    aliases: [],
+    groups: ["monkey", "baboon"],
+    diet: "Omnivore — Fruit, seeds and roots, plus insects and the odd small vertebrate",
+    biome: "Equatorial rainforest, also gallery forest and rocky clearings",
+    size: "55 – 85 cm long; 11 – 35 kg",
+    lastClue: "The biggest monkey of all, with a bright red-and-blue face and a blue rump.",
+    population: {
+      value: 50000, low: 10000, high: 100000,
+      display: "unknown, perhaps tens of thousands",
+      year: 2019, basis: "all individuals in the wild",
+      confidence: "rough",
+      note: "No reliable count; the IUCN only suspects a decline of over 30% in 24 years. This is an order-of-magnitude band.",
+      source: { label: "Wikipedia: Mandrill (conservation status)", url: "https://en.wikipedia.org/wiki/Mandrill" }
+    },
+    status: "Vulnerable",
+    region: "Africa",
+    regionsText: "Rainforests of southern Cameroon, Equatorial Guinea, Gabon and Congo",
+    fact: "Troops of several hundred can gather in a single forest. The bold face colours are brightest in dominant males.",
+    ranges: [
+      [[4,9.5],[2.5,10],[1,9.5],[-1,9.3],[-2.5,10],[-3.5,11.5],[-4,12.5],[-4,13.5],[-2,14],[0,13.8],[1,13],[2,12.5],[3,12],[4,11]]
+    ]
+  },
+  {
+    id: "ring-tailed-lemur",
+    name: "Ring-tailed Lemur",
+    wikiTitle: "Ring-tailed_lemur",
+    scientificName: "Lemur catta",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Primates)",
+    taxon: ["Mammalia", "Primates", "Lemuridae", "Lemur"],
+    aliases: ["ring tailed lemur", "ringtail lemur", "ring-tailed", "katta"],
+    groups: ["lemur"],
+    diet: "Omnivore — Fruit and leaves, especially the tamarind tree, plus flowers and insects",
+    biome: "Dry spiny forest, scrub and rocky outcrops",
+    size: "39 – 46 cm body plus a 56 – 63 cm tail; 2.2 – 3.5 kg",
+    lastClue: "A grey primate from Madagascar with a long black-and-white banded tail held up like a flag.",
+    population: {
+      value: 2000, low: 1600, high: 2400,
+      display: "about 2,000",
+      year: 2017, basis: "all individuals in the wild",
+      confidence: "estimated",
+      note: "Wikipedia gives about 2,000 as of 2017 without naming the original survey; some estimates are higher.",
+      source: { label: "Wikipedia: Ring-tailed lemur (population estimate)", url: "https://en.wikipedia.org/wiki/Ring-tailed_lemur" }
+    },
+    status: "Endangered",
+    region: "Africa",
+    regionsText: "Dry forests and rocky country of southern and south-western Madagascar",
+    fact: "Females run the troop, and males settle disputes with smelly 'stink fights' using scent glands on their tails. They bask with arms spread to warm up in the morning sun.",
+    ranges: [
+      [[-23.0,44.2],[-23.0,45.5],[-24.0,46.3],[-25.0,46.6],[-25.2,45.5],[-25.0,44.4],[-24.2,43.9],[-23.4,43.9]],
+      [[-22.0,46.6],[-22.3,47.0],[-22.8,46.9],[-22.6,46.4]]
+    ]
+  },
+  {
+    id: "ethiopian-wolf",
+    name: "Ethiopian Wolf",
+    wikiTitle: "Ethiopian_wolf",
+    scientificName: "Canis simensis",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Carnivora)",
+    taxon: ["Mammalia", "Carnivora", "Canidae", "Canis"],
+    aliases: ["simien jackal", "abyssinian wolf", "simien fox", "red jackal"],
+    groups: ["wolf"],
+    diet: "Carnivore — Almost entirely rodents such as giant mole-rats, hunted alone",
+    biome: "Cold treeless highland meadows above 3,000 m",
+    size: "90 – 100 cm long; 11 – 20 kg",
+    lastClue: "A rust-red, long-legged canid living on a handful of mountaintops in the Horn of Africa; rarest of its family.",
+    population: {
+      value: 400, low: 360, high: 440,
+      display: "about 360 – 440 adults",
+      year: 2011, basis: "adult individuals (over one year old)",
+      confidence: "estimated",
+      note: "IUCN estimate of 360-440 adults in 2011, more than half in the Bale Mountains, as quoted by Wikipedia.",
+      source: { label: "Wikipedia: Ethiopian wolf (IUCN 2011 estimate)", url: "https://en.wikipedia.org/wiki/Ethiopian_wolf" }
+    },
+    status: "Endangered",
+    region: "Africa",
+    regionsText: "Isolated highland meadows of the Ethiopian plateau, mainly the Bale Mountains",
+    fact: "Though it looks like a fox, it lives in family packs that gather to patrol and then go off to hunt alone. Rabies and dog-borne disease are its biggest threats.",
+    ranges: [
+      [[6.6,39.5],[7.1,39.9],[7.3,39.3],[6.8,39.0]],
+      [[7.6,39.3],[8.0,39.6],[8.1,39.2],[7.8,39.0]],
+      [[13.1,37.9],[13.4,38.4],[13.3,38.0]],
+      [[10.2,39.7],[10.5,39.9],[10.6,39.6]],
+      [[10.9,39.2],[11.3,39.9],[11.4,39.5],[11.0,39.1]]
+    ]
+  },
+  {
+    id: "grevys-zebra",
+    name: "Grévy's Zebra",
+    wikiTitle: "Grévy's_zebra",
+    scientificName: "Equus grevyi",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Perissodactyla)",
+    taxon: ["Mammalia", "Perissodactyla", "Equidae", "Equus"],
+    aliases: ["grevy's zebra", "grevys zebra", "imperial zebra"],
+    groups: ["zebra"],
+    diet: "Herbivore — Coarse dry grass, with leaves and bark in the dry season",
+    biome: "Semi-arid grassland and thorn scrub",
+    size: "1.4 – 1.6 m at the shoulder; 350 – 450 kg",
+    lastClue: "The largest wild horse relative, with narrow stripes, huge round ears and a white belly.",
+    population: {
+      value: 2250, low: 1800, high: 2700,
+      display: "about 2,250",
+      year: 2020, basis: "all individuals in the wild",
+      confidence: "estimated",
+      note: "About 2,250 in 2020 (a zoo press release quoted by Wikipedia); the IUCN counted under 2,000 mature animals in 2016.",
+      source: { label: "Wikipedia: Grévy's zebra (population estimates)", url: "https://en.wikipedia.org/wiki/Gr%C3%A9vy%27s_zebra" }
+    },
+    status: "Endangered",
+    region: "Africa",
+    regionsText: "Dry northern Kenya and a small area of southern Ethiopia",
+    fact: "Each animal's stripe pattern is unique, like a fingerprint. Males defend large territories around waterholes and are tolerated only by females that come to drink.",
+    ranges: [
+      [[5.8,37.3],[4.7,38.5],[3.4,38.6],[2.5,39.5],[1.0,39.0],[0.2,38.3],[0.5,37.2],[1.5,36.7],[2.5,37.0],[3.8,36.5],[4.8,36.8]]
+    ]
+  },
+  {
+    id: "meerkat",
+    name: "Meerkat",
+    wikiTitle: "Meerkat",
+    scientificName: "Suricata suricatta",
+    classPlain: "Mammal",
+    classFull: "Mammalia (Carnivora)",
+    taxon: ["Mammalia", "Carnivora", "Herpestidae", "Suricata"],
+    aliases: ["suricate"],
+    groups: ["mongoose"],
+    diet: "Insectivore — Beetles, grubs and scorpions, plus eggs and small lizards",
+    biome: "Dry open plains, scrub and desert with hard, diggable ground",
+    size: "25 – 35 cm long plus a 20 cm tail; 600 – 970 g",
+    lastClue: "A small social mongoose that stands upright on sentry duty beside its burrow.",
+    population: {
+      value: 500000, low: 100000, high: 1000000,
+      display: "unknown, probably hundreds of thousands",
+      year: 2015, basis: "all individuals in the wild",
+      confidence: "rough",
+      note: "No range-wide count is published; the species is common and stable. This is an order-of-magnitude band.",
+      source: { label: "Wikipedia: Meerkat (conservation status)", url: "https://en.wikipedia.org/wiki/Meerkat" }
+    },
+    status: "Least Concern",
+    region: "Africa",
+    regionsText: "Kalahari and Namib desert fringes of Botswana, Namibia, South Africa and Angola",
+    fact: "Groups of up to 30 share babysitting and take turns as lookouts, barking different alarms for hawks and for ground predators. Their dark eye patches reduce sun glare.",
+    ranges: [
+      [[-14.5,13],[-17.3,14.5],[-18.5,19],[-22,22],[-24.5,23],[-27,23.5],[-29,24.5],[-31,21.5],[-32.5,19],[-30,17],[-28.5,16.5],[-26.5,15.2],[-24,14.8],[-21,13.8],[-17.5,12],[-15.5,12.3]]
+    ]
+  },
+  {
+    id: "african-penguin",
+    name: "African Penguin",
+    wikiTitle: "African_penguin",
+    scientificName: "Spheniscus demersus",
+    classPlain: "Bird",
+    classFull: "Aves (Sphenisciformes)",
+    taxon: ["Aves", "Sphenisciformes", "Spheniscidae", "Spheniscus"],
+    aliases: ["jackass penguin", "black-footed penguin", "cape penguin"],
+    groups: ["penguin"],
+    diet: "Carnivore — Sardines and anchovies, plus squid, caught on underwater chases",
+    biome: "Cool coastal waters and rocky islands with a cold current",
+    size: "60 – 70 cm tall; 2.2 – 3.5 kg",
+    lastClue: "A flightless, black-and-white seabird with a pink gland above its eyes; it brays like a donkey on southern African coasts.",
+    population: {
+      value: 19800, low: 15800, high: 23800,
+      display: "about 19,800 adults",
+      year: 2024, basis: "mature individuals",
+      confidence: "estimated",
+      note: "2024 IUCN/BirdLife assessment as quoted by Wikipedia; breeding pairs fell below 10,000 in 2023.",
+      source: { label: "Wikipedia: African penguin (IUCN 2024 assessment)", url: "https://en.wikipedia.org/wiki/African_penguin" }
+    },
+    status: "Critically Endangered",
+    region: "Africa",
+    regionsText: "Coasts and islands of Namibia and South Africa",
+    fact: "Overfishing of its favourite prey has crashed its numbers to a tiny fraction of the millions that once bred. Pairs recognise each other by voice among noisy colonies.",
+    ranges: [
+      [[-23,14.2],[-23,12.5],[-27,13.5],[-31,15.5],[-34.6,17.5],[-35.2,20],[-34.9,22.5],[-34.2,26.5],[-33.9,26.4],[-34.3,22],[-34.4,19.3],[-34.0,18.4],[-32,17.8],[-29,16],[-26.7,15.1],[-24.5,14.3]]
+    ]
+  },
+  {
+    id: "grey-crowned-crane",
+    name: "Grey Crowned Crane",
+    wikiTitle: "Grey_crowned_crane",
+    scientificName: "Balearica regulorum",
+    classPlain: "Bird",
+    classFull: "Aves (Gruiformes)",
+    taxon: ["Aves", "Gruiformes", "Gruidae", "Balearica"],
+    aliases: ["crowned crane", "african crowned crane", "gray crowned crane", "east african crowned crane"],
+    groups: ["crane"],
+    diet: "Omnivore — Grass seeds, insects, frogs and small reptiles picked from wet fields",
+    biome: "Wetlands, marshes and wet grassland",
+    size: "1 – 1.1 m tall; 3.5 – 4 kg; wingspan about 2 m",
+    lastClue: "A tall wading bird topped with a stiff golden crest, the national bird of Uganda.",
+    population: {
+      value: 67500, low: 58000, high: 77000,
+      display: "about 58,000 – 77,000",
+      year: 2024, basis: "all individuals in the wild",
+      confidence: "estimated",
+      note: "Wikipedia gives 58,000-77,000 with no year; assigned to the 2024 BirdLife/IUCN assessment, so the year is approximate.",
+      source: { label: "Wikipedia: Grey crowned crane (population)", url: "https://en.wikipedia.org/wiki/Grey_crowned_crane" }
+    },
+    status: "Endangered",
+    region: "Africa",
+    regionsText: "Wetlands and grasslands of eastern and southern Africa, with a separate group in West Africa",
+    fact: "Unlike most of its relatives it roosts in trees, gripping branches with long toes. Pairs perform bowing and leaping dances.",
+    ranges: [
+      [[3.5,31.5],[4.5,34],[3.5,36],[1,38],[-1,40],[-4,39],[-8,39.5],[-11,40],[-12,35],[-14,36],[-18,35.5],[-22,33.5],[-26,32.3],[-29,31.8],[-30,29.5],[-28.5,28.5],[-26,28],[-23,25],[-19,24],[-16.5,23.5],[-14,24],[-10,26],[-8,30],[-5,29.5],[-3,29.5],[-1,29.5],[1,30],[2.5,31]],
+      [[13.5,-16],[13.5,-8],[13,-3],[12.5,8],[12.5,14],[10,14],[9,8],[9.5,-3],[11.5,-12]]
+    ]
+  },
+  {
+    id: "nile-crocodile",
+    name: "Nile Crocodile",
+    wikiTitle: "Nile_crocodile",
+    scientificName: "Crocodylus niloticus",
+    classPlain: "Reptile",
+    classFull: "Reptilia (Crocodilia)",
+    taxon: ["Reptilia", "Crocodilia", "Crocodylidae", "Crocodylus"],
+    aliases: ["african crocodile", "common crocodile"],
+    groups: ["crocodile"],
+    diet: "Carnivore — Fish, and ambushed zebra, wildebeest and other animals that come to drink",
+    biome: "Rivers, lakes, swamps and estuaries",
+    size: "3.5 – 5 m long; 225 – 750 kg",
+    lastClue: "Africa's biggest freshwater predator, famous for ambushing migrating herds at river crossings.",
+    population: {
+      value: 250000, low: 100000, high: 1000000,
+      display: "unknown, probably a few hundred thousand",
+      year: 2010, basis: "all individuals in the wild",
+      confidence: "rough",
+      note: "No range-wide census; local counts only. This is an order-of-magnitude band, and the species is rated Least Concern.",
+      source: { label: "Wikipedia: Nile crocodile (conservation status)", url: "https://en.wikipedia.org/wiki/Nile_crocodile" }
+    },
+    status: "Least Concern",
+    region: "Africa",
+    regionsText: "Rivers, lakes and wetlands across sub-Saharan Africa and western Madagascar",
+    fact: "Mothers guard their buried eggs and carry the hatchlings to water in their mouths. Where a river is shared with them, a single wildebeest migration can feed many for a year.",
+    ranges: [
+      [[16,-16.5],[15.5,-12],[14.5,-5],[14,4],[14,14],[12,24],[15.5,32.5],[13,36],[9,38],[5,38.5],[2,42],[-3,40.3],[-10,40.5],[-17,40],[-23,35.5],[-27,32.8],[-30,30.5],[-33,27.8],[-31,28],[-26,26],[-23,21],[-18,18],[-17.5,12.5],[-12,13.5],[-5,12],[0,9.5],[4,9],[5,2],[6,-4],[5,-8],[8,-13],[12,-17]],
+      [[-12.5,49],[-13.5,48],[-16,44.5],[-20,44],[-23,43.9],[-23,44.8],[-20,45.3],[-17,46.5],[-14.5,48.7]]
+    ]
+  }
+];

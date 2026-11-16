@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", system-ui, sans-serif;
+  background-color: #f6f1e6;
+  color: #2c251b;
+}
+
+h1, h2, .font-display {
+  font-family: "Fraunces Variable", "Fraunces", Georgia, serif;
+}
+
+/* Keyboard focus is always visible, on light and dark surfaces alike. */
+:focus-visible {
+  outline: 3px solid #d97706;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Comfortable tap targets for every control. */
+button, [role="option"] {
+  min-height: 44px;
+}
+.btn-mini {
+  min-height: 0;
+}
+.btn-compact {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Custom range slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 44px;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #dc2626 0%, #d97706 35%, #275c44 75%, #153124 100%);
+}
+input[type="range"]::-moz-range-track {
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #dc2626 0%, #d97706 35%, #275c44 75%, #153124 100%);
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fcfaf5;
+  border: 3px solid #153124;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  margin-top: -9px;
+  transition: transform 0.15s ease;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fcfaf5;
+  border: 3px solid #153124;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+input[type="range"].is-unset::-webkit-slider-thumb {
+  opacity: 0.45;
+}
+input[type="range"].is-unset::-moz-range-thumb {
+  opacity: 0.45;
+}
+
+/* Map: the world at its natural 2:1 shape, a little taller on phones so there is room to paint. */
+#habitat-map-container {
+  width: 100%;
+  aspect-ratio: 1000 / 487;
+  min-height: 250px;
+  max-height: 62vh;
+  background-color: #dfeef3;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+#habitat-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Text-style buttons in the footer. */
+.link-btn {
+  min-height: 44px;
+  padding: 0 0.5rem;
+  text-decoration: underline;
+  text-decoration-color: #d9c9a8;
+  text-underline-offset: 3px;
+}
+.link-btn:hover { color: #1d4734; }
+
+/* Zoo badges: a medal whose colour is the tier. */
+.zoo-badge {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #fff;
+  background: #a16207;
+}
+.zoo-badge::after { content: "B"; }
+.zoo-badge[data-badge="bronze"] { background: #a8672e; }
+.zoo-badge[data-badge="silver"] { background: #7b8794; }
+.zoo-badge[data-badge="silver"]::after { content: "S"; }
+.zoo-badge[data-badge="gold"] { background: #c8960c; }
+.zoo-badge[data-badge="gold"]::after { content: "G"; }
+
+/* Instructions that only make sense for a mouse, or only for touch. */
+.touch-only { display: none; }
+@media (hover: none), (pointer: coarse) {
+  .mouse-only { display: none; }
+  .touch-only { display: inline; }
+}
+
+.topo-bg {
+  background-image: radial-gradient(#dccdb0 0.75px, transparent 0.75px);
+  background-size: 20px 20px;
+}
+
+.animal-photo {
+  transition: opacity 0.35s ease;
+}
+.animal-photo.is-swapping {
+  opacity: 0;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-stage {
+  animation: fadeSlideUp 0.35s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,1952 @@
+{
+  "snow-leopard": {
+    "artist": "Irbis1983",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Irbis4.JPG",
+    "allowed": true,
+    "files": [
+      "726e9a0de584",
+      "836b37888566",
+      "6d58cb475389",
+      "c40b40ce283d",
+      "a24d084950c8",
+      "3d04aa4e75a3"
+    ]
+  },
+  "axolotl": {
+    "artist": "LoKiLeCh",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Axolotl_ganz.jpg",
+    "allowed": true,
+    "files": [
+      "7cab1a6ce826",
+      "a1530043761e",
+      "3adf1d52fab7",
+      "518d77540b81",
+      "661b988a99a7",
+      "d0b1232d3509"
+    ]
+  },
+  "komodo-dragon": {
+    "artist": "James Jolokia (james1203)",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:202306_Varanus_komodoensis.jpg",
+    "allowed": true,
+    "files": [
+      "96a4192177ab",
+      "b7a928c415dd",
+      "5185d794a8e8",
+      "06a9f5567c74",
+      "d24b26f0dbc4",
+      "936dc5e6e231"
+    ]
+  },
+  "okapi": {
+    "artist": "Daniel Jolivet",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint-Aignan_(Loir-et-Cher)._Okapi.jpg",
+    "allowed": true,
+    "files": [
+      "d195940311db",
+      "98961b059dcf",
+      "837b9c6ecdf6",
+      "61495b1fddde",
+      "281ac183be2b",
+      "8c01d8167e68"
+    ]
+  },
+  "red-panda": {
+    "artist": "Mathias Appel",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_Panda_(24986761703).jpg",
+    "allowed": true,
+    "files": [
+      "c592175d9c55",
+      "519034f19cf2",
+      "caae8626a5fc",
+      "30b4388a1ec3",
+      "eedb0a06c792",
+      "dbd669a64232"
+    ]
+  },
+  "kakapo": {
+    "artist": "Department of Conservation",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kakapo_Sirocco_1.jpg",
+    "allowed": true,
+    "files": [
+      "2ce64bfbbfe6",
+      "0ef39359b616",
+      "76709e704a30",
+      "83e5ca44be93",
+      "b9286e77c685",
+      "0168ee8719c4"
+    ]
+  },
+  "saiga-antelope": {
+    "artist": "Andrey Giljov",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saiga_antelope_at_the_Stepnoi_Sanctuary.jpg",
+    "allowed": true,
+    "files": [
+      "04bcd3e4378b",
+      "2423e72c6af8",
+      "9684912aaa42",
+      "72ac91de2e23",
+      "904f0d0f538e",
+      "63ce15a4d51f"
+    ]
+  },
+  "shoebill": {
+    "artist": "Bob Owen",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Balaeniceps_rex_-Ueno_Zoo,_Tokyo,_Japan-8a.jpg",
+    "allowed": true,
+    "files": [
+      "a90049b0e390",
+      "7ec40968aca3",
+      "7847b8f1bb05",
+      "e83242397371",
+      "d8530f90f300",
+      "ba08c553fb39"
+    ]
+  },
+  "narwhal": {
+    "artist": "пресс-служба ПАО \"Газпром нефть\"",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D1%80%D0%B2%D0%B0%D0%BB_%D0%B2_%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_%D0%90%D1%80%D0%BA%D1%82%D0%B8%D0%BA%D0%B5.jpg",
+    "allowed": true,
+    "files": [
+      "88a9ee0f2efc",
+      "13a896aae771",
+      "4cd59c85095a",
+      "4d09b7cb1faf",
+      "13b10de69b5d",
+      "58e2482b73db"
+    ]
+  },
+  "fossa": {
+    "artist": "Ran Kirlian",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cryptoprocta_Ferox.JPG",
+    "allowed": true,
+    "files": [
+      "2ebcb4817115",
+      "0abb40ff0404",
+      "72821c229dca",
+      "5095fcfd72cc",
+      "3efc9c2172ae",
+      "ea7843ef71c0"
+    ]
+  },
+  "maned-wolf": {
+    "artist": "Jonathan Wilkins",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lobo_Guar%C3%A1_andando.jpg",
+    "allowed": true,
+    "files": [
+      "b85a57bc3a9f",
+      "46cd08a01f6f",
+      "0ec5536c4a66",
+      "c5ae6e011c94",
+      "2c0e904bd62f",
+      "9d15cd53d220"
+    ]
+  },
+  "quokka": {
+    "artist": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Setonix_brachyurus_on_Rottnest_Island_1.jpg",
+    "allowed": true,
+    "files": [
+      "86bb38a7943e",
+      "5554bdee5627",
+      "f69db6cba0e9",
+      "8da9c6f71465",
+      "1bb25af5601a",
+      "ae27893bdaec"
+    ]
+  },
+  "aye-aye": {
+    "artist": "nomis-simon",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wild_aye_aye.jpg",
+    "allowed": true,
+    "files": [
+      "355961fffc50",
+      "6920428b945d",
+      "da1d58e1997f",
+      "f69c3e8593a5",
+      "7cd39cd21ec3",
+      "ff7fb3d3f3b3"
+    ]
+  },
+  "vaquita": {
+    "artist": "Paula Olson, NOAA",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vaquita6_Olson_NOAA.jpg",
+    "allowed": true,
+    "files": [
+      "02cc9bfc05a2",
+      "fce159674d34",
+      "fa20abdf2622",
+      "5a99f2b1c0d5",
+      "d2ddb9f90a44",
+      "53a915035818"
+    ]
+  },
+  "platypus": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duck-billed_platypus_(Ornithorhynchus_anatinus)_Scottsdale.jpg",
+    "allowed": true,
+    "files": [
+      "e2502a674115",
+      "cf336b4b247c",
+      "0f50e3787726",
+      "4f625b329a92",
+      "16f4b181209c",
+      "69f0343b322d"
+    ]
+  },
+  "galapagos-marine-iguana": {
+    "artist": "RAF-YYC from Calgary, Canada",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amblyrhynchus_cristatus_(3838137696).jpg",
+    "allowed": true,
+    "files": [
+      "45d508214c2f",
+      "7764fd6cdc0b",
+      "6329463df617",
+      "11b684123744",
+      "1c1b3091693a",
+      "134fcb72f1a0"
+    ]
+  },
+  "pangolin": {
+    "artist": "Piekfrosch at German Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pangolin_borneo.jpg",
+    "allowed": true,
+    "files": [
+      "02a5d3b0abd4",
+      "933655a2e082",
+      "5af2a48cbe4d",
+      "416c03fd602d",
+      "f18f1df23784",
+      "b5feba85085a"
+    ]
+  },
+  "capybara": {
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Capybaracropped.jpg",
+    "allowed": true,
+    "files": [
+      "5ecd65c862fd",
+      "651278670791",
+      "c23ca759a203",
+      "a2b10fd53ed5",
+      "2aa7654cf8ba",
+      "cf08c088298b"
+    ]
+  },
+  "iberian-lynx": {
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lince_ib%C3%A9rico_(Lynx_pardinus),_Almuradiel,_Ciudad_Real,_Espa%C3%B1a,_2021-12-19,_DD_07.jpg",
+    "allowed": true,
+    "files": [
+      "2db41731f6f0",
+      "cc660f1b5641",
+      "d567e3b725ff",
+      "54b485a99db8",
+      "543b605a6b5d",
+      "0b422d8b539e"
+    ]
+  },
+  "harpy-eagle": {
+    "artist": "http://www.birdphotos.com",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harpia_harpyja_001_800.jpg",
+    "allowed": true,
+    "files": [
+      "a955ecd98e2a",
+      "d6dfcff230b3",
+      "c428f99b8dc7",
+      "832fac36bfd5",
+      "f1b40140c9f7",
+      "fb27848e1746"
+    ]
+  },
+  "tasmanian-devil": {
+    "artist": "JJ Harrison (https://www.jjharrison.com.au/)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sarcophilus_harrisii_taranna.jpg",
+    "allowed": true,
+    "files": [
+      "2e06b4dd1f9c",
+      "719ed6f1109e",
+      "c84ced0080a6",
+      "67317086f827",
+      "0897d5d9ea08",
+      "342dfbce5dd8"
+    ]
+  },
+  "secretarybird": {
+    "artist": "Sumeet Moghe",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Secretary_bird_Mara_for_WC.jpg",
+    "allowed": true,
+    "files": [
+      "602190e6a262",
+      "563db483d297",
+      "c9ea6858c2cb",
+      "71a46a801605",
+      "60438eaa6837",
+      "3c6f800216c2"
+    ]
+  },
+  "dugong": {
+    "artist": "Gejuni",
+    "license": "CC BY-SA 3.0 de",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dugong.JPG",
+    "allowed": true,
+    "files": [
+      "fe37d1932bb2",
+      "e22f1a36b9cb",
+      "57f7fb7b8366",
+      "e3ce5aed8619",
+      "b57b1c98872e",
+      "4b1b8a8cacad"
+    ]
+  },
+  "gharial": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gharial_(Gavialis_gangeticus)_male.jpg",
+    "allowed": true,
+    "files": [
+      "8eb621da6ea6",
+      "dc39f5175a63",
+      "563f3b2cbd18",
+      "11ada6675dd7",
+      "6e091a896f71",
+      "7dd3fcd9b1ee"
+    ]
+  },
+  "african-bush-elephant": {
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:178_Male_African_bush_elephant_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg",
+    "allowed": true,
+    "files": [
+      "bc2ba4409b93",
+      "3ca3f0ff78ec",
+      "3b71cc61b119",
+      "925d32b5daa6",
+      "8dc15d225ab4",
+      "d9464e7888cc"
+    ]
+  },
+  "mountain-gorilla": {
+    "artist": "https://www.flickr.com/photos/deepphoto/ d_proffer",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Susa_group,_mountain_gorilla.jpg",
+    "allowed": true,
+    "files": [
+      "f66f4b8f4759",
+      "55e3c73b527d",
+      "ecc422c20e64",
+      "4da11156ffa9",
+      "0cc4d3ea56a6",
+      "2e27b7dc6453"
+    ]
+  },
+  "bonobo": {
+    "artist": "natataek",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apeldoorn_Apenheul_zoo_Bonobo.jpg",
+    "allowed": true,
+    "files": [
+      "39dc9913f40a",
+      "f45352553944",
+      "98b0f96c32ea",
+      "568b4ff933f3",
+      "83e8be1e0a3e",
+      "f1156ec8ecdf"
+    ]
+  },
+  "cheetah": {
+    "artist": "AfricanConservation",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Male_cheetah_facing_left_in_South_Africa.jpg",
+    "allowed": true,
+    "files": [
+      "78f818efbd9d",
+      "e5f046d7b347",
+      "ae79cacabdf2",
+      "fdae2ef44e83",
+      "169c47e9b4f0",
+      "ecff25930ba4"
+    ]
+  },
+  "african-wild-dog": {
+    "artist": "AfricanConservation",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:African_Wild_Dog_at_Working_with_Wildlife.jpg",
+    "allowed": true,
+    "files": [
+      "bf95ea59ce32",
+      "00ca81d840bb",
+      "97d954a2fbad",
+      "0e73d91dc2ec",
+      "384a68c05d22",
+      "0e9a3b42b496"
+    ]
+  },
+  "black-rhinoceros": {
+    "artist": "AfricanConservation",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Black_Rhino_at_Working_with_Wildlife.jpg",
+    "allowed": true,
+    "files": [
+      "c057e2d608a0",
+      "603815900db8",
+      "fe2267cff731",
+      "4b841f0496bc",
+      "f4cc4c0ebd01",
+      "f4344c4759f3"
+    ]
+  },
+  "hippopotamus": {
+    "artist": "Muhammad Mahdi Karim",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_Hippopotamus_in_the_water.jpg",
+    "allowed": true,
+    "files": [
+      "2be1d93659fd",
+      "a87868cac1db",
+      "133cc6509dfa",
+      "b4458bf6d85e",
+      "47f7e579326f",
+      "a4f3b662db56"
+    ]
+  },
+  "aardvark": {
+    "artist": "Kelly Abram",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orycteropus_afer_175359469.jpg",
+    "allowed": true,
+    "files": [
+      "a1bf80186f37",
+      "e06a1bdd2841",
+      "6b3ce260c04c",
+      "cbb328586d34",
+      "450e1293cd2f",
+      "656b47206005"
+    ]
+  },
+  "mandrill": {
+    "artist": "Katma0601",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mandrill_Albert_September_2015_Zoo_Berlin_(2).jpg",
+    "allowed": true,
+    "files": [
+      "a33f481bae80",
+      "6b7a860fe6d5",
+      "e2244db29361",
+      "0a1a8422313b",
+      "f75028b5c375",
+      "5c82bac4ba2b"
+    ]
+  },
+  "ring-tailed-lemur": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ring-tailed_lemur_(Lemur_catta).jpg",
+    "allowed": true,
+    "files": [
+      "9d7a084e5c11",
+      "02a38499c0ca",
+      "4479b32f07ec",
+      "b01640b5ecc5",
+      "64ae0b357310",
+      "3d37089bad94"
+    ]
+  },
+  "ethiopian-wolf": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ethiopian_wolf_(Canis_simensis_citernii).jpg",
+    "allowed": true,
+    "files": [
+      "4fce9afc7c12",
+      "997abbc3f394",
+      "6e71996fd907",
+      "dc047cbdf95c",
+      "405c15d69a05",
+      "9cf1f742981e"
+    ]
+  },
+  "grevys-zebra": {
+    "artist": "Rainbirder",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grevy%27s_Zebra_Stallion.jpg",
+    "allowed": true,
+    "files": [
+      "5044872984b0",
+      "7f8251f87e53",
+      "c4c379690cac",
+      "80c77020d845",
+      "668759357854",
+      "ba9a12c5a8d1"
+    ]
+  },
+  "meerkat": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meerkat_(Suricata_suricatta)_Tswalu.jpg",
+    "allowed": true,
+    "files": [
+      "5e6e8a8c6a1c",
+      "36b679f51fc6",
+      "c69370e5b172",
+      "d66630a050fb",
+      "62a13548541d",
+      "71ef2a6649c5"
+    ]
+  },
+  "african-penguin": {
+    "artist": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wikimania_2018,_Cape_Town_(_1050602),_crop.jpg",
+    "allowed": true,
+    "files": [
+      "5007bb5c00d1",
+      "ed711ed62f72",
+      "a66fdd4ab64a",
+      "2c7b5ea3d9d2",
+      "5f79a6e797be",
+      "03d37773f22d"
+    ]
+  },
+  "grey-crowned-crane": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grey_crowned_crane_(Balearica_regulorum_gibbericeps).jpg",
+    "allowed": true,
+    "files": [
+      "1af527ad86ed",
+      "17745c73c2b3",
+      "c445651bdc77",
+      "d81d17aa07f4",
+      "5660ed66222a",
+      "07078e4a6976"
+    ]
+  },
+  "nile-crocodile": {
+    "artist": "Dewet",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:NileCrocodile.jpg",
+    "allowed": true,
+    "files": [
+      "e3e2b81b6263",
+      "fce859c2d14b",
+      "61869c85cabb",
+      "8b5b0ab66c48",
+      "1936e535c3dc",
+      "4395c53f27e6"
+    ]
+  },
+  "giant-panda": {
+    "artist": "J. Patrick Fischer",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grosser_Panda.JPG",
+    "allowed": true,
+    "files": [
+      "a11c80f0cec8",
+      "5e7ce7e6c365",
+      "9abf55f8c419",
+      "d7fe5a003118",
+      "bfcabbe865ee",
+      "f48dafb0a000"
+    ]
+  },
+  "tiger": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bengal_tiger_(Panthera_tigris_tigris)_female_3_crop.jpg",
+    "allowed": true,
+    "files": [
+      "c47489529785",
+      "ea52e5a75433",
+      "18b8b5d94239",
+      "edc0eee4eeaf",
+      "d55457ba04fb",
+      "30b9c89fe17b"
+    ]
+  },
+  "asian-elephant": {
+    "artist": "Yathin S Krishnappa",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elephas_maximus_(Bandipur).jpg",
+    "allowed": true,
+    "files": [
+      "6125d2d5d209",
+      "4ce6c7946746",
+      "48b8c72d588e",
+      "7266b353e9d2",
+      "697a6d92c3eb",
+      "fad3d0789b4c"
+    ]
+  },
+  "bornean-orangutan": {
+    "artist": "Nanosanchez",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tanjung_Puting30477.jpg",
+    "allowed": true,
+    "files": [
+      "f34c62d03a86",
+      "1467c3b31330",
+      "7dbc473c0131",
+      "8328d233109e",
+      "90adf08a1c68",
+      "2a1ebda5c054"
+    ]
+  },
+  "malayan-tapir": {
+    "artist": "Rufus46",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schabrackentapir_Tapirus_indicus_Tiergarten-Nuernberg-1.jpg",
+    "allowed": true,
+    "files": [
+      "21d96f20e01a",
+      "c2b421c72ea3",
+      "34ecb188c064",
+      "ce20abd7e184",
+      "9f671d80faff",
+      "5c89e9e0071f"
+    ]
+  },
+  "proboscis-monkey": {
+    "artist": "David Dennis",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Proboscis_Monkey_in_Borneo.jpg",
+    "allowed": true,
+    "files": [
+      "8f756e3739ee",
+      "818185d34746",
+      "808b1010cc33",
+      "95667f3a9bd9",
+      "207e03327329",
+      "e1e0ef100020"
+    ]
+  },
+  "sun-bear": {
+    "artist": "Rushenb",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sun-bear.jpg",
+    "allowed": true,
+    "files": [
+      "b2cfce90ffa5",
+      "ee7ec5f352e5",
+      "ff5b9f2cb634",
+      "780a8896d486",
+      "31d0a6ee4285",
+      "22db44d5125c"
+    ]
+  },
+  "indian-rhinoceros": {
+    "artist": "Mayank1704",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great-Indian-one-horned-rhinoceros-at-Kaziranga-national-park-in-Assam-India.jpg",
+    "allowed": true,
+    "files": [
+      "bf5fe6852e1b",
+      "3c18d00a80b1",
+      "1bf85809472c",
+      "b7a7dd84d2a4",
+      "d512b30a4a99",
+      "67830358c547"
+    ]
+  },
+  "przewalskis-horse": {
+    "artist": "Claudia Feh",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Przewalskis_horse_02.jpg",
+    "allowed": true,
+    "files": [
+      "cedec00c618e",
+      "2f60a67bf6c9",
+      "629f29091ca5",
+      "0504344b56da",
+      "8c093125d985",
+      "e7f97275f105"
+    ]
+  },
+  "wild-bactrian-camel": {
+    "artist": "Lutz Fischer-Lamprecht",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camelus_Ferus_F._Bactriana_9380.jpg",
+    "allowed": true,
+    "files": [
+      "9f3d2b273eec",
+      "d59e1d2416fe",
+      "f0c9d04742ad",
+      "386c4a786d7f",
+      "db62bd627b5d",
+      "8ba21cdc5552"
+    ]
+  },
+  "japanese-macaque": {
+    "artist": "Rocktendo & Adam Gman",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Japanese_Snow_Monkey_(Macaque)_Mother_Grooms_Her_Young.jpg",
+    "allowed": true,
+    "files": [
+      "53b13ef66a1d",
+      "d7460c21fbbc",
+      "b1622a801a76",
+      "3a1d708e32a3",
+      "28ab0f628242",
+      "e3bcdcb54a2c"
+    ]
+  },
+  "binturong": {
+    "artist": "Tassilo Rau",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Binturong_in_Overloon.jpg",
+    "allowed": true,
+    "files": [
+      "6be32c896c17",
+      "0aaa326bbd66",
+      "bae4ee6d38a7",
+      "c11c917b9068",
+      "4fbfc313cce4",
+      "071f30a6343a"
+    ]
+  },
+  "king-cobra": {
+    "artist": "Michael Allen Smith from Seattle, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:12_-_The_Mystical_King_Cobra_and_Coffee_Forests.jpg",
+    "allowed": true,
+    "files": [
+      "3619961e8156",
+      "cfab7c89ebe1",
+      "392577f4a57e",
+      "b00ddd67b231",
+      "c1d65d76503b",
+      "5bdbbf7272ab"
+    ]
+  },
+  "indian-peafowl": {
+    "artist": "Kandukuru Nagarjun from Bangalore, India",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peacock_on_tree_(52077240794).jpg",
+    "allowed": true,
+    "files": [
+      "2e5db371b269",
+      "19957c76ab9f",
+      "c47f98a0191e",
+      "a2789eab22b8",
+      "f9fb4c6d6346",
+      "38aa6aafb494"
+    ]
+  },
+  "red-crowned-crane": {
+    "artist": "Alastair Rae from London, United Kingdom",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grus_japonensis_-Hokkaido,_Japan_-several-8_(1).jpg",
+    "allowed": true,
+    "files": [
+      "19a80f934607",
+      "499189d1302a",
+      "f30af8717d80",
+      "74cda0505986",
+      "4f411596064f",
+      "adad3e7f2d27"
+    ]
+  },
+  "chinese-giant-salamander": {
+    "artist": "Petr Hamerník",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Velemlok_%C4%8D%C3%ADnsk%C3%BD_zoo_praha_1.jpg",
+    "allowed": true,
+    "files": [
+      "3f27e0a1646a",
+      "0312c4cb9c9e",
+      "45b1a6b257ea",
+      "f23a1597310a",
+      "16bdf7a80eb2",
+      "3e043c53a3ff"
+    ]
+  },
+  "european-bison": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:European_bison_(Bison_bonasus)_male_Bia%C5%82owieza.jpg",
+    "allowed": true,
+    "files": [
+      "9172748f3998",
+      "66f64eda5057",
+      "80f62ed5e10c",
+      "3558d5263a69",
+      "94df06912e5f",
+      "8f7ec8019f34"
+    ]
+  },
+  "atlantic-puffin": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Puffin_(Fratercula_arctica).jpg",
+    "allowed": true,
+    "files": [
+      "823842aeb93e",
+      "a4b9931e9c0f",
+      "ba5ac21c542c",
+      "9d8cbc5074b7",
+      "65d0a581c49b",
+      "b4610e8c7223"
+    ]
+  },
+  "alpine-ibex": {
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:003_Wild_Alpine_Ibex_Sunset_Creux_du_Van_Mont_Racine_Photo_by_Giles_Laurent.jpg",
+    "allowed": true,
+    "files": [
+      "330791441e76",
+      "097248d11535",
+      "c4141374b53c",
+      "ad9c3ef06422",
+      "f0a4daeed0c7",
+      "2372c3ccc4ed"
+    ]
+  },
+  "european-hedgehog": {
+    "artist": "Jörg Hempel",
+    "license": "CC BY-SA 2.0 de",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Erinaceus_europaeus_LC0119.jpg",
+    "allowed": true,
+    "files": [
+      "63082712b82d",
+      "05ba646fdfc5",
+      "293c33481407",
+      "a9002112db2c",
+      "382e5f4c7911",
+      "ed9c2291ec18"
+    ]
+  },
+  "olm": {
+    "artist": "Arne Hodalič",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:P_anguinus1.jpg",
+    "allowed": true,
+    "files": [
+      "3de2ad55f600",
+      "0b74dfee4159",
+      "4870cf06a537",
+      "075d52606f40",
+      "438a1a205b21",
+      "0dfb69476546"
+    ]
+  },
+  "western-capercaillie": {
+    "artist": "David Palmer",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Palmer_Capercaillie.jpg",
+    "allowed": true,
+    "files": [
+      "69b661188d30",
+      "6a7e33852562",
+      "56f283d98c89",
+      "b90cae0c4fdc",
+      "78a396e231b7",
+      "a3fd4b15d402"
+    ]
+  },
+  "fire-salamander": {
+    "artist": "Holger Krisp",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Feuersalamander-salamandra-salamandra.jpg",
+    "allowed": true,
+    "files": [
+      "f96237b58891",
+      "ee58bfda07be",
+      "636447af7b12",
+      "4b1f2406b466",
+      "89159aabcbea",
+      "9ec187b19c89"
+    ]
+  },
+  "eurasian-red-squirrel": {
+    "artist": "Peter Trimming",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Squirrel_posing.jpg",
+    "allowed": true,
+    "files": [
+      "f9d83448b88b",
+      "127f47363333",
+      "443f16150f2e",
+      "1c0861780803",
+      "05d7993ea637",
+      "90b1ba783833"
+    ]
+  },
+  "chamois": {
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:064_Wild_Chamois_Parc_r%C3%A9gional_Chasseral_Photo_by_Giles_Laurent.jpg",
+    "allowed": true,
+    "files": [
+      "8490d4d0065c",
+      "d70edbd40c77",
+      "e3b0a779afae",
+      "989f3c1d0688",
+      "52d0cbc61856",
+      "fc05a22e6f8f"
+    ]
+  },
+  "european-badger": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:European_badger_(Meles_meles_taxus)_Drenthe.jpg",
+    "allowed": true,
+    "files": [
+      "1483b7794e32",
+      "1dbda6495fb7",
+      "cbea36012903",
+      "c535328b9070",
+      "384465664806",
+      "316918823885"
+    ]
+  },
+  "white-stork": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:White_stork_(Ciconia_ciconia)_Bia%C5%82owieza.jpg",
+    "allowed": true,
+    "files": [
+      "6f75810571b0",
+      "a46e0230a9bd",
+      "d06c6278d70b",
+      "4d89ee94543a",
+      "8ec546b870c9",
+      "bff2bdc803de"
+    ]
+  },
+  "european-pine-marten": {
+    "artist": "caroline legg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pine_Marten_(48173751702).jpg",
+    "allowed": true,
+    "files": [
+      "fa612bc8c92b",
+      "50a55481902e",
+      "71cd29f6d36b",
+      "b7adfcab6b38",
+      "9b61af812cf0",
+      "6bc7b110393b"
+    ]
+  },
+  "american-bison": {
+    "artist": "Jack Dykinga",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:American_bison_k5680-1.jpg",
+    "allowed": true,
+    "files": [
+      "7324b3516626",
+      "5572cf25cb39",
+      "1f5480072d4d",
+      "268b7197ed9c",
+      "cbdcb1df8cc7",
+      "41f3666c404d"
+    ]
+  },
+  "bald-eagle": {
+    "artist": "Andy Morffew from Itchen Abbas, Hampshire, UK",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bald_eagle_about_to_fly_in_Alaska_(2016).jpg",
+    "allowed": true,
+    "files": [
+      "e50106a7f9f3",
+      "9f4e19a22ef8",
+      "f4787848d610",
+      "512b7a7df1b4",
+      "dbc7d2df549c",
+      "0f0bcefef62b"
+    ]
+  },
+  "pronghorn": {
+    "artist": "www.naturespicsonline.com",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antilocapra_americana.jpg",
+    "allowed": true,
+    "files": [
+      "76773743fe45",
+      "0583c2525872",
+      "3eb79cd622a0",
+      "45271c8992b2",
+      "d5d682c2b5a5",
+      "558d291e8ee2"
+    ]
+  },
+  "california-condor": {
+    "artist": "Don Graham from Redlands, CA, USA - God bless it!",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:California-condor-gymnogyps-californianus-078_(21196759264).jpg",
+    "allowed": true,
+    "files": [
+      "32f1964b11d3",
+      "69356532af90",
+      "ece378fc2e1c",
+      "5965db94cd90",
+      "1becfdd381de",
+      "2fbe8e383a66"
+    ]
+  },
+  "black-footed-ferret": {
+    "artist": "USFWS Mountain Prairie",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mustela_nigripes_2.jpg",
+    "allowed": true,
+    "files": [
+      "90173add3a5b",
+      "826f1fab0d60",
+      "fd379f118ccb",
+      "6bc84729f827",
+      "572a2b66e3c8",
+      "bc182d752038"
+    ]
+  },
+  "gila-monster": {
+    "artist": "Blueag9",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gila_monster2.JPG",
+    "allowed": true,
+    "files": [
+      "ff50bcd3fb43",
+      "a294d3f972a5",
+      "45c1299ae973",
+      "5642121cd8eb",
+      "30828419116d",
+      "97e3968ff110"
+    ]
+  },
+  "american-alligator": {
+    "artist": "User:Postdlf",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:American_Alligator.jpg",
+    "allowed": true,
+    "files": [
+      "1bacd709a599",
+      "486ca0fb70df",
+      "2f25c2602fda",
+      "25f571aa42a2",
+      "1d9d91cd6376",
+      "deee4b56483a"
+    ]
+  },
+  "north-american-beaver": {
+    "artist": "GlacierNPS",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:North_American_beaver_(Castor_canadensis)_(46677957975).jpg",
+    "allowed": true,
+    "files": [
+      "aea7d81c4eed",
+      "71d571d11633",
+      "d08dce179eb8",
+      "228f6ed0df67",
+      "93d150d92d0e",
+      "29b094230b78"
+    ]
+  },
+  "monarch-butterfly": {
+    "artist": "Rhododendrites",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monarch_butterfly_male_(52341).jpg",
+    "allowed": true,
+    "files": [
+      "f4c9bc58772f",
+      "4fba21f431dc",
+      "ba46d8543957",
+      "2125e222d67c",
+      "e2cfe1290a1b",
+      "54de1d3d551b"
+    ]
+  },
+  "muskox": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muskox_(Ovibos_moschatus)_male_Dovrefjell_4.jpg",
+    "allowed": true,
+    "files": [
+      "993a1c12cc01",
+      "c2c9e941deef",
+      "ce449e188dc5",
+      "eb3f0900adaf",
+      "7b932b6082a5",
+      "03b0cb203606"
+    ]
+  },
+  "mountain-goat": {
+    "artist": "Adam Schneider",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mountain_Goat,_Enchantments_Basin.jpg",
+    "allowed": true,
+    "files": [
+      "0fcdeb6e9609",
+      "95d2695a575f",
+      "e2d7f39dd88a",
+      "b80b28625a40",
+      "1ceaf63e5982",
+      "add35d8f584d"
+    ]
+  },
+  "greater-roadrunner": {
+    "artist": "Polinova",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Greater_Roadrunner_Tingley_Beach.jpg",
+    "allowed": true,
+    "files": [
+      "64867c9d5542",
+      "e4af9285777e",
+      "c09decab8236",
+      "79a8d4d6ce7b",
+      "002891728944",
+      "6c776f3c7cfe"
+    ]
+  },
+  "whooping-crane": {
+    "artist": "Sasata",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grus_americana_Sasata.jpg",
+    "allowed": true,
+    "files": [
+      "3ecc841d8e31",
+      "5a7b35fe68ef",
+      "7e4e66d1bf9b",
+      "a9d8d23babe3",
+      "a4e06b4694b5",
+      "04e5ee100a33"
+    ]
+  },
+  "resplendent-quetzal": {
+    "artist": "lwolfartist",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Resplendent_quetzal_san_gerardo_de_dota_3.31.24_DSC_3989-topaz-denoiseraw.jpg",
+    "allowed": true,
+    "files": [
+      "b9d4b92af1d0",
+      "157943927773",
+      "88ca8973081c",
+      "d6244fd4f25b",
+      "a2824ba0ed2b",
+      "a88290ba6500"
+    ]
+  },
+  "bairds-tapir": {
+    "artist": "Rhododendrites",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baird%27s_tapir_mother_with_baby_(92151).jpg",
+    "allowed": true,
+    "files": [
+      "b4da53f038d0",
+      "943348344d7a",
+      "0d48a5970e20",
+      "45c928a187c8",
+      "b9a66f136f8b",
+      "f859c3911785"
+    ]
+  },
+  "star-nosed-mole": {
+    "artist": "US National Parks Service",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Condylura.jpg",
+    "allowed": true,
+    "files": [
+      "4d0eaf85193e",
+      "61f3f123e8bf",
+      "7aaf29855720",
+      "ced854442ae4",
+      "df5b4f128ac6",
+      "2242eeb57971"
+    ]
+  },
+  "jaguar": {
+    "artist": "USFWS",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Standing_jaguar.jpg",
+    "allowed": true,
+    "files": [
+      "18f23e2dc9e5",
+      "f4ce3e2e9726",
+      "4a92202b4e64",
+      "2b34d7f827d0",
+      "22656b70f6d8",
+      "f9b381cb665b"
+    ]
+  },
+  "giant-anteater": {
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:037_Giant_anteater_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg",
+    "allowed": true,
+    "files": [
+      "cda17eaa0121",
+      "a73335b15fce",
+      "96fcc80c3b01",
+      "8f5aad86df35",
+      "9311b4837c14",
+      "080f89aa4fc2"
+    ]
+  },
+  "giant-otter": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giant_otters_(Pteronura_brasiliensis).jpg",
+    "allowed": true,
+    "files": [
+      "de7fdf91bcf3",
+      "8b28af84b7f8",
+      "e01e27731665",
+      "b2b18a80bb64",
+      "db760a29ee36",
+      "0d005ca2cad3"
+    ]
+  },
+  "andean-condor": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andean_condor_(Vultur_gryphus)_male_Farellones.jpg",
+    "allowed": true,
+    "files": [
+      "f562854c6ba1",
+      "b4149757d9bb",
+      "3710d39341b1",
+      "9d1bbab14c13",
+      "615bcd9edf0c",
+      "f754330f2f35"
+    ]
+  },
+  "spectacled-bear": {
+    "artist": "Wilfredor",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tremarctos_ornatus_in_Jardim_Zool%C3%B3gico_de_Curitiba.jpg",
+    "allowed": true,
+    "files": [
+      "c1ce337a153a",
+      "6115c8d9b9d7",
+      "13a0cad53181",
+      "68e6413f7d79",
+      "9fce988ef118",
+      "2bc11acc83dc"
+    ]
+  },
+  "vicuna": {
+    "artist": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vicu%C3%B1a_in_Chimborazo_Wildlife_Reserve.jpg",
+    "allowed": true,
+    "files": [
+      "19294f4b9049",
+      "8114c9ee5e43",
+      "3d2ad2fe276a",
+      "ff9de19af89b",
+      "52b0a94808fa",
+      "67099c7c608c"
+    ]
+  },
+  "golden-lion-tamarin": {
+    "artist": "Henrique Bitencourt",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leontopithecus_rosalia_467256293.jpg",
+    "allowed": true,
+    "files": [
+      "7b5cb2e1a27b",
+      "518d94578cb4",
+      "6e89ff370bb2",
+      "3c1db1af7b76",
+      "825cc5fb5bfe",
+      "0cbfc6043b0a"
+    ]
+  },
+  "hoatzin": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hoatzin_(Opisthocomus_hoazin)_Rio_Napo.jpg",
+    "allowed": true,
+    "files": [
+      "8ab752878b3a",
+      "0ccbec76a36a",
+      "2f53f624e98e",
+      "ded2401e19d4",
+      "88309c68c28e",
+      "b4ddfb6bd292"
+    ]
+  },
+  "green-anaconda": {
+    "artist": "MKAMPIS",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sucuri_verde.jpg",
+    "allowed": true,
+    "files": [
+      "6ab912cd1857",
+      "895f69b178c5",
+      "11cbbfbfa09c",
+      "de0e6d03f258",
+      "feda8676fd4f",
+      "cf913c7649ea"
+    ]
+  },
+  "amazon-river-dolphin": {
+    "artist": "Dan Riskin",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inia_geoffrensis_geoffrensis_62673186.jpg",
+    "allowed": true,
+    "files": [
+      "4819b69cb4f7",
+      "1ac25ab9ce4d",
+      "8a7845e4351d",
+      "e618b9b47c9f",
+      "3c2c8c07ba08",
+      "e1dd75cc3ddf"
+    ]
+  },
+  "hyacinth-macaw": {
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:008_Hyacinth_macaw_couple_kissing_under_Pink_Ip%C3%AA_tree_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent.jpg",
+    "allowed": true,
+    "files": [
+      "261111c0ed3f",
+      "80a18b6ee9ae",
+      "748b0867ba66",
+      "be252ed9aad6",
+      "ab3d955e1fa8",
+      "6c9b7e0842e9"
+    ]
+  },
+  "brown-throated-sloth": {
+    "artist": "Stefan Laube (Tauchgurke)",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bradypus.jpg",
+    "allowed": true,
+    "files": [
+      "529551ea8791",
+      "0e5411b084ba",
+      "12ee029397d1",
+      "32961059d48c",
+      "b31e71b37362",
+      "0f636f45dd30"
+    ]
+  },
+  "giant-armadillo": {
+    "artist": "Guillaume Delaitre",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Priodontes_maximus_at_R%C3%A9gina.jpg",
+    "allowed": true,
+    "files": [
+      "6d64aca278ab",
+      "7b3c9f148e62",
+      "0f1ff348332b",
+      "ed1f24ef985d",
+      "d20fb98d5907",
+      "6d96bd0ec1cd"
+    ]
+  },
+  "galapagos-tortoise": {
+    "artist": "Mfield, Matthew Field, http://www.photography.mattfield.com",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galapagos_giant_tortoise_Geochelone_elephantopus.jpg",
+    "allowed": true,
+    "files": [
+      "872193f92181",
+      "d917c6ff3e15",
+      "03270d2d7a6f",
+      "b7b416bed07d",
+      "a75e1c2c20c6",
+      "b80b27f2c876"
+    ]
+  },
+  "andean-cock-of-the-rock": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andean_cock-of-the-rock_(Rupicola_peruvianus_sanguinolentus)_male_Antioquia.jpg",
+    "allowed": true,
+    "files": [
+      "1d4cdf91967d",
+      "c44dd89aab6d",
+      "151663033b39",
+      "e555922d75f1",
+      "f7a6c2990455",
+      "a94f78272026"
+    ]
+  },
+  "toco-toucan": {
+    "artist": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:006_Toco_toucan_in_Encontro_das_%C3%81guas_State_Park_Photo_by_Giles_Laurent_(cropped).jpg",
+    "allowed": true,
+    "files": [
+      "5f8ebf0e67a9",
+      "d471bfbcce17",
+      "a57498a196cb",
+      "dc3f1a5ec34d",
+      "f3a9e304a718",
+      "1b7b8a3e3a73"
+    ]
+  },
+  "koala": {
+    "artist": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Koala_climbing_tree.jpg",
+    "allowed": true,
+    "files": [
+      "f190eb4ddd63",
+      "46debfc2938e",
+      "86f230dc8c05",
+      "59326100dd86",
+      "1282acbb13c9",
+      "61e61b6900ec"
+    ]
+  },
+  "red-kangaroo": {
+    "artist": "PotMart186",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_Kangaroos_at_Sturt_National_Park_NSW.jpg",
+    "allowed": true,
+    "files": [
+      "622b0ce42c7c",
+      "9755c98e1f79",
+      "c4105725e72d",
+      "e81b76f880df",
+      "d3374ffb711e",
+      "577d3eca4ee7"
+    ]
+  },
+  "common-wombat": {
+    "artist": "JJ Harrison (jjharrison89@facebook.com)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vombatus_ursinus_-Maria_Island_National_Park.jpg",
+    "allowed": true,
+    "files": [
+      "40813c327b96",
+      "456fd4f56584",
+      "47b3a0e5442e",
+      "26448dedf3f1",
+      "d2339b2741ba",
+      "ac7030c60b35"
+    ]
+  },
+  "southern-cassowary": {
+    "artist": "Summerdrought",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Southern_Cassowary_7071.jpg",
+    "allowed": true,
+    "files": [
+      "748e92d53581",
+      "913ff48ca5db",
+      "45b97198a82d",
+      "1e1db5ef9cd8",
+      "90138935f3c6",
+      "97257e230ba3"
+    ]
+  },
+  "north-island-brown-kiwi": {
+    "artist": "Maungatautari Ecological Island Trust",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:TeTuatahianui.jpg",
+    "allowed": true,
+    "files": [
+      "cc95c27e8979",
+      "95d8838928c2",
+      "f8066ad257cc",
+      "9a9f3d2f4b24",
+      "6ad9ce58379c",
+      "ff34b993615b"
+    ]
+  },
+  "tuatara": {
+    "artist": "Sid Mosdell from New Zealand",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tuatara_(5205719005).jpg",
+    "allowed": true,
+    "files": [
+      "f760fa98e5e3",
+      "960b4d8e7d6f",
+      "b4b11bb03914",
+      "a6d1a42c2dd7",
+      "f9a3e72b1371",
+      "f32fb3d7b0a0"
+    ]
+  },
+  "emu": {
+    "artist": "JJ Harrison (https://www.jjharrison.com.au/)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emu_1_-_Tidbinbilla.jpg",
+    "allowed": true,
+    "files": [
+      "76211f489dc9",
+      "4b0e5d3fc538",
+      "727115a865ee",
+      "6c4c59e15686",
+      "cf494c047515",
+      "77bdc091f1e3"
+    ]
+  },
+  "short-beaked-echidna": {
+    "artist": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Short-beaked_echidna_(Tachyglossus_aculeatus)_Freycinet.jpg",
+    "allowed": true,
+    "files": [
+      "a9f659c5802d",
+      "027be692e45c",
+      "91415f15a64d",
+      "754ee6124a68",
+      "1dffca554d8c",
+      "37d20e2ab24f"
+    ]
+  },
+  "laughing-kookaburra": {
+    "artist": "Photo by: Paulweberphoto - paulweberphoto.com",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laughing_Kookaburra_1.jpg",
+    "allowed": true,
+    "files": [
+      "9f3af5e64a83",
+      "038cee846726",
+      "c639f8c28508",
+      "242079f95879",
+      "56dbe0f257a9",
+      "5579169a36b0"
+    ]
+  },
+  "thorny-devil": {
+    "artist": "Bäras (talk · contribs)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thornydevil.jpg",
+    "allowed": true,
+    "files": [
+      "27f23b6ba7a8",
+      "60429db3d0c0",
+      "48b124ab63f4",
+      "258e58efeab4",
+      "2a50dcf7b133",
+      "d66e43e6b9d1"
+    ]
+  },
+  "sugar-glider": {
+    "artist": "Inconnu(e)",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petaurus_breviceps_(sugar_glider).jpg",
+    "allowed": true,
+    "files": [
+      "9e22f686d764",
+      "4c84a3a16b30",
+      "9ad9bd83973b",
+      "01f38b97721e",
+      "5864eea79767",
+      "f891c12cdbbd"
+    ]
+  },
+  "numbat": {
+    "artist": "JJ Harrison",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Numbat,_Dryandra_Woodland,_Western_Australia.jpg",
+    "allowed": true,
+    "files": [
+      "e16d8d723bbc",
+      "e4d6d740cca8",
+      "5059e779937e",
+      "82ac37e688bc",
+      "411d2a9799e1",
+      "31d483add601"
+    ]
+  },
+  "superb-lyrebird": {
+    "artist": "John Manger, CSIRO",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_10356_Superb_Lyrebird.jpg",
+    "allowed": true,
+    "files": [
+      "4ec7ea5e953c",
+      "74d91cef12ef",
+      "02a6681bab05",
+      "6cdc6984d604",
+      "d3c5f77c36bf",
+      "d459c813e55f"
+    ]
+  },
+  "kea": {
+    "artist": "Mark Whatmough",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nestor_notabilis_-Fiordland,_New_Zealand-8b.jpg",
+    "allowed": true,
+    "files": [
+      "043193e438d9",
+      "d3e1ca5f1e12",
+      "4ec77ed271b9",
+      "dbfda5dba3bb",
+      "7c860a1da256",
+      "17926b214785"
+    ]
+  },
+  "blue-whale": {
+    "artist": "NOAA Photo Library",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anim1754_-_Flickr_-_NOAA_Photo_Library.jpg",
+    "allowed": true,
+    "files": [
+      "8073dd9d415c",
+      "ca555d1de108",
+      "26fc09ed4565",
+      "6c4d611bc656",
+      "5d2933ee276c",
+      "fc3af30e93cc"
+    ]
+  },
+  "orca": {
+    "artist": "Robert Pittman",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Killerwhales_jumping.jpg",
+    "allowed": true,
+    "files": [
+      "b3e04c3e2de8",
+      "2a8e7874a842",
+      "ab9cc2d36946",
+      "ba6375ad24b3",
+      "7f4f2ba94081",
+      "106771bc8a91"
+    ]
+  },
+  "sea-otter": {
+    "artist": "Marshal Hedin from San Diego",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sea_Otter_(Enhydra_lutris)_(25169790524)_crop.jpg",
+    "allowed": true,
+    "files": [
+      "f5a937420def",
+      "f7afdd1b2e87",
+      "954f582965c5",
+      "1737acf10b6a",
+      "f9f87cd7afa5",
+      "6325ef9bd1bd"
+    ]
+  },
+  "polar-bear": {
+    "artist": "Alan Wilson",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polar_Bear_-_Alaska_(cropped).jpg",
+    "allowed": true,
+    "files": [
+      "b5834c41ce5b",
+      "df2f2e789117",
+      "2fd4edc8135b",
+      "763794dad8b0",
+      "5a31831c8684",
+      "ca2b9d6527a0"
+    ]
+  },
+  "emperor-penguin": {
+    "artist": "Ian Duffy from UK",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aptenodytes_forsteri_-Snow_Hill_Island,_Antarctica_-adults_and_juvenile-8.jpg",
+    "allowed": true,
+    "files": [
+      "9617747b21e1",
+      "c4e2450a0ba3",
+      "895dcac040cd",
+      "d22894918af2",
+      "10cd6982f895",
+      "cefed495c186"
+    ]
+  },
+  "walrus": {
+    "artist": "Nixette",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Walrus_in_the_Russian_Arctic_National_Park,_Novaya_Zemlya_2015-2.jpg",
+    "allowed": true,
+    "files": [
+      "f2d3231e8042",
+      "370151eba2d0",
+      "5ae55317a571",
+      "cf5dc8334efd",
+      "ab6fb0466846",
+      "5101e071d58a"
+    ]
+  },
+  "leatherback-sea-turtle": {
+    "artist": "U.S. Fish and Wildlife Service Southeast Region",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leatherback_sea_turtle_Tinglar,_USVI_(5839996547).jpg",
+    "allowed": true,
+    "files": [
+      "59481d68d91b",
+      "9b97aa5538e8",
+      "83c5bb8d1042",
+      "b6e5531cf083",
+      "95efdc26d365",
+      "43572f7df2db"
+    ]
+  },
+  "whale-shark": {
+    "artist": "Derek Keats from Johannesburg, South Africa",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whale_shark,_Rhincodon_typus,_at_Daedalus_in_the_Egyptian_Red_Sea._(35827412321).jpg",
+    "allowed": true,
+    "files": [
+      "4106049090d9",
+      "f530ca2ec3be",
+      "e75c50726cb1",
+      "02e663c9adb7",
+      "9c854fb3d532",
+      "86e509e5f7e8"
+    ]
+  },
+  "great-white-shark": {
+    "artist": "Pterantula (Terry Goss) at en.wikipedia",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:White_shark.jpg",
+    "allowed": true,
+    "files": [
+      "b88388f2fcb7",
+      "fd3086e09fcb",
+      "f71ae9d5a972",
+      "a01ba6b136de",
+      "5e3856fcaac7",
+      "311da1e4d50e"
+    ]
+  },
+  "giant-oceanic-manta-ray": {
+    "artist": "jon hanson from london, UK",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manta_birostris-Thailand4.jpg",
+    "allowed": true,
+    "files": [
+      "b2a7c2da3435",
+      "0b487e7b6a45",
+      "e6adaccf399d",
+      "925542dd9cb9",
+      "fe3d92995ed2",
+      "91159ce64afb"
+    ]
+  },
+  "beluga-whale": {
+    "artist": "Premier.gov.ru",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beluga_premier.gov.ru-1.jpeg",
+    "allowed": true,
+    "files": [
+      "e32251aec268",
+      "ed9cc6308217",
+      "a66caa17f181",
+      "785547f5db5b",
+      "54a1d1e072ab",
+      "e9f332085a9d"
+    ]
+  },
+  "hawaiian-monk-seal": {
+    "artist": "N3kt0n",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monachus_schauinslandi.jpg",
+    "allowed": true,
+    "files": [
+      "c8cbd83de74d",
+      "c742c453965a",
+      "f094f2d21d99",
+      "664a69cc8372",
+      "4f5f80605f52",
+      "75f20c823144"
+    ]
+  },
+  "wandering-albatross": {
+    "artist": "JJ Harrison (https://www.jjharrison.com.au/)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diomedea_exulans_-_SE_Tasmania.jpg",
+    "allowed": true,
+    "files": [
+      "15799ef302c4",
+      "7f905d519e6b",
+      "07686956290b",
+      "eff04398a0e9",
+      "683aa603aa10",
+      "397b256d0fbd"
+    ]
+  },
+  "giant-pacific-octopus": {
+    "artist": "NOAA/R. N. Lea [1]",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Enteroctopus_dolfeini.jpg",
+    "allowed": true,
+    "files": [
+      "2963e81181c2",
+      "0dfc8190ede4",
+      "9571d03de058",
+      "6bcdf30cc641",
+      "e42e87a96325",
+      "2564d5605da2"
+    ]
+  },
+  "west-indian-manatee": {
+    "artist": "Galen Rathbun",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manatee_with_calf.PD_-_colour_corrected.jpg",
+    "allowed": true,
+    "files": [
+      "9cb90e72af86",
+      "5e267807db07",
+      "f5beac1b566c",
+      "d5cc4db896c7",
+      "fb8e3b1bbff5",
+      "c6db644d44d2"
+    ]
+  },
+  "leafy-seadragon": {
+    "artist": "James Rosindell",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leafy_Seadragon_on_Kangaroo_Island.jpg",
+    "allowed": true,
+    "files": [
+      "0df0213e000a",
+      "1f05690d419a",
+      "fc6ee6655ff6",
+      "1af001be4365",
+      "d09f6a3dc81c",
+      "b4c4deb058e5"
+    ]
+  }
+}

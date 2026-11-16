@@ -1,0 +1,865 @@
+{
+ "snow-leopard": {
+  "focus": [
+   0.55,
+   0.35
+  ]
+ },
+ "axolotl": {
+  "focus": [
+   0.62,
+   0.38
+  ]
+ },
+ "komodo-dragon": {
+  "focus": [
+   0.38,
+   0.5
+  ]
+ },
+ "okapi": {
+  "focus": [
+   0.7,
+   0.55
+  ]
+ },
+ "red-panda": {
+  "focus": [
+   0.2,
+   0.75
+  ]
+ },
+ "kakapo": {
+  "focus": [
+   0.62,
+   0.5
+  ]
+ },
+ "saiga-antelope": {
+  "focus": [
+   0.5,
+   0.45
+  ]
+ },
+ "shoebill": {
+  "focus": [
+   0.4,
+   0.6
+  ],
+  "frame": [
+   0.5,
+   0.12
+  ]
+ },
+ "narwhal": {
+  "focus": [
+   0.45,
+   0.42
+  ]
+ },
+ "fossa": {
+  "focus": [
+   0.45,
+   0.45
+  ]
+ },
+ "maned-wolf": {
+  "focus": [
+   0.4,
+   0.75
+  ]
+ },
+ "quokka": {
+  "focus": [
+   0.55,
+   0.25
+  ],
+  "frame": [
+   0.5,
+   0.62
+  ]
+ },
+ "aye-aye": {
+  "focus": [
+   0.35,
+   0.8
+  ]
+ },
+ "vaquita": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "platypus": {
+  "focus": [
+   0.65,
+   0.45
+  ]
+ },
+ "galapagos-marine-iguana": {
+  "focus": [
+   0.55,
+   0.45
+  ]
+ },
+ "pangolin": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "capybara": {
+  "focus": [
+   0.65,
+   0.6
+  ]
+ },
+ "iberian-lynx": {
+  "focus": [
+   0.3,
+   0.6
+  ],
+  "frame": [
+   0.5,
+   0.25
+  ]
+ },
+ "harpy-eagle": {
+  "focus": [
+   0.4,
+   0.45
+  ],
+  "frame": [
+   0.5,
+   0.3
+  ]
+ },
+ "tasmanian-devil": {
+  "focus": [
+   0.6,
+   0.6
+  ]
+ },
+ "secretarybird": {
+  "focus": [
+   0.5,
+   0.65
+  ]
+ },
+ "dugong": {
+  "focus": [
+   0.72,
+   0.8
+  ]
+ },
+ "gharial": {
+  "focus": [
+   0.35,
+   0.55
+  ]
+ },
+ "african-penguin": {
+  "focus": [
+   0.5,
+   0.75
+  ],
+  "frame": [
+   0.5,
+   0
+  ]
+ },
+ "bornean-orangutan": {
+  "focus": [
+   0.62,
+   0.72
+  ],
+  "frame": [
+   0.5,
+   0.4
+  ]
+ },
+ "indian-peafowl": {
+  "focus": [
+   0.55,
+   0.68
+  ],
+  "frame": [
+   0.5,
+   0
+  ]
+ },
+ "north-american-beaver": {
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "frame": [
+   0.5,
+   0
+  ],
+  "file": "File:North American beaver (Castor canadensis) (46677957975).jpg"
+ },
+ "whooping-crane": {
+  "focus": [
+   0.6,
+   0.72
+  ],
+  "frame": [
+   0.5,
+   0
+  ]
+ },
+ "resplendent-quetzal": {
+  "focus": [
+   0.66,
+   0.4
+  ],
+  "frame": [
+   0.5,
+   0
+  ]
+ },
+ "andean-condor": {
+  "focus": [
+   0.22,
+   0.55
+  ],
+  "frame": [
+   0.5,
+   0
+  ],
+  "file": "File:Andean condor (Vultur gryphus) male Farellones.jpg"
+ },
+ "golden-lion-tamarin": {
+  "focus": [
+   0.6,
+   0.62
+  ],
+  "frame": [
+   0.5,
+   0.2
+  ],
+  "file": "File:Leontopithecus rosalia 467256293.jpg"
+ },
+ "hoatzin": {
+  "focus": [
+   0.5,
+   0.8
+  ],
+  "frame": [
+   0.5,
+   0.25
+  ]
+ },
+ "emperor-penguin": {
+  "focus": [
+   0.78,
+   0.8
+  ],
+  "frame": [
+   0.5,
+   0
+  ]
+ },
+ "koala": {
+  "focus": [
+   0.7,
+   0.48
+  ],
+  "frame": [
+   0.5,
+   0
+  ]
+ },
+ "american-alligator": {
+  "focus": [
+   0.62,
+   0.12
+  ],
+  "frame": [
+   0.5,
+   1
+  ]
+ },
+ "african-bush-elephant": {
+  "focus": [
+   0.4,
+   0.42
+  ]
+ },
+ "mountain-gorilla": {
+  "focus": [
+   0.48,
+   0.48
+  ]
+ },
+ "bonobo": {
+  "focus": [
+   0.5,
+   0.57
+  ]
+ },
+ "cheetah": {
+  "focus": [
+   0.45,
+   0.5
+  ]
+ },
+ "african-wild-dog": {
+  "focus": [
+   0.38,
+   0.42
+  ]
+ },
+ "black-rhinoceros": {
+  "focus": [
+   0.5,
+   0.46
+  ]
+ },
+ "hippopotamus": {
+  "focus": [
+   0.35,
+   0.5
+  ]
+ },
+ "aardvark": {
+  "focus": [
+   0.62,
+   0.42
+  ]
+ },
+ "mandrill": {
+  "focus": [
+   0.5,
+   0.72
+  ]
+ },
+ "ring-tailed-lemur": {
+  "focus": [
+   0.55,
+   0.42
+  ],
+  "frame": [
+   0.5,
+   1
+  ]
+ },
+ "ethiopian-wolf": {
+  "focus": [
+   0.45,
+   0.5
+  ]
+ },
+ "grevys-zebra": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "meerkat": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "grey-crowned-crane": {
+  "focus": [
+   0.42,
+   0.5
+  ]
+ },
+ "nile-crocodile": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "giant-panda": {
+  "focus": [
+   0.27,
+   0.5
+  ]
+ },
+ "tiger": {
+  "focus": [
+   0.5,
+   0.55
+  ]
+ },
+ "asian-elephant": {
+  "focus": [
+   0.56,
+   0.76
+  ]
+ },
+ "malayan-tapir": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "proboscis-monkey": {
+  "focus": [
+   0.3,
+   0.6
+  ]
+ },
+ "sun-bear": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "indian-rhinoceros": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "przewalskis-horse": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "wild-bactrian-camel": {
+  "focus": [
+   0.42,
+   0.5
+  ],
+  "file": "File:Camelus Ferus F. Bactriana 9380.jpg"
+ },
+ "japanese-macaque": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "binturong": {
+  "focus": [
+   0.4,
+   0.45
+  ]
+ },
+ "king-cobra": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "red-crowned-crane": {
+  "focus": [
+   0.28,
+   0.4
+  ]
+ },
+ "chinese-giant-salamander": {
+  "focus": [
+   0.5,
+   0.4
+  ]
+ },
+ "european-bison": {
+  "focus": [
+   0.45,
+   0.5
+  ]
+ },
+ "atlantic-puffin": {
+  "focus": [
+   0.4,
+   0.62
+  ]
+ },
+ "alpine-ibex": {
+  "focus": [
+   0.45,
+   0.82
+  ],
+  "frame": [
+   0.5,
+   0.3
+  ]
+ },
+ "european-hedgehog": {
+  "focus": [
+   0.62,
+   0.38
+  ]
+ },
+ "olm": {
+  "focus": [
+   0.62,
+   0.27
+  ]
+ },
+ "western-capercaillie": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "fire-salamander": {
+  "focus": [
+   0.45,
+   0.4
+  ],
+  "file": "File:Feuersalamander-salamandra-salamandra.jpg"
+ },
+ "eurasian-red-squirrel": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "chamois": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "european-badger": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "white-stork": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "european-pine-marten": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "american-bison": {
+  "focus": [
+   0.55,
+   0.4
+  ]
+ },
+ "bald-eagle": {
+  "focus": [
+   0.68,
+   0.45
+  ]
+ },
+ "pronghorn": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "california-condor": {
+  "focus": [
+   0.4,
+   0.8
+  ]
+ },
+ "black-footed-ferret": {
+  "focus": [
+   0.4,
+   0.62
+  ]
+ },
+ "gila-monster": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "monarch-butterfly": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "muskox": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "mountain-goat": {
+  "focus": [
+   0.68,
+   0.82
+  ]
+ },
+ "greater-roadrunner": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "bairds-tapir": {
+  "focus": [
+   0.22,
+   0.5
+  ]
+ },
+ "star-nosed-mole": {
+  "focus": [
+   0.88,
+   0.6
+  ]
+ },
+ "red-kangaroo": {
+  "focus": [
+   0.33,
+   0.62
+  ]
+ },
+ "common-wombat": {
+  "focus": [
+   0.62,
+   0.7
+  ]
+ },
+ "southern-cassowary": {
+  "focus": [
+   0.6,
+   0.42
+  ]
+ },
+ "north-island-brown-kiwi": {
+  "focus": [
+   0.45,
+   0.88
+  ]
+ },
+ "tuatara": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "emu": {
+  "focus": [
+   0.4,
+   0.5
+  ]
+ },
+ "short-beaked-echidna": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "laughing-kookaburra": {
+  "focus": [
+   0.5,
+   0.55
+  ]
+ },
+ "thorny-devil": {
+  "focus": [
+   0.5,
+   0.72
+  ]
+ },
+ "sugar-glider": {
+  "focus": [
+   0.66,
+   0.3
+  ]
+ },
+ "numbat": {
+  "focus": [
+   0.35,
+   0.58
+  ]
+ },
+ "superb-lyrebird": {
+  "focus": [
+   0.8,
+   0.58
+  ],
+  "file": "File:CSIRO ScienceImage 10356 Superb Lyrebird.jpg"
+ },
+ "kea": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "blue-whale": {
+  "focus": [
+   0.45,
+   0.47
+  ]
+ },
+ "orca": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "sea-otter": {
+  "focus": [
+   0.3,
+   0.62
+  ]
+ },
+ "polar-bear": {
+  "focus": [
+   0.5,
+   0.55
+  ]
+ },
+ "walrus": {
+  "focus": [
+   0.65,
+   0.62
+  ]
+ },
+ "leatherback-sea-turtle": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "whale-shark": {
+  "focus": [
+   0.4,
+   0.36
+  ],
+  "file": "File:Whale shark, Rhincodon typus, at Daedalus in the Egyptian Red Sea. (35827412321).jpg"
+ },
+ "great-white-shark": {
+  "focus": [
+   0.52,
+   0.45
+  ]
+ },
+ "giant-oceanic-manta-ray": {
+  "focus": [
+   0.42,
+   0.6
+  ]
+ },
+ "beluga-whale": {
+  "focus": [
+   0.45,
+   0.25
+  ],
+  "file": "File:Beluga premier.gov.ru-1.jpeg"
+ },
+ "hawaiian-monk-seal": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "wandering-albatross": {
+  "focus": [
+   0.38,
+   0.68
+  ]
+ },
+ "giant-pacific-octopus": {
+  "focus": [
+   0.5,
+   0.45
+  ]
+ },
+ "west-indian-manatee": {
+  "focus": [
+   0.55,
+   0.4
+  ]
+ },
+ "leafy-seadragon": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "jaguar": {
+  "focus": [
+   0.45,
+   0.38
+  ]
+ },
+ "giant-anteater": {
+  "focus": [
+   0.36,
+   0.46
+  ],
+  "file": "File:037 Giant anteater in Encontro das Águas State Park Photo by Giles Laurent.jpg"
+ },
+ "giant-otter": {
+  "focus": [
+   0.3,
+   0.55
+  ]
+ },
+ "spectacled-bear": {
+  "focus": [
+   0.45,
+   0.58
+  ]
+ },
+ "vicuna": {
+  "focus": [
+   0.4,
+   0.42
+  ],
+  "file": "File:Vicuña in Chimborazo Wildlife Reserve.jpg"
+ },
+ "green-anaconda": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "amazon-river-dolphin": {
+  "focus": [
+   0.6,
+   0.5
+  ],
+  "file": "File:Inia geoffrensis geoffrensis 62673186.jpg"
+ },
+ "hyacinth-macaw": {
+  "focus": [
+   0.2,
+   0.7
+  ]
+ },
+ "brown-throated-sloth": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "giant-armadillo": {
+  "focus": [
+   0.65,
+   0.25
+  ]
+ },
+ "galapagos-tortoise": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "andean-cock-of-the-rock": {
+  "focus": [
+   0.6,
+   0.55
+  ]
+ },
+ "toco-toucan": {
+  "focus": [
+   0.3,
+   0.6
+  ]
+ }
+}
