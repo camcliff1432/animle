@@ -109,6 +109,28 @@ input[type="range"].is-unset::-moz-range-thumb {
 }
 .link-btn:hover { color: #1d4734; }
 
+/* Marks a feature that is shown but not built yet. */
+.soon-pill {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #f0c97a;
+  background: #fff6e0;
+  color: #7a4b00;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.lb-tab {
+  min-height: 40px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a4234;
+}
+.lb-tab[aria-pressed="true"] { background: #fff; color: #153124; box-shadow: 0 1px 2px rgb(0 0 0 / 0.12); }
+
 /* Zoo badges: a medal whose colour is the tier. */
 .zoo-badge {
   width: 1.75rem;

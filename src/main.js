@@ -7,7 +7,7 @@ import { scaleBand, scaleLinear } from "d3-scale";
 import {
   createIcons, Compass, Flame, Shuffle, Calendar, CalendarDays, Award, ZoomIn, FileText, Search, ArrowRight,
   CircleCheck, Map as MapIcon, Hand, Paintbrush, Eraser, Undo2, Trash2, Info, Globe, Share2, X,
-  CirclePlay, Lock, CircleHelp, RefreshCw, Timer, Menu, PawPrint, Copy
+  CirclePlay, Lock, CircleHelp, RefreshCw, Timer, Menu, PawPrint, Copy, Trophy, Users, CircleUserRound
 } from "lucide";
 
 import { WILDLIFE_DB, speciesById, ZOO_REGIONS } from "./data/species.js";
@@ -33,7 +33,7 @@ import { createHabitatMap } from "./map.js";
 const ICONS = {
   Compass, Flame, Shuffle, Calendar, CalendarDays, Award, ZoomIn, FileText, Search, ArrowRight, CircleCheck,
   Map: MapIcon, Hand, Paintbrush, Eraser, Undo2, Trash2, Info, Globe, Share2, X, CirclePlay, Lock,
-  CircleHelp, RefreshCw, Timer, Menu, PawPrint, Copy
+  CircleHelp, RefreshCw, Timer, Menu, PawPrint, Copy, Trophy, Users, CircleUserRound
 };
 const refreshIcons = () => createIcons({ icons: ICONS });
 
@@ -880,7 +880,8 @@ function renderSummary() {
   const entry = data.zoo[a.id];
   const met = WILDLIFE_DB.filter(s => data.zoo[s.id]).length;
   const need = zooBar(data, a.id, appState.mode).toLocaleString();
-  $("summary-badge").classList.toggle("hidden", !entry);
+  // The badge's own display rule beats the "hidden" class, so set it directly.
+  $("summary-badge").style.display = entry ? "" : "none";
   if (entry) {
     const badge = badgeFor(entry.best);
     $("summary-badge").dataset.badge = badge;
@@ -1207,6 +1208,58 @@ async function copyBackupCode() {
   if (!ok) { out.focus(); out.select(); }
 }
 
+// ---------------------------------------------------------------------------
+// Leaderboard and sign-in: shown as "coming soon" so players can see where they
+// will live. Nothing here talks to a server. The only real numbers shown are the
+// player's own, from this device.
+// ---------------------------------------------------------------------------
+const LB_TEXT = {
+  daily: { unit: "points", explain: "Everyone who finishes today's puzzle, ranked by score out of 3,000. Ties go to whoever used fewer guesses in round 1." },
+  streak: { unit: "days", explain: "The longest runs of consecutive daily puzzles." },
+  zoo: { unit: "animals", explain: "Who has collected the most animals, with gold badges breaking ties." }
+};
+const lbState = { scope: "everyone", board: "daily" };
+
+function renderLeaderboard() {
+  const data = loadData();
+  const today = dateString();
+  const mine = {
+    daily: data.dailyProgress[today]?.stage === 4 ? dailyHistory(data).find(g => g.date === today)?.total ?? null : null,
+    streak: activeStreak(data, today),
+    zoo: WILDLIFE_DB.filter(a => data.zoo[a.id]).length
+  }[lbState.board];
+  for (const btn of document.querySelectorAll("[data-action=lb-scope]")) btn.setAttribute("aria-pressed", String(btn.dataset.scope === lbState.scope));
+  for (const btn of document.querySelectorAll("[data-action=lb-board]")) btn.setAttribute("aria-pressed", String(btn.dataset.board === lbState.board));
+  const { unit, explain } = LB_TEXT[lbState.board];
+  $("lb-explain").textContent = (lbState.scope === "friends" ? "Only people you follow. " : "") + explain;
+  const line = (rank, name, value, own) => {
+    const li = document.createElement("li");
+    li.className = "flex items-center gap-3 px-3 py-2 rounded-lg border " + (own ? "bg-forest-50 border-forest-200" : "bg-white border-dashed border-parchment-300");
+    const r = document.createElement("span");
+    r.className = "w-6 text-center text-xs font-bold text-parchment-800";
+    r.textContent = rank;
+    const n = document.createElement("span");
+    n.className = "grow text-sm " + (own ? "font-bold text-parchment-900" : "text-parchment-800");
+    n.textContent = name;
+    const v = document.createElement("span");
+    v.className = "text-sm font-bold " + (own ? "text-forest-800" : "text-parchment-300");
+    v.textContent = value;
+    li.append(r, n, v);
+    return li;
+  };
+  // Empty slots, not invented players: the list fills in when leaderboards open.
+  $("lb-rows").replaceChildren(
+    ...[1, 2, 3].map(rank => line(String(rank), "Open place", "—", false)),
+    line("—", "You (this device)", mine === null ? "Finish today's puzzle" : `${mine.toLocaleString()} ${mine === 1 ? unit.replace(/s$/, "") : unit}`, true)
+  );
+}
+
+function openLeaderboard(el) {
+  if (el?.dataset.scope) lbState.scope = el.dataset.scope;
+  renderLeaderboard();
+  openModal("leaderboard-modal");
+}
+
 let pendingRestore = null;
 function askRestore() {
   pendingRestore = importCode($("restore-input").value);
@@ -1263,6 +1316,10 @@ const actions = {
   "open-menu": () => openModal("menu-modal"),
   "open-archive": openArchive,
   "open-zoo": openZoo,
+  "open-leaderboard": openLeaderboard,
+  "open-account": () => openModal("account-modal"),
+  "lb-scope": (el) => { lbState.scope = el.dataset.scope; renderLeaderboard(); },
+  "lb-board": (el) => { lbState.board = el.dataset.board; renderLeaderboard(); },
   "open-howto": () => openModal("howto-modal"),
   "open-credits": openCredits,
   "open-privacy": () => openModal("privacy-modal"),

@@ -235,6 +235,7 @@ test("a low-scoring daily does not earn the animal, and retakes stay locked belo
 
   await expect(page.locator("#summary-zoo-title")).toContainText(`${animal.name} got away`);
   await expect(page.locator("#summary-zoo-sub")).toContainText("Reach a 3-day streak");
+  await expect(page.locator("#summary-badge")).toBeHidden(); // no badge for an animal that got away
   await expect(page.locator("#zoo-pill-count")).toHaveText("0");
   await expect(page.locator("#streak-count")).toHaveText("1"); // the streak still counts
 
@@ -393,4 +394,35 @@ test("the game still works when the browser blocks storage", async ({ page }) =>
   await page.keyboard.press("Escape");
   await guess(page, WRONG);
   await expect(page.locator("#attempts-dots")).toHaveAttribute("aria-label", "4 attempts left");
+});
+
+test("the leaderboard, friends and sign-in screens are marked as coming soon", async ({ page }) => {
+  await page.goto("/");
+  await page.keyboard.press("Escape");
+
+  await openMenuItem(page, /Leaderboard/);
+  const board = page.getByRole("dialog", { name: "Leaderboard" });
+  await expect(board.getByText("Coming soon")).toBeVisible();
+  await expect(board.getByText("You (this device)")).toBeVisible();
+  await expect(board.getByText("Finish today's puzzle")).toBeVisible();
+  // The tabs switch what would be ranked, and show the player's own number.
+  await board.getByRole("button", { name: "Streaks" }).click();
+  await expect(board.getByText("0 days")).toBeVisible();
+  await board.getByRole("button", { name: "Zoos" }).click();
+  await expect(board.getByText("0 animals")).toBeVisible();
+  await board.getByRole("button", { name: "Friends" }).click();
+  await expect(board.locator("#lb-explain")).toContainText("Only people you follow");
+  await noSidewaysScroll(page);
+  await page.keyboard.press("Escape");
+
+  await openMenuItem(page, /Friends/);
+  await expect(board.getByRole("button", { name: "Friends" })).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("Escape");
+
+  await openMenuItem(page, /Sign in/);
+  const account = page.getByRole("dialog", { name: "Sign in" });
+  await expect(account.getByText("Coming soon")).toBeVisible();
+  await noSidewaysScroll(page);
+  await account.getByRole("button", { name: "Get a backup code" }).click();
+  await expect(page.getByRole("dialog", { name: "My zoo" })).toBeVisible();
 });

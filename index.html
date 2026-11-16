@@ -439,6 +439,19 @@
             </div>
           </div>
 
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button data-action="open-leaderboard" class="text-left bg-white hover:bg-forest-50 rounded-xl p-3 border border-dashed border-parchment-300 flex items-center gap-3 transition">
+              <span class="w-9 h-9 shrink-0 rounded-lg bg-parchment-200 text-parchment-800 flex items-center justify-center"><i data-lucide="trophy" class="w-4 h-4" aria-hidden="true"></i></span>
+              <span class="min-w-0 grow"><span class="block text-sm font-bold text-parchment-900">Today's rank</span><span class="block text-xs text-parchment-800">See where this score places</span></span>
+              <span class="soon-pill">Coming soon</span>
+            </button>
+            <button data-action="open-leaderboard" data-scope="friends" class="text-left bg-white hover:bg-forest-50 rounded-xl p-3 border border-dashed border-parchment-300 flex items-center gap-3 transition">
+              <span class="w-9 h-9 shrink-0 rounded-lg bg-parchment-200 text-parchment-800 flex items-center justify-center"><i data-lucide="users" class="w-4 h-4" aria-hidden="true"></i></span>
+              <span class="min-w-0 grow"><span class="block text-sm font-bold text-parchment-900">Challenge a friend</span><span class="block text-xs text-parchment-800">Send today's puzzle and compare</span></span>
+              <span class="soon-pill">Coming soon</span>
+            </button>
+          </div>
+
           <div class="flex flex-col sm:flex-row gap-3">
             <button data-action="share" class="flex-1 py-3.5 px-5 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold shadow-md transition flex items-center justify-center gap-2">
               <i data-lucide="share-2" class="w-4 h-4" aria-hidden="true"></i>
@@ -571,10 +584,78 @@
           <span class="w-10 h-10 shrink-0 rounded-lg bg-forest-800 text-amber-300 flex items-center justify-center"><i data-lucide="paw-print" class="w-5 h-5" aria-hidden="true"></i></span>
           <span class="min-w-0"><span class="block font-bold text-sm text-parchment-900">My zoo</span><span class="block text-xs text-parchment-800">Every animal you have met, with your badges</span></span>
         </button>
+        <button data-action="open-leaderboard" class="w-full flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-forest-50 border border-parchment-200 text-left transition">
+          <span class="w-10 h-10 shrink-0 rounded-lg bg-parchment-200 text-parchment-800 flex items-center justify-center"><i data-lucide="trophy" class="w-5 h-5" aria-hidden="true"></i></span>
+          <span class="min-w-0 grow"><span class="block font-bold text-sm text-parchment-900">Leaderboard</span><span class="block text-xs text-parchment-800">Daily scores, streaks and zoos, ranked</span></span>
+          <span class="soon-pill">Coming soon</span>
+        </button>
+        <button data-action="open-leaderboard" data-scope="friends" class="w-full flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-forest-50 border border-parchment-200 text-left transition">
+          <span class="w-10 h-10 shrink-0 rounded-lg bg-parchment-200 text-parchment-800 flex items-center justify-center"><i data-lucide="users" class="w-5 h-5" aria-hidden="true"></i></span>
+          <span class="min-w-0 grow"><span class="block font-bold text-sm text-parchment-900">Friends</span><span class="block text-xs text-parchment-800">Follow friends and compare today's result</span></span>
+          <span class="soon-pill">Coming soon</span>
+        </button>
+        <button data-action="open-account" class="w-full flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-forest-50 border border-parchment-200 text-left transition">
+          <span class="w-10 h-10 shrink-0 rounded-lg bg-parchment-200 text-parchment-800 flex items-center justify-center"><i data-lucide="circle-user-round" class="w-5 h-5" aria-hidden="true"></i></span>
+          <span class="min-w-0 grow"><span class="block font-bold text-sm text-parchment-900">Sign in</span><span class="block text-xs text-parchment-800">Keep your progress on every device</span></span>
+          <span class="soon-pill">Coming soon</span>
+        </button>
         <button data-action="open-howto" class="w-full flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-forest-50 border border-parchment-200 text-left transition">
           <span class="w-10 h-10 shrink-0 rounded-lg bg-forest-800 text-amber-300 flex items-center justify-center"><i data-lucide="circle-help" class="w-5 h-5" aria-hidden="true"></i></span>
           <span class="min-w-0"><span class="block font-bold text-sm text-parchment-900">How to play</span><span class="block text-xs text-parchment-800">The three rounds and how scoring works</span></span>
         </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="leaderboard-modal" class="hidden fixed inset-0 z-50 bg-forest-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" data-modal>
+    <div role="dialog" aria-modal="true" aria-labelledby="leaderboard-title" tabindex="-1" class="bg-parchment-50 rounded-2xl max-w-md w-full max-h-[88vh] flex flex-col border border-parchment-300 shadow-2xl overflow-hidden">
+      <div class="px-5 py-3 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2 flex-wrap">
+          <h3 id="leaderboard-title" class="font-display text-xl font-bold text-parchment-900">Leaderboard</h3>
+          <span class="soon-pill">Coming soon</span>
+        </div>
+        <button data-action="close-modal" class="btn-compact rounded-lg hover:bg-parchment-200 text-parchment-900 flex items-center justify-center" aria-label="Close">
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="p-4 overflow-y-auto space-y-4">
+        <p class="text-sm text-parchment-900">Leaderboards are not open yet. This is where they will live, and what they will rank.</p>
+        <div role="group" aria-label="Whose scores" class="grid grid-cols-2 gap-1 p-1 rounded-xl bg-parchment-200">
+          <button data-action="lb-scope" data-scope="everyone" aria-pressed="true" class="lb-tab">Everyone</button>
+          <button data-action="lb-scope" data-scope="friends" aria-pressed="false" class="lb-tab">Friends</button>
+        </div>
+        <div role="group" aria-label="What is ranked" class="grid grid-cols-3 gap-1 p-1 rounded-xl bg-parchment-200">
+          <button data-action="lb-board" data-board="daily" aria-pressed="true" class="lb-tab">Today</button>
+          <button data-action="lb-board" data-board="streak" aria-pressed="false" class="lb-tab">Streaks</button>
+          <button data-action="lb-board" data-board="zoo" aria-pressed="false" class="lb-tab">Zoos</button>
+        </div>
+        <p id="lb-explain" class="text-xs text-parchment-800"></p>
+        <ol id="lb-rows" class="space-y-1.5" aria-label="Preview of the leaderboard layout"></ol>
+        <p class="text-xs text-parchment-800">Rankings need accounts and scores checked on a server, so nobody can post a score they did not earn. Until then, the Share button on your result is the way to compare.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="account-modal" class="hidden fixed inset-0 z-50 bg-forest-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" data-modal>
+    <div role="dialog" aria-modal="true" aria-labelledby="account-title" tabindex="-1" class="bg-parchment-50 rounded-2xl max-w-md w-full max-h-[88vh] flex flex-col border border-parchment-300 shadow-2xl overflow-hidden">
+      <div class="px-5 py-3 bg-parchment-100 border-b border-parchment-200 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2 flex-wrap">
+          <h3 id="account-title" class="font-display text-xl font-bold text-parchment-900">Sign in</h3>
+          <span class="soon-pill">Coming soon</span>
+        </div>
+        <button data-action="close-modal" class="btn-compact rounded-lg hover:bg-parchment-200 text-parchment-900 flex items-center justify-center" aria-label="Close">
+          <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="p-4 overflow-y-auto space-y-3 text-sm text-parchment-900">
+        <p>Accounts are not open yet. When they are, signing in will:</p>
+        <ul class="space-y-2">
+          <li class="flex gap-2"><i data-lucide="refresh-cw" class="w-4 h-4 mt-0.5 shrink-0 text-forest-700" aria-hidden="true"></i><span>keep your streak, scores and zoo on every device</span></li>
+          <li class="flex gap-2"><i data-lucide="trophy" class="w-4 h-4 mt-0.5 shrink-0 text-forest-700" aria-hidden="true"></i><span>put you on the leaderboards</span></li>
+          <li class="flex gap-2"><i data-lucide="users" class="w-4 h-4 mt-0.5 shrink-0 text-forest-700" aria-hidden="true"></i><span>let you follow friends and compare results</span></li>
+        </ul>
+        <p class="text-xs text-parchment-800">Playing will never need an account. For now your progress is saved in this browser, and a backup code moves it to another device.</p>
+        <button data-action="open-zoo" class="w-full py-3 px-4 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold transition">Get a backup code</button>
       </div>
     </div>
   </div>
