@@ -1,7 +1,7 @@
 // Content validation: fails the test run if any species is incomplete or inconsistent.
 import { describe, it, expect } from "vitest";
 import { existsSync, readFileSync } from "node:fs";
-import { WILDLIFE_DB, ZOO_REGIONS } from "../src/data/species.js";
+import { ALL_SPECIES as WILDLIFE_DB, ZOO_REGIONS } from "../src/data/species.js";
 import { GUESSABLE } from "../src/data/taxonomy.js";
 import { normalizeName, answerKeys } from "../src/engine/matching.js";
 

@@ -1,7 +1,7 @@
 // Writes docs/SPECIES-REVIEW.md: one row per species with the facts a reviewer must check.
 // Run: node scripts/review-sheet.mjs
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
-import { WILDLIFE_DB, ZOO_REGIONS } from "../src/data/species.js";
+import { ALL_SPECIES as WILDLIFE_DB, ZOO_REGIONS } from "../src/data/species.js";
 
 const photos = JSON.parse(readFileSync("src/data/photos.json", "utf8"));
 const focus = JSON.parse(readFileSync("scripts/photo-focus.json", "utf8"));
@@ -22,7 +22,7 @@ for (const region of ZOO_REGIONS) {
   out += `\n## ${region} (${here.length})\n\n| Animal | Status | Population shown | Scores full marks | Year | Confidence | Source | Photo credit | Close-up |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n`;
   for (const a of here) {
     const p = a.population, ph = photos[a.id];
-    out += `| ${a.name} | ${a.status} | ${p.display} | ${n(p.low)} – ${n(p.high)} | ${p.year} | ${p.confidence} | [${p.source.label.replace(/\|/g, "/")}](${p.source.url}) | [${ph.artist.replace(/\|/g, "/").slice(0, 40)}](${ph.sourceUrl}), ${ph.license} | ${focus[a.id]?.focus ? "chosen" : "centre"} |\n`;
+    out += `| ${a.name}${a.practice ? " (practice only)" : ""} | ${a.status} | ${p.display} | ${n(p.low)} – ${n(p.high)} | ${p.year} | ${p.confidence} | [${p.source.label.replace(/\|/g, "/")}](${p.source.url}) | [${ph.artist.replace(/\|/g, "/").slice(0, 40)}](${ph.sourceUrl}), ${ph.license} | ${focus[a.id]?.focus ? "chosen" : "centre"} |\n`;
   }
 }
 mkdirSync("docs", { recursive: true });

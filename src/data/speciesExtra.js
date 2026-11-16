@@ -15,6 +15,13 @@ export const REGION_OF = {
   "tasmanian-devil": "Oceania", "secretarybird": "Africa", "dugong": "Oceans", "gharial": "Asia"
 };
 
+/**
+ * Practice animals: easy, familiar species used only for the Practice button.
+ * They are never a daily, never join the zoo, and stay out of the daily schedule.
+ * Do not add an animal here once it has had its day as a daily.
+ */
+export const PRACTICE_IDS = ["giant-panda", "koala", "polar-bear", "african-bush-elephant", "emperor-penguin"];
+
 export const EXTRA = {
   "snow-leopard": { taxon: ["Mammalia", "Carnivora", "Felidae", "Panthera"], size: "About 1 m long plus a 1 m tail; 25 – 55 kg", lastClue: "A big cat that cannot roar, hunting above the treeline in Central Asia.", band: [4000, 6500] },
   "axolotl": { taxon: ["Amphibia", "Urodela", "Ambystomatidae", "Ambystoma"], size: "15 – 30 cm long; about 100 – 200 g", lastClue: "A salamander that never grows up, native to a single lake system in Mexico.", band: [50, 1000] },

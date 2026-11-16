@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { normalizeName, judgeGuess, escapeHtml } from "../src/engine/matching.js";
-import { speciesById, WILDLIFE_DB } from "../src/data/species.js";
+import { speciesById, ALL_SPECIES as WILDLIFE_DB } from "../src/data/species.js";
 import { GUESSABLE } from "../src/data/taxonomy.js";
 
 const known = new Set([

@@ -2,7 +2,7 @@
 // Answers are added to the guess box from the species data, so listing them twice would
 // create duplicates. Run after adding species: node scripts/prune-guess-list.mjs
 import { readFileSync, writeFileSync } from "node:fs";
-import { WILDLIFE_DB } from "../src/data/species.js";
+import { ALL_SPECIES as WILDLIFE_DB } from "../src/data/species.js";
 import { normalizeName, answerKeys } from "../src/engine/matching.js";
 
 const answers = new Set(WILDLIFE_DB.flatMap(a => [...answerKeys(a)]));

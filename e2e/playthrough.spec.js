@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { WILDLIFE_DB } from "../src/data/species.js";
+import { WILDLIFE_DB, PRACTICE_DB } from "../src/data/species.js";
 import { dateString, scheduledId, previousDate, LAUNCH_DATE } from "../src/engine/daily.js";
 import { SCHEDULE } from "../src/data/schedule.js";
 import { relatedness } from "../src/engine/scoring.js";
@@ -173,7 +173,9 @@ test("a full daily game, then practice, keeps stats and progress straight", asyn
   await expect(page.locator("#summary-edition-tag")).toHaveText("Practice Field Report");
   await expect(page.locator("#stat-total-played")).toHaveText("1");
   await expect(page.locator("#stat-avg-score")).toHaveText(dailyAverage);
-  await expect(page.locator("#summary-zoo-title")).toContainText("Practice and past dailies do not add animals");
+  await expect(page.locator("#summary-zoo-title")).toContainText("is a practice animal, so it does not join your zoo");
+  // Practice only ever uses the five practice animals.
+  expect(PRACTICE_DB.map(a => a.name)).toContain(await page.locator("#summary-animal-title").textContent());
   await expect(page.locator("#zoo-pill-count")).toHaveText("1");
 
   // Back to the daily: still finished, same animal.

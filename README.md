@@ -28,7 +28,7 @@ A daily wildlife game in three rounds: name the animal, estimate its wild popula
 
 ## How the game works
 
-There are 130 species.
+There are 130 species: 125 take turns as the daily, and 5 easy ones (giant panda, koala, polar bear, African bush elephant, emperor penguin) are practice animals. Practice animals are listed in `PRACTICE_IDS` in `src/data/speciesExtra.js`; they are never a daily and never join the zoo.
 
 - **Round 1, five guesses.** Each miss zooms the photo out, unlocks a clue and says how closely the guess is related (same class, order, family or genus). Solving scores 1000, 850, 700, 550 or 400. Not solving still scores up to 350 for the closest relative guessed.
 - **Round 2.** Any guess inside the published population range scores 1000. Outside it the score falls with the order-of-magnitude distance.

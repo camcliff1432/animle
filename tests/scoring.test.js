@@ -6,7 +6,7 @@ import {
 import {
   cells, neighbours, cellAt, cellAtLatLng, cellsForPolygons, cellDistance, step, describePosition, MAP_W, MAP_H
 } from "../src/engine/grid.js";
-import { speciesById, WILDLIFE_DB } from "../src/data/species.js";
+import { speciesById, ALL_SPECIES as WILDLIFE_DB } from "../src/data/species.js";
 import { GUESSABLE } from "../src/data/taxonomy.js";
 
 // A guess can be on the guess list or be another answer species.

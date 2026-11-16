@@ -16,7 +16,7 @@ const only = args[0];
 // A batch file is checked on its own, so a half-written batch elsewhere cannot break the run.
 const WILDLIFE_DB = batchFile
   ? (await import(pathToFileURL(resolve(batchFile)).href)).default
-  : (await import("../src/data/species.js")).WILDLIFE_DB;
+  : (await import("../src/data/species.js")).ALL_SPECIES;
 const getJson = async (url) => {
   const res = await fetch(url, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`${res.status} ${url}`);

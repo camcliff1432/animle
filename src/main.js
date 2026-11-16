@@ -10,7 +10,7 @@ import {
   CirclePlay, Lock, CircleHelp, RefreshCw, Timer, Menu, PawPrint, Copy, Trophy, Users, CircleUserRound
 } from "lucide";
 
-import { WILDLIFE_DB, speciesById, ZOO_REGIONS } from "./data/species.js";
+import { WILDLIFE_DB, PRACTICE_DB, ALL_SPECIES, speciesById, ZOO_REGIONS } from "./data/species.js";
 import { GUESSABLE } from "./data/taxonomy.js";
 import { SCHEDULE } from "./data/schedule.js";
 import PHOTOS from "./data/photos.json";
@@ -277,8 +277,8 @@ function startRetake(id) {
 }
 
 function startRandomPractice() {
-  const locked = lockedIds();
-  const pool = WILDLIFE_DB.filter(a => !locked.has(a.id) && a.id !== appState.animal.id);
+  // Practice has its own small set of easy animals, so it never spoils a daily.
+  const pool = PRACTICE_DB.filter(a => a.id !== appState.animal.id);
   if (pool.length === 0) {
     showToast("No practice animals are available right now.", "warn");
     return;
@@ -358,7 +358,7 @@ const localEntries = [];
     knownAnimals.add(key);
     if (!seen.has(key)) { seen.add(key); localEntries.push({ title }); }
   };
-  for (const a of WILDLIFE_DB) {
+  for (const a of ALL_SPECIES) {
     list(a.name);
     // Aliases and scientific names are accepted but not listed, so the list gives nothing away.
     for (const n of [a.name, a.scientificName, ...(a.aliases || [])]) {
@@ -371,7 +371,7 @@ const localEntries = [];
     if (!taxonByKey.has(normalizeName(g.name))) taxonByKey.set(normalizeName(g.name), g.taxon);
   }
   // Group words ("lemur", "whale") are known too; they only place a guess as far as the order.
-  for (const a of WILDLIFE_DB) for (const n of a.groups || []) {
+  for (const a of ALL_SPECIES) for (const n of a.groups || []) {
     const key = normalizeName(n);
     knownAnimals.add(key);
     if (!taxonByKey.has(key)) taxonByKey.set(key, { cls: a.taxon.cls, order: a.taxon.order, family: "", genus: "" });
@@ -893,11 +893,13 @@ function renderSummary() {
     const earning = appState.mode === "daily" || appState.mode === "retake";
     $("summary-zoo-title").textContent = earning
       ? `${a.name} got away: you scored ${total.toLocaleString()} and it takes ${need} to add it to your zoo`
+      : a.practice ? `${a.name} is a practice animal, so it does not join your zoo`
       : `${a.name} is not in your zoo yet. Practice and past dailies do not add animals`;
     const status = retakeStatus(data, dateString(), activeStreak(data, dateString()));
     $("summary-zoo-sub").textContent = status === "ready" ? "You have a retake today. Open your zoo to use it."
       : status === "used" ? "Today's retake is used. You can retake it another day from your zoo."
       : `Reach a ${RETAKE_STREAK}-day streak to retake one missed animal a day.`;
+    if (a.practice) $("summary-zoo-sub").textContent = "Practice animals are for warming up. Animals join your zoo from the daily puzzle.";
     if (earning) $("summary-zoo-sub").textContent += ` Its next retake needs ${retakeBar((data.retakes[a.id] || 0) + 1).toLocaleString()}.`;
   }
 

@@ -8,7 +8,7 @@ import sharp from "sharp";
 
 const UA = "wildlife-game-build/0.2 (photo fetch script)";
 // Every species in the game, as [id, Wikipedia article title]. Pass ids on the command line to fetch only those.
-const { WILDLIFE_DB } = await import("../src/data/species.js");
+const { ALL_SPECIES: WILDLIFE_DB } = await import("../src/data/species.js");
 const wanted = process.argv.slice(2);
 const SPECIES = WILDLIFE_DB.filter(a => !wanted.length || wanted.includes(a.id)).map(a => [a.id, a.wikiTitle]);
 // Zoom factors: one per guess in round 1 (five), then the full photo.

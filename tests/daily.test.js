@@ -4,7 +4,7 @@ import {
   activeStreak, completeDaily, msUntilNextPuzzle, formatCountdown, LAUNCH_DATE
 } from "../src/engine/daily.js";
 import { SCHEDULE, SCHEDULE_START } from "../src/data/schedule.js";
-import { ALL_SPECIES, WILDLIFE_DB } from "../src/data/species.js";
+import { ALL_SPECIES, WILDLIFE_DB, PRACTICE_DB } from "../src/data/species.js";
 import {
   migrate, emptyData, dailyHistory, SCHEMA_VERSION, addToZoo, exportCode, importCode, dailyAverages,
   recordZooResult, retakeStatus, ZOO_MIN_SCORE, RETAKE_STREAK, RETAKE_STEP, RETAKE_MAX_SCORE, retakeBar, zooBar, beginRetake
@@ -67,6 +67,11 @@ describe("the published schedule", () => {
         expect(SCHEDULE[i] === SCHEDULE[(i + gap) % SCHEDULE.length] ? `${SCHEDULE[i]} on days ${i + 1} and ${i + 1 + gap}` : "").toBe("");
       }
     }
+  });
+  it("keeps the five practice animals out of the dailies", () => {
+    expect(PRACTICE_DB).toHaveLength(5);
+    for (const a of PRACTICE_DB) expect(SCHEDULE.includes(a.id), a.id).toBe(false);
+    for (const a of WILDLIFE_DB) expect(a.practice, a.id).toBe(false);
   });
   it("gives every species a day", () => {
     const scheduled = new Set(SCHEDULE);

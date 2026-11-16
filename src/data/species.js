@@ -9,7 +9,7 @@
 // ranges are hand-drawn approximations of the native range as [lat, lng] rings.
 // They follow the real shape of each range but are not survey-grade data.
 
-import { EXTRA, POPULATION_FIXES, REQUIRE_REVIEW, REVIEWED, REGION_OF, ZOO_REGIONS } from "./speciesExtra.js";
+import { EXTRA, POPULATION_FIXES, REQUIRE_REVIEW, REVIEWED, REGION_OF, ZOO_REGIONS, PRACTICE_IDS } from "./speciesExtra.js";
 
 import batchAfrica from "./batches/africa.js";
 import batchAsia from "./batches/asia.js";
@@ -416,10 +416,12 @@ const BATCHES = [batchAfrica, batchAsia, batchEurope, batchNorthAmerica, batchSo
   return { ...a, statusColor: STATUS[a.status], taxon: { cls, order, family, genus }, reviewed: REVIEWED[a.id] || null };
 });
 
-const ALL = [...CORE, ...BATCHES];
+const ALL = [...CORE, ...BATCHES].map(a => ({ ...a, practice: PRACTICE_IDS.includes(a.id) }));
 
 /** The species scheduled as dailies. */
-export const WILDLIFE_DB = REQUIRE_REVIEW ? ALL.filter(a => a.reviewed) : ALL;
+export const WILDLIFE_DB = ALL.filter(a => !a.practice && (!REQUIRE_REVIEW || a.reviewed));
+/** The animals behind the Practice button. */
+export const PRACTICE_DB = ALL.filter(a => a.practice);
 export const speciesById = (id) => ALL.find(a => a.id === id);
-/** Every species, reviewed or not. For tools; the game uses WILDLIFE_DB. */
+/** Every species: dailies and practice animals, reviewed or not. For tools, tests and guess matching. */
 export const ALL_SPECIES = ALL;
